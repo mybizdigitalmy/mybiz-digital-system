@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBiz Digital — SaaS v5 Preview</title>
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#111827; --panel2:#0f172a; --muted:#94a3b8; --line:#1f2937; --text:#e5e7eb; --accent:#38bdf8; --accent2:#0ea5e9; --danger:#ef4444; --ok:#22c55e;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    .app{display:flex;min-height:100vh}
+    .sidebar{width:320px;background:#111827;border-right:1px solid var(--line);padding:16px;overflow:auto;position:sticky;top:0;height:100vh}
+    .main{flex:1;padding:20px;max-width:calc(100vw - 320px)}
+    h1,h2,h3,h4{margin:0 0 10px}
+    h1{font-size:24px}
+    h2{font-size:18px}
+    h3{font-size:16px}
+    .sub{color:var(--muted);font-size:13px;line-height:1.4}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    label{display:block;font-size:12px;color:#cbd5e1;margin:0 0 6px}
+    input,select,textarea{width:100%;border:none;border-radius:10px;padding:10px 12px;background:#0b1220;color:var(--text);outline:none;border:1px solid #243041}
+    textarea{min-height:90px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:#4fb9e8;box-shadow:0 0 0 3px rgba(56,189,248,.12)}
+    button{width:100%;border:none;border-radius:10px;padding:11px 12px;font-weight:700;cursor:pointer;background:var(--accent);color:#02111b;transition:.15s ease}
+    button:hover{background:var(--accent2)}
+    .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .btn-ghost{background:#1f2937;color:var(--text);border:1px solid #334155}
+    .btn-ghost:hover{background:#273244}
+    .btn-danger{background:#7f1d1d;color:#fff}
+    .btn-danger:hover{background:#991b1b}
+    .pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#0b1220;border:1px solid #243041;color:#cbd5e1;font-size:12px;margin:4px 6px 0 0}
+    .project{padding:10px;border:1px solid #243041;background:#0b1220;border-radius:10px;margin-bottom:10px;cursor:pointer}
+    .project:hover{border-color:#36506b}
+    .project-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+    .project-name{font-weight:700;font-size:14px;word-break:break-word}
+    .project-meta{font-size:12px;color:var(--muted);margin-top:4px}
+    .project-actions{display:flex;gap:8px;margin-top:10px}
+    .project-actions button{padding:8px 10px;font-size:12px;width:auto;flex:1}
+    .checklist{display:flex;flex-wrap:wrap;gap:8px}
+    .check{display:inline-flex;align-items:center;gap:8px;background:#0b1220;border:1px solid #243041;padding:8px 10px;border-radius:10px;font-size:13px;cursor:pointer;user-select:none}
+    .check input{width:auto;margin:0}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+    .scorebox{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .score{padding:8px 10px;border-radius:999px;background:#0b1220;border:1px solid #243041;font-size:12px}
+    .score.ok{border-color:rgba(34,197,94,.35);color:#bbf7d0}
+    .score.warn{border-color:rgba(245,158,11,.35);color:#fde68a}
+    .score.bad{border-color:rgba(239,68,68,.35);color:#fecaca}
+    .output{white-space:pre-wrap;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px;min-height:340px;line-height:1.55}
+    .small{font-size:12px;color:var(--muted)}
+    .hr{height:1px;background:var(--line);margin:12px 0}
+    .hidden{display:none}
+    .kbd{font-size:11px;color:#dbeafe;background:#102033;border:1px solid #22324a;padding:3px 7px;border-radius:8px}
+    .muted{color:var(--muted)}
+    .section-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .tagline{font-size:12px;color:#93c5fd}
+    .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
+    .topbar .brand{max-width:780px}
+    .topbar .actions{min-width:240px;display:grid;gap:10px}
+    .summary-list{margin:0;padding-left:18px;color:#cbd5e1}
+    .summary-list li{margin:5px 0}
+    @media (max-width: 1100px){
+      .app{flex-direction:column}
+      .sidebar{width:100%;height:auto;position:relative}
+      .main{max-width:100%;padding:16px}
+      .grid,.grid-3,.btn-row{grid-template-columns:1fr}
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="card">
+        <h1>MyBiz Digital</h1>
+        <div class="sub">SaaS v5 — Website Discovery OS</div>
+        <div class="hr"></div>
+        <div class="small">Client projects</div>
+        <div id="projectList"></div>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="btn-ghost" onclick="newProject()">+ New</button>
+          <button class="btn-ghost" onclick="duplicateProject()">Duplicate</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Project actions</h3>
+        <div class="small">Open a project, rename it, edit fields, then save again. Data stays in your browser.</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="brand">
+          <h1>Agency Discovery System</h1>
+          <div class="sub">Foundation layer for premium website structure, before design. Includes strategy, content, UX, SEO, technical, CRO, and launch readiness.</div>
+        </div>
+        <div class="actions">
+          <button onclick="generateStrategy()">Generate Website Blueprint</button>
+          <button class="btn-ghost" onclick="exportPDF()">Export Client PDF</button>
+          <button class="btn-ghost" onclick="saveProject()">Save Project</button>
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>1. Category & Industry</h3>
+          <span class="kbd">Category → Industry</span>
+        </div>
+        <div class="grid">
+          <div>
+            <label>Category</label>
+            <select id="category" onchange="loadIndustries()">
+              <option value="">Select category</option>
+              <option value="food">Food & Hospitality</option>
+              <option value="beauty">Beauty & Personal Care</option>
+              <option value="health">Healthcare & Medical</option>
+              <option value="home">Home Services</option>
+              <option value="business">Professional Services</option>
+              <option value="ecom">E-Commerce & Retail</option>
+              <option value="education">Education & Training</option>
+              <option value="realestate">Real Estate</option>
+              <option value="auto">Automotive</option>
+              <option value="events">Events & Entertainment</option>
+              <option value="logistics">Transport & Logistics</option>
+              <option value="tech">Tech / SaaS / Digital Products</option>
+              <option value="fitness">Fitness & Sports</option>
+            </select>
+          </div>
+          <div>
+            <label>Industry</label>
+            <select id="industry"></select>
+          </div>
+        </div>
+        <div class="small" style="margin-top:10px">Recommended setup is industry-aware and auto-fills the checklist.</div>
+        <div style="margin-top:10px"><button class="btn-ghost" onclick="recommendedSetup()">⚡ Recommended Setup</button></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>2. Business Core</h3>
+          <span class="kbd">Positioning & objective</span>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Project / Client Name</label>
+            <input id="projectName" placeholder="Client project name" />
+          </div>
+          <div>
+            <label>Business Name</label>
+            <input id="businessName" placeholder="Client business name" />
+          </div>
+          <div>
+            <label>Website Objective</label>
+            <select id="goal">
+              <option>Lead Generation</option>
+              <option>Booking</option>
+              <option>Sales</option>
+              <option>Brand Awareness</option>
+              <option>Authority Building</option>
+              <option>Portfolio Showcase</option>
+              <option>Subscriptions</option>
+              <option>Education</option>
+              <option>Support / Information</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Brand Positioning</label>
+            <select id="positioning">
+              <option>Premium</option>
+              <option>Luxury</option>
+              <option>Affordable</option>
+              <option>Corporate</option>
+              <option>Modern</option>
+              <option>Friendly</option>
+              <option>Enterprise</option>
+              <option>Minimal</option>
+              <option>Innovative</option>
+              <option>High-performance</option>
+            </select>
+          </div>
+          <div>
+            <label>Brand Personality</label>
+            <select id="personality">
+              <option>Professional</option>
+              <option>Calm</option>
+              <option>Bold</option>
+              <option>Friendly</option>
+              <option>Luxury</option>
+              <option>Playful</option>
+              <option>Technical</option>
+              <option>Minimal</option>
+            </select>
+          </div>
+          <div>
+            <label>Pricing Model</label>
+            <select id="pricingModel">
+              <option>Fixed Pricing</option>
+              <option>Tiered Pricing</option>
+              <option>Custom Quotation</option>
+              <option>Subscription Model</option>
+              <option>Pay-per-service</option>
+              <option>Package Bundles</option>
+              <option>Membership Model</option>
+              <option>Freemium</option>
+            </select>
+          </div>
+        </div>
+        <label>Unique Selling Proposition (USP)</label>
+        <textarea id="usp" placeholder="Why should customers choose this business over competitors?"></textarea>
+        <label>Competitor References</label>
+        <textarea id="competitors" placeholder="Competitor names or URLs (optional)"></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>3. Client Content Layer</h3>
+          <span class="kbd">Client copy input</span>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Hero Headline</label>
+            <input id="headline" placeholder="Example: Reliable Laundry Delivery in KL" />
+          </div>
+          <div>
+            <label>Subheadline</label>
+            <input id="subheadline" placeholder="Example: Pickup, clean, and deliver without hassle" />
+          </div>
+          <div>
+            <label>Primary CTA Text</label>
+            <input id="ctaText" placeholder="Book Now / Get Quote / WhatsApp Us" />
+          </div>
+        </div>
+        <label>Brand Message / About Intro</label>
+        <textarea id="brandMessage" placeholder="Client-provided about text, tagline, or brand narrative."></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>4. Audience Research</h3>
+          <span class="kbd">Guided + custom</span>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Primary Audience</label>
+            <select id="primaryAudience">
+              <option value="">Select</option>
+              <option>Working professionals (25–45)</option>
+              <option>Students</option>
+              <option>Families with children</option>
+              <option>SMEs / small business owners</option>
+              <option>Corporate clients</option>
+              <option>High-income clients</option>
+              <option>Local neighborhood customers</option>
+              <option>Tourists / travelers</option>
+              <option>Online shoppers</option>
+              <option>Elderly users</option>
+              <option>First-time buyers</option>
+            </select>
+          </div>
+          <div>
+            <label>Secondary Audience</label>
+            <select id="secondaryAudience">
+              <option value="">Select</option>
+              <option>Referral customers</option>
+              <option>Walk-in customers</option>
+              <option>Repeat customers</option>
+              <option>Seasonal customers</option>
+              <option>Corporate partners</option>
+              <option>Event-based users</option>
+              <option>Occasional users</option>
+              <option>Budget-conscious buyers</option>
+              <option>Premium buyers</option>
+            </select>
+          </div>
+          <div>
+            <label>User Awareness Level</label>
+            <select id="awareness">
+              <option>Unaware</option>
+              <option>Problem aware</option>
+              <option>Solution aware</option>
+              <option>Product aware</option>
+              <option>Decision stage</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-2 grid" style="margin-top:12px">
+          <div>
+            <label>Primary Pain Points</label>
+            <textarea id="painPoints" placeholder="No time, distrust, expensive alternatives, confusing process, slow service, etc."></textarea>
+          </div>
+          <div>
+            <label>Desired Outcomes</label>
+            <textarea id="desiredOutcomes" placeholder="Save time, convenience, better leads, premium perception, more bookings, etc."></textarea>
+          </div>
+        </div>
+        <div style="margin-top:10px" id="audienceBox" class="checklist"></div>
+        <label style="margin-top:10px">Custom audience note</label>
+        <input id="audienceCustom" placeholder="Add custom audience segment if needed" />
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>5. Services / Products</h3>
+          <span class="kbd">Offer structure</span>
+        </div>
+        <div id="serviceBox" class="checklist"></div>
+        <label style="margin-top:10px">Custom services / products</label>
+        <textarea id="serviceCustom" placeholder="Add anything not shown above"></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>6. Features / Functionality</h3>
+          <span class="kbd">System behavior</span>
+        </div>
+        <div id="featureBox" class="checklist"></div>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <label>Need CMS?</label>
+            <select id="needCMS">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need booking system?</label>
+            <select id="needBooking">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need payment gateway?</label>
+            <select id="needPayment">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <label>Need user login?</label>
+            <select id="needLogin">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need admin dashboard?</label>
+            <select id="needDashboard">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need integrations?</label>
+            <select id="needIntegrations">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <label style="margin-top:10px">Custom features / integrations</label>
+        <textarea id="featureCustom" placeholder="WhatsApp, Stripe, Google Calendar, CRM, Maps, reviews API, etc."></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>7. Trust System</h3>
+          <span class="kbd">Trust stacking</span>
+        </div>
+        <div id="trustBox" class="checklist"></div>
+        <label style="margin-top:10px">Custom trust elements</label>
+        <textarea id="trustCustom" placeholder="Years of experience, awards, certifications, case studies, partner brands, etc."></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>8. SEO + Content Strategy</h3>
+          <span class="kbd">Discovery inputs</span>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Target Keywords</label>
+            <textarea id="keywords" placeholder="laundry service KL, premium salon near me"></textarea>
+          </div>
+          <div>
+            <label>Target Locations</label>
+            <textarea id="locations" placeholder="Kuala Lumpur, Petaling Jaya, Setapak"></textarea>
+          </div>
+          <div>
+            <label>Need blog system?</label>
+            <select id="needBlog">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <label>Local SEO needed?</label>
+            <select id="localSEO">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need analytics setup?</label>
+            <select id="needAnalytics">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need heatmaps / A-B testing?</label>
+            <select id="needCROTools">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <label style="margin-top:10px">Content gaps / extra notes</label>
+        <textarea id="contentNotes" placeholder="Missing copy, missing testimonials, no case studies, etc."></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>9. Design System + UX</h3>
+          <span class="kbd">Style decisions</span>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Preferred Style</label>
+            <select id="stylePref">
+              <option>Minimal</option>
+              <option>Luxury</option>
+              <option>Editorial</option>
+              <option>Corporate</option>
+              <option>Tech</option>
+              <option>Bold</option>
+              <option>Modern SaaS</option>
+            </select>
+          </div>
+          <div>
+            <label>Animation Level</label>
+            <select id="animationLevel">
+              <option>Minimal</option>
+              <option>Moderate</option>
+              <option>Interactive</option>
+            </select>
+          </div>
+          <div>
+            <label>Typography Direction</label>
+            <select id="typographyDir">
+              <option>Modern sans-serif</option>
+              <option>Editorial serif + sans</option>
+              <option>Corporate sans-serif</option>
+              <option>Technical geometric</option>
+              <option>Luxury high-contrast</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <label>Accessibility Priority</label>
+            <select id="accessibilityPriority">
+              <option>Standard</option>
+              <option>High</option>
+              <option>WCAG focused</option>
+            </select>
+          </div>
+          <div>
+            <label>Performance Priority</label>
+            <select id="performancePriority">
+              <option>Balanced</option>
+              <option>Speed focused</option>
+              <option>Visual focused</option>
+            </select>
+          </div>
+          <div>
+            <label>Device Priority</label>
+            <select id="devicePriority">
+              <option>Mobile-first</option>
+              <option>Balanced</option>
+              <option>Desktop-first</option>
+            </select>
+          </div>
+        </div>
+        <label style="margin-top:10px">Reference websites / style references</label>
+        <textarea id="refSites" placeholder="Links or descriptions of websites the client likes"></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>10. Conversion + Technical + Launch</h3>
+          <span class="kbd">Senior checklist</span>
+        </div>
+        <div class="grid-3">
+          <div>
+            <label>Main CTA</label>
+            <select id="mainCTA">
+              <option>Book Now</option>
+              <option>Get Quote</option>
+              <option>WhatsApp Us</option>
+              <option>Order Now</option>
+              <option>Schedule Appointment</option>
+              <option>Request Callback</option>
+              <option>Free Consultation</option>
+              <option>Start Free Trial</option>
+              <option>Download App</option>
+            </select>
+          </div>
+          <div>
+            <label>Urgency / Scarcity</label>
+            <select id="urgency">
+              <option>No urgency</option>
+              <option>Limited daily slots</option>
+              <option>Limited weekly capacity</option>
+              <option>Seasonal promotion</option>
+              <option>Flash deal</option>
+              <option>Waiting list</option>
+              <option>Same-day availability</option>
+            </select>
+          </div>
+          <div>
+            <label>Lead qualification</label>
+            <select id="leadQual">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <label>Need PDF proposal?</label>
+            <select id="needPDF">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+          <div>
+            <label>Launch ready?</label>
+            <select id="launchReady">
+              <option>No</option>
+              <option>Partially</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Project status</label>
+            <select id="projectStatus">
+              <option>Discovery</option>
+              <option>Strategy</option>
+              <option>Ready for Design</option>
+              <option>Ready for Development</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <label>Need homepage hero image direction</label>
+            <select id="heroImageDir">
+              <option>Real humans</option>
+              <option>Product / service visuals</option>
+              <option>Lifestyle imagery</option>
+              <option>Abstract / branded graphics</option>
+            </select>
+          </div>
+          <div>
+            <label>Need CMS training?</label>
+            <select id="cmsTraining">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>Need backup / maintenance plan?</label>
+            <select id="maintenancePlan">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <label style="margin-top:10px">Launch checklist notes</label>
+        <textarea id="launchNotes" placeholder="Domain, hosting, legal pages, tracking pixels, business email, backup, etc."></textarea>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h3>11. Output</h3>
+          <span class="kbd">Blueprint + PDF</span>
+        </div>
+        <div class="btn-row">
+          <button onclick="generateStrategy()">Generate Website Blueprint</button>
+          <button class="btn-ghost" onclick="exportPDF()">Export Client PDF</button>
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="btn-ghost" onclick="saveProject()">Save Project</button>
+          <button class="btn-ghost" onclick="renameCurrentProject()">Rename Project</button>
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="btn-danger" onclick="deleteCurrentProject()">Delete Project</button>
+          <button class="btn-ghost" onclick="validateAndScore()">Recalculate Score</button>
+        </div>
+        <div id="scoreBox" class="scorebox"></div>
+        <div class="hr"></div>
+        <div id="output" class="output">Your website blueprint will appear here.</div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const INDUSTRIES = {
+      food:["Restaurant","Cafe / Coffee Shop","Fast Food","Bakery","Catering","Food Truck","Fine Dining","Dessert Shop"],
+      beauty:["Barber","Hair Salon","Nail Salon","Spa","Massage Therapy","Skincare Clinic","Makeup Artist"],
+      health:["Clinic","Dental Clinic","Physiotherapy","Chiropractic","Therapy Practice","Optometry"],
+      home:["Laundry Service","Cleaning Service","Plumbing","Electrical","Renovation","Interior Design","Pest Control","Handyman"],
+      business:["Agency","Consulting","Law Firm","Accounting Firm","IT Services","Software Agency","HR Agency"],
+      ecom:["Fashion Store","Electronics Store","Beauty Products","Furniture Store","Grocery Store","Auto Parts"],
+      education:["Tuition Center","Online Course","Bootcamp","Coaching Program","Corporate Training"],
+      realestate:["Property Agency","Developer","Rental Platform","Commercial Real Estate"],
+      auto:["Car Dealer","Motorcycle Dealer","Car Rental","Car Workshop","Car Detailing"],
+      events:["Event Planner","Wedding Planner","DJ / Music Service","Photography / Videography","Event Venue","Ticketing Platform"],
+      logistics:["Courier Service","Moving Company","Trucking Service","Taxi / Ride Service","Delivery Platform"],
+      tech:["SaaS Platform","Mobile App","AI Tool","Software Company","Subscription Tool","Dashboard Product"],
+      fitness:["Gym","Personal Trainer","Yoga Studio","Sports Coaching","Fitness Class","Wellness Studio"]
+    };
+
+    const RECO = {
+      "Restaurant": {
+        audience:["Families with children","Working professionals (25–45)","Tourists / travelers"],
+        services:["Dine-in service","Online ordering","Reservations","Catering service"],
+        features:["Menu system","Booking system","WhatsApp integration","Google Maps"],
+        trust:["Google rating","Customer reviews","Food photography","Hygiene / quality signals"],
+        cta:"Reserve a Table",
+        headline:"Authentic Dining Experience",
+        subheadline:"Fresh food, welcoming service, and easy reservation flow.",
+        goal:"Booking",
+        mainCTA:"Reserve a Table"
+      },
+      "Cafe / Coffee Shop": {
+        audience:["Working professionals (25–45)","Students","Local neighborhood customers"],
+        services:["Dine-in","Takeaway","Coffee orders","Desserts"],
+        features:["Menu system","Map","WhatsApp","Location hours"],
+        trust:["Customer reviews","Ambience photos","Barista / brand story"],
+        cta:"Visit Us Today",
+        headline:"Your Everyday Coffee Stop",
+        subheadline:"A warm place for quality coffee, dessert, and conversation.",
+        goal:"Brand Awareness",
+        mainCTA:"Visit Us Today"
+      },
+      "Laundry Service": {
+        audience:["Working professionals (25–45)","Families with children","Elderly users"],
+        services:["Wash & Fold","Dry Cleaning","Ironing Service","Pickup & Delivery"],
+        features:["Order scheduling","Pickup slots","Order tracking","WhatsApp integration"],
+        trust:["Reviews","Service guarantee","Turnaround time","Hygiene / quality signals"],
+        cta:"Schedule Pickup",
+        headline:"Laundry Made Effortless",
+        subheadline:"We pick up, clean, and deliver so you save time every week.",
+        goal:"Booking",
+        mainCTA:"Schedule Pickup"
+      },
+      "Clinic": {
+        audience:["Patients","Families with children","Elderly users"],
+        services:["Consultation","Treatment","Screening","Follow-up care"],
+        features:["Appointment system","Doctor profiles","Privacy / records","Google Maps"],
+        trust:["Doctor credentials","Certifications","Patient reviews","Clinic photos"],
+        cta:"Book Consultation",
+        headline:"Trusted Care for Better Health",
+        subheadline:"Clear information, professional care, and simple appointment booking.",
+        goal:"Booking",
+        mainCTA:"Book Consultation"
+      },
+      "Agency": {
+        audience:["SMEs / small business owners","Corporate clients","High-income clients"],
+        services:["Strategy","Design","Development","Marketing"],
+        features:["Lead form","Case study pages","Blog","WhatsApp"],
+        trust:["Case studies","Client logos","Testimonials","Years of experience"],
+        cta:"Get Proposal",
+        headline:"Build a Website That Converts",
+        subheadline:"Premium strategy, clean structure, and client-focused execution.",
+        goal:"Lead Generation",
+        mainCTA:"Get Proposal"
+      },
+      "SaaS Platform": {
+        audience:["SMEs / small business owners","Corporate clients","Tech-savvy users"],
+        services:["Subscription access","Product onboarding","Dashboard access"],
+        features:["User login","Payment gateway","Analytics","API integrations"],
+        trust:["Product demos","Testimonials","Security signals","Customer count"],
+        cta:"Start Free Trial",
+        headline:"A Smarter Way to Work",
+        subheadline:"Simple onboarding, powerful features, and clear value from day one.",
+        goal:"Subscriptions",
+        mainCTA:"Start Free Trial"
+      }
+    };
+
+    const AUDIENCE = [
+      "Working professionals (25–45)",
+      "Students",
+      "Families with children",
+      "SMEs / small business owners",
+      "Corporate clients",
+      "High-income clients",
+      "Local neighborhood customers",
+      "Tourists / travelers",
+      "Online shoppers",
+      "Elderly users",
+      "First-time buyers",
+      "Referral customers",
+      "Walk-in customers",
+      "Repeat customers",
+      "Budget-conscious buyers",
+      "Premium buyers"
+    ];
+
+    const SERVICES = [
+      "Core service delivery",
+      "Consultation",
+      "Booking / appointment",
+      "Delivery",
+      "Subscription",
+      "Package bundles",
+      "Custom quotation",
+      "After-sales support",
+      "Installation / setup",
+      "Maintenance / follow-up"
+    ];
+
+    const FEATURES = [
+      "WhatsApp integration",
+      "Online booking system",
+      "Payment gateway",
+      "Live chat",
+      "CRM integration",
+      "Order tracking",
+      "SEO blog",
+      "Mobile-first UI",
+      "Map integration",
+      "User login",
+      "Admin dashboard",
+      "Analytics tracking",
+      "A/B testing readiness",
+      "Email automation"
+    ];
+
+    const TRUST = [
+      "Customer reviews",
+      "Google rating",
+      "Before/after results",
+      "Certifications / licenses",
+      "Years of experience",
+      "Case studies",
+      "Testimonials video",
+      "Partner brands / logos",
+      "Money-back guarantee",
+      "Service guarantee",
+      "Hygiene / quality signals",
+      "Security badges"
+    ];
+
+    let projects = JSON.parse(localStorage.getItem('mybiz_v5_projects') || '[]');
+    let currentProjectId = null;
+
+    function loadIndustries(){
+      const cat = document.getElementById('category').value;
+      const industry = document.getElementById('industry');
+      industry.innerHTML = '<option value="">Select industry</option>';
+      if(!cat){ renderAllChecklists(); return; }
+      (INDUSTRIES[cat] || []).forEach(i => {
+        const opt = document.createElement('option');
+        opt.value = i; opt.textContent = i;
+        industry.appendChild(opt);
+      });
+      renderAllChecklists();
+      updateRecommendedPreview();
+    }
+
+    function renderChecklist(containerId, items){
+      const box = document.getElementById(containerId);
+      box.innerHTML = '';
+      items.forEach(item => {
+        const label = document.createElement('label');
+        label.className = 'check';
+        label.innerHTML = `<input type="checkbox" value="${escapeHtml(item)}" /> <span>${item}</span>`;
+        box.appendChild(label);
+      });
+    }
+
+    function renderAllChecklists(){
+      renderChecklist('audienceBox', AUDIENCE);
+      renderChecklist('serviceBox', SERVICES);
+      renderChecklist('featureBox', FEATURES);
+      renderChecklist('trustBox', TRUST);
+    }
+
+    function getChecked(id){
+      return [...document.querySelectorAll(`#${id} input:checked`)].map(x => x.value);
+    }
+
+    function setChecks(containerId, wanted){
+      document.querySelectorAll(`#${containerId} input[type=checkbox]`).forEach(cb => {
+        cb.checked = wanted.includes(cb.value);
+      });
+    }
+
+    function recommendedSetup(){
+      const industry = document.getElementById('industry').value;
+      document.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = false);
+      if(RECO[industry]){
+        setChecks('audienceBox', RECO[industry].audience || []);
+        setChecks('serviceBox', RECO[industry].services || []);
+        setChecks('featureBox', RECO[industry].features || []);
+        setChecks('trustBox', RECO[industry].trust || []);
+        document.getElementById('headline').value = RECO[industry].headline || '';
+        document.getElementById('subheadline').value = RECO[industry].subheadline || '';
+        document.getElementById('ctaText').value = RECO[industry].cta || '';
+        document.getElementById('goal').value = RECO[industry].goal || 'Lead Generation';
+        document.getElementById('mainCTA').value = RECO[industry].mainCTA || 'Get Quote';
+      }
+      validateAndScore();
+      updateRecommendedPreview();
+    }
+
+    function updateRecommendedPreview(){
+      const industry = document.getElementById('industry').value;
+      if(!industry || !RECO[industry]) return;
+      const r = RECO[industry];
+      document.getElementById('output').innerText = `Recommended setup loaded for ${industry}.\n\nSuggested headline: ${r.headline}\nSuggested CTA: ${r.cta}\nSuggested focus: ${r.services.join(', ')}`;
+    }
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"]+/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]));
+    }
+
+    function collectData(){
+      return {
+        projectName: document.getElementById('projectName').value.trim(),
+        businessName: document.getElementById('businessName').value.trim(),
+        category: document.getElementById('category').value,
+        industry: document.getElementById('industry').value,
+        goal: document.getElementById('goal').value,
+        positioning: document.getElementById('positioning').value,
+        personality: document.getElementById('personality').value,
+        pricingModel: document.getElementById('pricingModel').value,
+        usp: document.getElementById('usp').value.trim(),
+        competitors: document.getElementById('competitors').value.trim(),
+        headline: document.getElementById('headline').value.trim(),
+        subheadline: document.getElementById('subheadline').value.trim(),
+        ctaText: document.getElementById('ctaText').value.trim(),
+        brandMessage: document.getElementById('brandMessage').value.trim(),
+        primaryAudience: document.getElementById('primaryAudience').value,
+        secondaryAudience: document.getElementById('secondaryAudience').value,
+        awareness: document.getElementById('awareness').value,
+        painPoints: document.getElementById('painPoints').value.trim(),
+        desiredOutcomes: document.getElementById('desiredOutcomes').value.trim(),
+        audienceCustom: document.getElementById('audienceCustom').value.trim(),
+        serviceCustom: document.getElementById('serviceCustom').value.trim(),
+        featureCustom: document.getElementById('featureCustom').value.trim(),
+        trustCustom: document.getElementById('trustCustom').value.trim(),
+        keywords: document.getElementById('keywords').value.trim(),
+        locations: document.getElementById('locations').value.trim(),
+        needBlog: document.getElementById('needBlog').value,
+        localSEO: document.getElementById('localSEO').value,
+        needAnalytics: document.getElementById('needAnalytics').value,
+        needCROTools: document.getElementById('needCROTools').value,
+        stylePref: document.getElementById('stylePref').value,
+        animationLevel: document.getElementById('animationLevel').value,
+        typographyDir: document.getElementById('typographyDir').value,
+        accessibilityPriority: document.getElementById('accessibilityPriority').value,
+        performancePriority: document.getElementById('performancePriority').value,
+        devicePriority: document.getElementById('devicePriority').value,
+        refSites: document.getElementById('refSites').value.trim(),
+        mainCTA: document.getElementById('mainCTA').value,
+        urgency: document.getElementById('urgency').value,
+        leadQual: document.getElementById('leadQual').value,
+        needCMS: document.getElementById('needCMS').value,
+        needBooking: document.getElementById('needBooking').value,
+        needPayment: document.getElementById('needPayment').value,
+        needLogin: document.getElementById('needLogin').value,
+        needDashboard: document.getElementById('needDashboard').value,
+        needIntegrations: document.getElementById('needIntegrations').value,
+        needPDF: document.getElementById('needPDF').value,
+        launchReady: document.getElementById('launchReady').value,
+        projectStatus: document.getElementById('projectStatus').value,
+        heroImageDir: document.getElementById('heroImageDir').value,
+        cmsTraining: document.getElementById('cmsTraining').value,
+        maintenancePlan: document.getElementById('maintenancePlan').value,
+        launchNotes: document.getElementById('launchNotes').value.trim(),
+        audienceSelected: getChecked('audienceBox'),
+        serviceSelected: getChecked('serviceBox'),
+        featureSelected: getChecked('featureBox'),
+        trustSelected: getChecked('trustBox')
+      };
+    }
+
+    function buildBlueprint(data){
+      const selectedAud = [...data.audienceSelected, data.audienceCustom].filter(Boolean);
+      const selectedSvc = [...data.serviceSelected, data.serviceCustom].filter(Boolean);
+      const selectedFeat = [...data.featureSelected, data.featureCustom].filter(Boolean);
+      const selectedTrust = [...data.trustSelected, data.trustCustom].filter(Boolean);
+
+      const uxPattern = ['Home','Landing','Sales'].includes(data.goal) || ['Bookings','Sales'].includes(data.projectStatus) ? 'Z-Pattern for conversion-led homepage' : 'F-Pattern for content-heavy pages';
+      const readiness = computeScore(data);
+
+      const sitemap = [
+        'Home',
+        'About',
+        selectedSvc.length ? 'Services / Products' : 'Services',
+        data.needBlog === 'Yes' ? 'Blog / Insights' : null,
+        data.needBooking === 'Yes' ? 'Booking / Contact' : 'Contact',
+        data.needPayment === 'Yes' ? 'Pricing / Checkout' : 'Pricing',
+        'FAQ',
+        'Privacy Policy',
+        'Terms of Service'
+      ].filter(Boolean);
+
+      const heroHead = data.headline || defaultHeadline(data);
+      const heroSub = data.subheadline || defaultSubheadline(data);
+      const cta = data.ctaText || data.mainCTA;
+
+      const trustStack = selectedTrust.length ? selectedTrust : ['Reviews', 'Experience', 'Case studies'];
+      const featureLine = selectedFeat.length ? selectedFeat.join(', ') : 'Core website features based on the selected industry';
+      const contentLine = data.brandMessage || 'Client brand copy and strategic messaging to be refined before design.';
+
+      return `MYBIZ DIGITAL — WEBSITE BLUEPRINT\n\nCLIENT\n- Project: ${data.projectName || 'Untitled'}\n- Business: ${data.businessName || 'N/A'}\n- Category: ${data.category || 'N/A'}\n- Industry: ${data.industry || 'N/A'}\n- Objective: ${data.goal}\n- Positioning: ${data.positioning}\n- Personality: ${data.personality}\n- Pricing Model: ${data.pricingModel}\n\nSTRATEGY SUMMARY\n- USP: ${data.usp || 'To be defined'}\n- Competitors: ${data.competitors || 'Not provided'}\n- Audience: ${selectedAud.join('; ') || 'To be defined'}\n- Pain Points: ${data.painPoints || 'To be defined'}\n- Desired Outcomes: ${data.desiredOutcomes || 'To be defined'}\n- Awareness Stage: ${data.awareness}\n\nUX / CONVERSION\n- Pattern: ${uxPattern}\n- Main CTA: ${cta}\n- Urgency: ${data.urgency}\n- Lead Qualification: ${data.leadQual}\n- Trust Stack: ${trustStack.join(', ')}\n- CTA Placement Rule: repeat 3 times across homepage and relevant pages\n\nCONTENT INPUT\n- Headline: ${heroHead}\n- Subheadline: ${heroSub}\n- Brand Message: ${contentLine}\n\nSEO / CONTENT\n- Keywords: ${data.keywords || 'N/A'}\n- Locations: ${data.locations || 'N/A'}\n- Blog Needed: ${data.needBlog}\n- Local SEO: ${data.localSEO}\n- Analytics: ${data.needAnalytics}\n- CRO Tools: ${data.needCROTools}\n\nTECHNICAL / FUNCTIONAL\n- CMS: ${data.needCMS}\n- Booking: ${data.needBooking}\n- Payment: ${data.needPayment}\n- Login: ${data.needLogin}\n- Dashboard: ${data.needDashboard}\n- Integrations: ${data.needIntegrations}\n- Device Priority: ${data.devicePriority}\n- Accessibility Priority: ${data.accessibilityPriority}\n- Performance Priority: ${data.performancePriority}\n\nDESIGN DIRECTION\n- Style: ${data.stylePref}\n- Animation Level: ${data.animationLevel}\n- Typography: ${data.typographyDir}\n- Hero Imagery: ${data.heroImageDir}\n- Reference Sites: ${data.refSites || 'N/A'}\n\nMANDATORY PAGE STRUCTURE\n1. Home\n2. About\n3. ${selectedSvc.length ? 'Services / Products' : 'Services'}\n4. ${data.needBlog === 'Yes' ? 'Blog / Insights' : 'FAQ'}\n5. ${data.needBooking === 'Yes' ? 'Booking / Contact' : 'Contact'}\n6. ${data.needPayment === 'Yes' ? 'Pricing / Checkout' : 'Pricing'}\n7. Privacy Policy\n8. Terms of Service\n\nHOME PAGE SECTION ORDER\n1. Navigation\n2. Hero\n3. Value proposition\n4. Services / products\n5. Proof / trust\n6. How it works\n7. CTA\n8. FAQ\n9. Footer\n\nIMPLEMENTATION NOTES\n- Use a premium, clear, calm, intentional design language.\n- Keep conversion path obvious and low-friction.\n- Design mobile-first unless desktop-first is explicitly required.\n- Use real human imagery where trust matters most.\n- Include accessibility, speed, and SEO from the start.\n\nBUILD PROMPT FOR AI TOOLS\nCreate a premium, conversion-focused website for ${data.businessName || 'the client'} in the ${data.industry || 'selected industry'} industry. The website must reflect ${data.positioning} positioning, ${data.personality} personality, and a ${data.pricingModel} pricing model. The homepage should start with the headline: \"${heroHead}\" and the subheadline: \"${heroSub}\". Primary CTA: ${cta}. Build the sitemap, UX flow, page hierarchy, trust stacking, and responsive UI according to the structured strategy above.`;
+    }
+
+    function defaultHeadline(data){
+      const industry = data.industry || 'Business';
+      const map = {
+        'Restaurant':'Premium Dining Experience',
+        'Cafe / Coffee Shop':'Your Everyday Coffee Destination',
+        'Laundry':'Laundry Made Effortless',
+        'Clinic':'Trusted Care for Better Health',
+        'Agency':'Build a Website That Converts',
+        'SaaS Platform':'A Smarter Way to Work'
+      };
+      return map[industry] || `Premium ${industry} Website`;
+    }
+
+    function defaultSubheadline(data){
+      const map = {
+        'Restaurant':'Clear menu, easy reservation flow, and strong trust signals.',
+        'Cafe / Coffee Shop':'Warm ambience, quality drinks, and fast discovery.',
+        'Laundry':'Pickup, cleaning, and delivery with less effort.',
+        'Clinic':'Professional information, trust, and simple appointment booking.',
+        'Agency':'A clear structure that positions the business and drives leads.',
+        'SaaS Platform':'Simple onboarding, clear value, and strong conversion flow.'
+      };
+      return map[data.industry] || 'Clear messaging, strong hierarchy, and conversion-focused structure.';
+    }
+
+    function computeScore(data){
+      let score = 0;
+      const fields = [
+        data.businessName, data.industry, data.goal, data.positioning, data.personality,
+        data.headline, data.subheadline, data.ctaText, data.usp, data.primaryAudience,
+        data.painPoints, data.desiredOutcomes, data.keywords, data.mainCTA
+      ];
+      fields.forEach(v => { if(String(v || '').trim()) score += 5; });
+      if(data.audienceSelected.length) score += 10;
+      if(data.serviceSelected.length) score += 10;
+      if(data.featureSelected.length) score += 10;
+      if(data.trustSelected.length) score += 10;
+      if(data.needCMS === 'Yes') score += 3;
+      if(data.needBooking === 'Yes') score += 3;
+      if(data.needPayment === 'Yes') score += 3;
+      if(data.needAnalytics === 'Yes') score += 2;
+      if(data.needCROTools === 'Yes') score += 2;
+      if(data.needBlog === 'Yes') score += 2;
+      return Math.min(score, 100);
+    }
+
+    function validateAndScore(){
+      const data = collectData();
+      const score = computeScore(data);
+      const scoreBox = document.getElementById('scoreBox');
+      const items = [];
+      items.push(score >= 80 ? `<span class="score ok">Readiness: ${score}/100</span>` : score >= 55 ? `<span class="score warn">Readiness: ${score}/100</span>` : `<span class="score bad">Readiness: ${score}/100</span>`);
+      const gaps = [];
+      if(!data.businessName) gaps.push('Business name');
+      if(!data.headline) gaps.push('Hero headline');
+      if(!data.subheadline) gaps.push('Subheadline');
+      if(!data.usp) gaps.push('USP');
+      if(!data.primaryAudience) gaps.push('Primary audience');
+      if(!data.painPoints) gaps.push('Pain points');
+      if(!data.keywords) gaps.push('SEO keywords');
+      if(!data.mainCTA) gaps.push('Main CTA');
+      items.push(`<span class="score ${gaps.length ? 'warn' : 'ok'}">Missing: ${gaps.length ? gaps.join(', ') : 'None'}</span>`);
+      scoreBox.innerHTML = items.join('');
+      return score;
+    }
+
+    function generateStrategy(){
+      const data = collectData();
+      validateAndScore();
+      const blueprint = buildBlueprint(data);
+      document.getElementById('output').innerText = blueprint;
+      return blueprint;
+    }
+
+    function saveProject(){
+      const data = collectData();
+      const name = data.projectName || data.businessName || 'Untitled Project';
+      const project = {
+        id: currentProjectId || Date.now(),
+        name,
+        updatedAt: new Date().toISOString(),
+        data,
+        blueprint: buildBlueprint(data)
+      };
+      const idx = projects.findIndex(p => p.id === project.id);
+      if(idx >= 0) projects[idx] = project; else projects.unshift(project);
+      localStorage.setItem('mybiz_v5_projects', JSON.stringify(projects));
+      currentProjectId = project.id;
+      renderProjects();
+      generateStrategy();
+    }
+
+    function loadProject(id){
+      const project = projects.find(p => p.id === id);
+      if(!project) return;
+      currentProjectId = project.id;
+      const d = project.data || {};
+      document.getElementById('projectName').value = d.projectName || project.name || '';
+      document.getElementById('businessName').value = d.businessName || '';
+      document.getElementById('category').value = d.category || '';
+      loadIndustries();
+      document.getElementById('industry').value = d.industry || '';
+      document.getElementById('goal').value = d.goal || 'Lead Generation';
+      document.getElementById('positioning').value = d.positioning || 'Premium';
+      document.getElementById('personality').value = d.personality || 'Professional';
+      document.getElementById('pricingModel').value = d.pricingModel || 'Fixed Pricing';
+      document.getElementById('usp').value = d.usp || '';
+      document.getElementById('competitors').value = d.competitors || '';
+      document.getElementById('headline').value = d.headline || '';
+      document.getElementById('subheadline').value = d.subheadline || '';
+      document.getElementById('ctaText').value = d.ctaText || '';
+      document.getElementById('brandMessage').value = d.brandMessage || '';
+      document.getElementById('primaryAudience').value = d.primaryAudience || '';
+      document.getElementById('secondaryAudience').value = d.secondaryAudience || '';
+      document.getElementById('awareness').value = d.awareness || 'Problem aware';
+      document.getElementById('painPoints').value = d.painPoints || '';
+      document.getElementById('desiredOutcomes').value = d.desiredOutcomes || '';
+      document.getElementById('audienceCustom').value = d.audienceCustom || '';
+      document.getElementById('serviceCustom').value = d.serviceCustom || '';
+      document.getElementById('featureCustom').value = d.featureCustom || '';
+      document.getElementById('trustCustom').value = d.trustCustom || '';
+      document.getElementById('keywords').value = d.keywords || '';
+      document.getElementById('locations').value = d.locations || '';
+      document.getElementById('needBlog').value = d.needBlog || 'No';
+      document.getElementById('localSEO').value = d.localSEO || 'No';
+      document.getElementById('needAnalytics').value = d.needAnalytics || 'No';
+      document.getElementById('needCROTools').value = d.needCROTools || 'No';
+      document.getElementById('stylePref').value = d.stylePref || 'Minimal';
+      document.getElementById('animationLevel').value = d.animationLevel || 'Minimal';
+      document.getElementById('typographyDir').value = d.typographyDir || 'Modern sans-serif';
+      document.getElementById('accessibilityPriority').value = d.accessibilityPriority || 'Standard';
+      document.getElementById('performancePriority').value = d.performancePriority || 'Balanced';
+      document.getElementById('devicePriority').value = d.devicePriority || 'Mobile-first';
+      document.getElementById('refSites').value = d.refSites || '';
+      document.getElementById('mainCTA').value = d.mainCTA || 'Get Quote';
+      document.getElementById('urgency').value = d.urgency || 'No urgency';
+      document.getElementById('leadQual').value = d.leadQual || 'No';
+      document.getElementById('needCMS').value = d.needCMS || 'No';
+      document.getElementById('needBooking').value = d.needBooking || 'No';
+      document.getElementById('needPayment').value = d.needPayment || 'No';
+      document.getElementById('needLogin').value = d.needLogin || 'No';
+      document.getElementById('needDashboard').value = d.needDashboard || 'No';
+      document.getElementById('needIntegrations').value = d.needIntegrations || 'No';
+      document.getElementById('needPDF').value = d.needPDF || 'Yes';
+      document.getElementById('launchReady').value = d.launchReady || 'No';
+      document.getElementById('projectStatus').value = d.projectStatus || 'Discovery';
+      document.getElementById('heroImageDir').value = d.heroImageDir || 'Real humans';
+      document.getElementById('cmsTraining').value = d.cmsTraining || 'No';
+      document.getElementById('maintenancePlan').value = d.maintenancePlan || 'No';
+      document.getElementById('launchNotes').value = d.launchNotes || '';
+
+      renderAllChecklists();
+      setChecks('audienceBox', d.audienceSelected || []);
+      setChecks('serviceBox', d.serviceSelected || []);
+      setChecks('featureBox', d.featureSelected || []);
+      setChecks('trustBox', d.trustSelected || []);
+      document.getElementById('output').innerText = project.blueprint || buildBlueprint(collectData());
+      validateAndScore();
+    }
+
+    function duplicateProject(){
+      const data = collectData();
+      const clone = {
+        id: Date.now(),
+        name: (data.projectName || data.businessName || 'Untitled') + ' Copy',
+        updatedAt: new Date().toISOString(),
+        data,
+        blueprint: buildBlueprint(data)
+      };
+      projects.unshift(clone);
+      localStorage.setItem('mybiz_v5_projects', JSON.stringify(projects));
+      renderProjects();
+      currentProjectId = clone.id;
+    }
+
+    function renameCurrentProject(){
+      if(!currentProjectId){ alert('Open or save a project first.'); return; }
+      const newName = prompt('Rename project:', document.getElementById('projectName').value || 'Untitled Project');
+      if(!newName) return;
+      document.getElementById('projectName').value = newName;
+      const idx = projects.findIndex(p => p.id === currentProjectId);
+      if(idx >= 0){
+        projects[idx].name = newName;
+        projects[idx].data = collectData();
+        projects[idx].updatedAt = new Date().toISOString();
+        projects[idx].blueprint = buildBlueprint(collectData());
+        localStorage.setItem('mybiz_v5_projects', JSON.stringify(projects));
+        renderProjects();
+      }
+    }
+
+    function deleteCurrentProject(){
+      if(!currentProjectId){ alert('Open or save a project first.'); return; }
+      if(!confirm('Delete this project?')) return;
+      projects = projects.filter(p => p.id !== currentProjectId);
+      localStorage.setItem('mybiz_v5_projects', JSON.stringify(projects));
+      currentProjectId = null;
+      newProject();
+      renderProjects();
+    }
+
+    function newProject(){
+      currentProjectId = null;
+      document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+      ['category','industry','goal','positioning','personality','pricingModel','primaryAudience','secondaryAudience','awareness','needBlog','localSEO','needAnalytics','needCROTools','stylePref','animationLevel','typographyDir','accessibilityPriority','performancePriority','devicePriority','mainCTA','urgency','leadQual','needCMS','needBooking','needPayment','needLogin','needDashboard','needIntegrations','needPDF','launchReady','projectStatus','heroImageDir','cmsTraining','maintenancePlan'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.selectedIndex = 0;
+      });
+      renderAllChecklists();
+      document.getElementById('output').innerText = 'Start a new discovery project.';
+      document.getElementById('scoreBox').innerHTML = '';
+    }
+
+    function renderProjects(){
+      const list = document.getElementById('projectList');
+      list.innerHTML = '';
+      if(!projects.length){
+        list.innerHTML = '<div class="small">No saved projects yet.</div>';
+        return;
+      }
+      projects.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'project';
+        div.innerHTML = `
+          <div class="project-top">
+            <div>
+              <div class="project-name">${escapeHtml(p.name || 'Untitled Project')}</div>
+              <div class="project-meta">${new Date(p.updatedAt || Date.now()).toLocaleString()}</div>
+            </div>
+          </div>
+          <div class="project-actions">
+            <button class="btn-ghost" onclick="event.stopPropagation(); loadProject(${p.id})">Open</button>
+            <button class="btn-danger" onclick="event.stopPropagation(); quickDelete(${p.id})">Delete</button>
+          </div>`;
+        div.onclick = () => loadProject(p.id);
+        list.appendChild(div);
+      });
+    }
+
+    function quickDelete(id){
+      if(!confirm('Delete this project?')) return;
+      projects = projects.filter(p => p.id !== id);
+      localStorage.setItem('mybiz_v5_projects', JSON.stringify(projects));
+      if(currentProjectId === id) currentProjectId = null;
+      renderProjects();
+    }
+
+    function exportPDF(){
+      const data = collectData();
+      const text = buildBlueprint(data);
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+      const margin = 40;
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+      const maxWidth = pageWidth - margin * 2;
+      const lines = doc.splitTextToSize(text, maxWidth);
+      let y = 50;
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(18);
+      doc.text('MyBiz Digital — Client Proposal / Website Blueprint', margin, y);
+      y += 22;
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.text(`Generated: ${new Date().toLocaleString()}`, margin, y);
+      y += 18;
+      doc.setDrawColor(200);
+      doc.line(margin, y, pageWidth - margin, y);
+      y += 18;
+
+      doc.setFontSize(10);
+      lines.forEach(line => {
+        if(y > pageHeight - 45){ doc.addPage(); y = 40; }
+        doc.text(line, margin, y);
+        y += 14;
+      });
+
+      const filename = (data.projectName || data.businessName || 'MyBiz_Digital_Proposal').replace(/[^a-z0-9_-]+/gi, '_');
+      doc.save(`${filename}.pdf`);
+    }
+
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('change', validateAndScore);
+      el.addEventListener('keyup', validateAndScore);
+    });
+
+    renderProjects();
+    renderAllChecklists();
+    validateAndScore();
+  </script>
+</body>
+</html>
