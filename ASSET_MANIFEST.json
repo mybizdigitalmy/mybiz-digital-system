@@ -1,0 +1,376 @@
+{
+  "source": "V1.96_MYBIZDIGITAL_HORIZONX_FOOTER_REFINEMENT.html",
+  "source_sha256": "6435daf2c802560284bb705f58e844167f195b8e86ac8b4c1c830e379051190b",
+  "media_references": 46,
+  "unique_assets": 43,
+  "files": [
+    {
+      "index": 0,
+      "filename": "brand-logo.svg",
+      "mime": "image/svg+xml",
+      "bytes": 2671,
+      "sha256": "2e583a7bd091137dc17ce63fe44c6833a14b092c54ffdd1f1e5ace746b13fd01",
+      "source_label": "brand-logo"
+    },
+    {
+      "index": 1,
+      "filename": "google-review-cover.webp",
+      "mime": "image/webp",
+      "bytes": 170962,
+      "sha256": "c5f0e64c95257938766643056fc1f7ba57e8dd373b45de335f333be1ba7da721",
+      "source_label": "google-review-cover"
+    },
+    {
+      "index": 2,
+      "filename": "google-review-front.webp",
+      "mime": "image/webp",
+      "bytes": 55164,
+      "sha256": "7ccac24265efd8d219725ead761a4f0bd20c5c0994b33497de4f6b0ffcde2890",
+      "source_label": "google-review-front"
+    },
+    {
+      "index": 3,
+      "filename": "google-review-left.webp",
+      "mime": "image/webp",
+      "bytes": 15350,
+      "sha256": "90b0b127db0d7b1ba9cfc8f001e42a69700fd4e223834b343b7a0c2676c0485f",
+      "source_label": "google-review-left"
+    },
+    {
+      "index": 4,
+      "filename": "google-review-back.webp",
+      "mime": "image/webp",
+      "bytes": 12806,
+      "sha256": "f715a2dcee130713147ec42173fe500455ebf9d9c0cb7f07cfe6c576d03f16e7",
+      "source_label": "google-review-back"
+    },
+    {
+      "index": 5,
+      "filename": "google-review-right.webp",
+      "mime": "image/webp",
+      "bytes": 15184,
+      "sha256": "84642b2422ca283068f8b01dd8f43655b6a905c901df6115186cab6bd9dc520e",
+      "source_label": "google-review-right"
+    },
+    {
+      "index": 6,
+      "filename": "facebook-cover.webp",
+      "mime": "image/webp",
+      "bytes": 179430,
+      "sha256": "859d4474a9af20ffb55f87f6f7993a313c6adb3a01fe3712e557089dbe46865d",
+      "source_label": "facebook-cover"
+    },
+    {
+      "index": 7,
+      "filename": "facebook-front.webp",
+      "mime": "image/webp",
+      "bytes": 47936,
+      "sha256": "dd6080ef9c583cd948f48f72bdbf723764e7caf8f22d9240dd74017e6820743e",
+      "source_label": "facebook-front"
+    },
+    {
+      "index": 8,
+      "filename": "facebook-left.webp",
+      "mime": "image/webp",
+      "bytes": 15010,
+      "sha256": "32adf51cad2a71162db048db52c5473fa7f851c016164deedf59da7dd1018cf7",
+      "source_label": "facebook-left"
+    },
+    {
+      "index": 9,
+      "filename": "google-review-back.webp",
+      "mime": "image/webp",
+      "bytes": 12806,
+      "sha256": "f715a2dcee130713147ec42173fe500455ebf9d9c0cb7f07cfe6c576d03f16e7",
+      "source_label": "facebook-back"
+    },
+    {
+      "index": 10,
+      "filename": "facebook-right.webp",
+      "mime": "image/webp",
+      "bytes": 15060,
+      "sha256": "b5486031a8222f099383694948a5cc5cbf11dbe0c458fcb6238080bf043944e3",
+      "source_label": "facebook-right"
+    },
+    {
+      "index": 11,
+      "filename": "instagram-cover.webp",
+      "mime": "image/webp",
+      "bytes": 223384,
+      "sha256": "42b3571bdd6f82fb47409829b87c6fa82dec0d9cc3237c4d1226101dc9cc3fe2",
+      "source_label": "instagram-cover"
+    },
+    {
+      "index": 12,
+      "filename": "instagram-front.webp",
+      "mime": "image/webp",
+      "bytes": 56604,
+      "sha256": "fee7e56907f7c33eecea5b6e2e1e15c0242edf228a45bd57885904049d666cf9",
+      "source_label": "instagram-front"
+    },
+    {
+      "index": 13,
+      "filename": "instagram-left.webp",
+      "mime": "image/webp",
+      "bytes": 15260,
+      "sha256": "b01b3db0b31e09aaeae01bb36f63dab0f100108f973c344890125e81c5566f7c",
+      "source_label": "instagram-left"
+    },
+    {
+      "index": 14,
+      "filename": "google-review-back.webp",
+      "mime": "image/webp",
+      "bytes": 12806,
+      "sha256": "f715a2dcee130713147ec42173fe500455ebf9d9c0cb7f07cfe6c576d03f16e7",
+      "source_label": "instagram-back"
+    },
+    {
+      "index": 15,
+      "filename": "instagram-right.webp",
+      "mime": "image/webp",
+      "bytes": 14914,
+      "sha256": "e4f84f999549520241dfbe2166c1f98e127dc2313b900313d8b547a270791c6c",
+      "source_label": "instagram-right"
+    },
+    {
+      "index": 16,
+      "filename": "tiktok-cover.webp",
+      "mime": "image/webp",
+      "bytes": 179990,
+      "sha256": "cf5e4f449faccf96b24f329933d4d6dce6724088ca6f39799cc624a9b7e3ac10",
+      "source_label": "tiktok-cover"
+    },
+    {
+      "index": 17,
+      "filename": "tiktok-front.webp",
+      "mime": "image/webp",
+      "bytes": 55590,
+      "sha256": "1133c202b0db9cb188c950ae9992c89696d6b62cfc94efe160b5c8a5ab701b26",
+      "source_label": "tiktok-front"
+    },
+    {
+      "index": 18,
+      "filename": "tiktok-left.webp",
+      "mime": "image/webp",
+      "bytes": 18708,
+      "sha256": "d07d443bef9cdaaab735e1fabdf1924395d1a0de3c9c84a00178aa489bcfec80",
+      "source_label": "tiktok-left"
+    },
+    {
+      "index": 19,
+      "filename": "tiktok-back.webp",
+      "mime": "image/webp",
+      "bytes": 14142,
+      "sha256": "2c5ca31bde4cdd7955d69e4e5eb4b28a6a097021a56c5658607b7e19650f0492",
+      "source_label": "tiktok-back"
+    },
+    {
+      "index": 20,
+      "filename": "tiktok-right.webp",
+      "mime": "image/webp",
+      "bytes": 18430,
+      "sha256": "1e542b453e0cbf91b12c0f40387d33dd9dc952ef1b1bde4add195686fee9d207",
+      "source_label": "tiktok-right"
+    },
+    {
+      "index": 21,
+      "filename": "food-menu-cover.webp",
+      "mime": "image/webp",
+      "bytes": 149556,
+      "sha256": "bf82dec0c02fc7cd08bfc6c20c55e254f9042e53260d42488b24d928f3c924c6",
+      "source_label": "food-menu-cover"
+    },
+    {
+      "index": 22,
+      "filename": "food-menu-front.webp",
+      "mime": "image/webp",
+      "bytes": 162056,
+      "sha256": "2d324b7851a971abdd0dcc37395693b8fe5a3c82ea40114f8ad7581def04ee31",
+      "source_label": "food-menu-front"
+    },
+    {
+      "index": 23,
+      "filename": "food-menu-left.webp",
+      "mime": "image/webp",
+      "bytes": 236594,
+      "sha256": "7e7086d88c42b6bda6d282b2ff71444bc1eb10906c37974f51dab05de98134b2",
+      "source_label": "food-menu-left"
+    },
+    {
+      "index": 24,
+      "filename": "food-menu-back.webp",
+      "mime": "image/webp",
+      "bytes": 450200,
+      "sha256": "65fd1999f662b19f195d6d2cd9774dfd630c75c6c4a8723ccffe465852208e59",
+      "source_label": "food-menu-back"
+    },
+    {
+      "index": 25,
+      "filename": "food-menu-right.webp",
+      "mime": "image/webp",
+      "bytes": 236402,
+      "sha256": "0c018b20b14b1ffe9fe872f179c54bf34f76ac0f72d59e529d68b1f600cc059a",
+      "source_label": "food-menu-right"
+    },
+    {
+      "index": 26,
+      "filename": "hiw-google-icon.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1134,
+      "sha256": "9ef04c0b0e88cfa90f2fe72b642eab5a99a20b51d40d07e52c9cd457f52b21f0",
+      "source_label": "hiw-google-icon"
+    },
+    {
+      "index": 27,
+      "filename": "hiw-instagram-icon.svg",
+      "mime": "image/svg+xml",
+      "bytes": 4188,
+      "sha256": "cdb24338313de5bf7eea53c67598eaa41060ea2b1f5d7682ed61dfd4d44c0936",
+      "source_label": "hiw-instagram-icon"
+    },
+    {
+      "index": 28,
+      "filename": "hiw-food-black-icon.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1340,
+      "sha256": "f56e951414ba0a06becb111fd67e4b7b8f60cab53339d01c43feedfaab45f13f",
+      "source_label": "hiw-food-black-icon"
+    },
+    {
+      "index": 29,
+      "filename": "hiw-food-white-icon.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1340,
+      "sha256": "837a467968c84c6b0d76615edc8e33a6ba2002879b404f9f0d1a65421a578ed8",
+      "source_label": "hiw-food-white-icon"
+    },
+    {
+      "index": 30,
+      "filename": "hiw-google-stand.webp",
+      "mime": "image/webp",
+      "bytes": 63550,
+      "sha256": "4aba7dc1082506c7c84392b6df89dab101c0ef5847f5d37b697b73baa4de203a",
+      "source_label": "hiw-google-stand"
+    },
+    {
+      "index": 31,
+      "filename": "hiw-static-video-poster.jpg",
+      "mime": "image/jpeg",
+      "bytes": 129493,
+      "sha256": "13386168259408247516010ae48c86d563cad90488a5e338e2da911433be3b92",
+      "source_label": "hiw-static-video-poster"
+    },
+    {
+      "index": 32,
+      "filename": "brand-logo.svg",
+      "mime": "image/svg+xml",
+      "bytes": 2671,
+      "sha256": "2e583a7bd091137dc17ce63fe44c6833a14b092c54ffdd1f1e5ace746b13fd01",
+      "source_label": "brand-logo-footer"
+    },
+    {
+      "index": 33,
+      "filename": "product-card-food-menu.png",
+      "mime": "image/png",
+      "bytes": 284628,
+      "sha256": "57fe91c216648ca7fe6eb1bc167ac1c018e92fd3efea2621cfb9a41d441ee82b",
+      "source_label": "product-card-food-menu"
+    },
+    {
+      "index": 34,
+      "filename": "product-card-instagram.png",
+      "mime": "image/png",
+      "bytes": 718304,
+      "sha256": "c48aee9bf65a482b396f4b187620fcd2cf0bb188a93428a043fb3add379db216",
+      "source_label": "product-card-instagram"
+    },
+    {
+      "index": 35,
+      "filename": "product-card-google-review.png",
+      "mime": "image/png",
+      "bytes": 391756,
+      "sha256": "8376f8f1e311914b412995e0f29bb4251f7724e19089fbb6256d36014f75c5dd",
+      "source_label": "product-card-google-review"
+    },
+    {
+      "index": 36,
+      "filename": "product-card-tiktok.png",
+      "mime": "image/png",
+      "bytes": 150825,
+      "sha256": "e5893c907087015ab5d0416f382c5819863909fd86b5e7bedee7919e77e2207a",
+      "source_label": "product-card-tiktok"
+    },
+    {
+      "index": 37,
+      "filename": "product-card-facebook.png",
+      "mime": "image/png",
+      "bytes": 395650,
+      "sha256": "efd34895a12e3673f698c85815de3bc1ca5c7dfadb624615767b5e58c6c02030",
+      "source_label": "product-card-facebook"
+    },
+    {
+      "index": 38,
+      "filename": "hiw-google-demo.mp4",
+      "mime": "video/mp4",
+      "bytes": 5449769,
+      "sha256": "7a5dc2f8b8f72245d18854b518d1bb1f88e41191e64d54aa76df28df6e961496",
+      "source_label": "hiw-google-demo"
+    },
+    {
+      "index": 39,
+      "filename": "hiw-social-demo.mp4",
+      "mime": "video/mp4",
+      "bytes": 4506509,
+      "sha256": "d71e826ae0b4c57e30fe2621460287243c33e28b2017f73bdb6ebf6bf692d970",
+      "source_label": "hiw-social-demo"
+    },
+    {
+      "index": 40,
+      "filename": "hiw-menu-demo.mp4",
+      "mime": "video/mp4",
+      "bytes": 4048037,
+      "sha256": "734bf698a84064fbea70277fab6453dfb108d37e48c5d0885a30cb5178466287",
+      "source_label": "hiw-menu-demo"
+    },
+    {
+      "index": 41,
+      "filename": "hiw-google-poster.jpg",
+      "mime": "image/jpeg",
+      "bytes": 79191,
+      "sha256": "58a5d564b9c85225dbe5f40fe34f5383df5a179cdb925f5cc37bb85c71f63de0",
+      "source_label": "hiw-google-poster"
+    },
+    {
+      "index": 42,
+      "filename": "hiw-social-poster.jpg",
+      "mime": "image/jpeg",
+      "bytes": 75282,
+      "sha256": "24f6856a89984fc8a522e8e4ed6656510fb10874f409c15974ce9062ff158801",
+      "source_label": "hiw-social-poster"
+    },
+    {
+      "index": 43,
+      "filename": "hiw-menu-poster.jpg",
+      "mime": "image/jpeg",
+      "bytes": 145105,
+      "sha256": "2fc4e32c60af0aa904d6e75e3f99ae76bfdb47bd526a4ea901516d8a3e4aa3f4",
+      "source_label": "hiw-menu-poster"
+    },
+    {
+      "index": 44,
+      "filename": "hiw-social-stand.webp",
+      "mime": "image/webp",
+      "bytes": 33492,
+      "sha256": "6756646e11da22ebdc2638ae9c9023b46833011ecdce64622d59342ff6102ef4",
+      "source_label": "hiw-social-stand"
+    },
+    {
+      "index": 45,
+      "filename": "hiw-menu-stand.webp",
+      "mime": "image/webp",
+      "bytes": 35642,
+      "sha256": "52fc6da2ba5471edb9bbd06c2ff0c2434e73f86dfd9e5eac2d962daba4d02d4c",
+      "source_label": "hiw-menu-stand"
+    }
+  ]
+}

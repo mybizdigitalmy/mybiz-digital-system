@@ -1,0 +1,14 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Dependencies or temporary outputs (not required by this static site)
+node_modules/
+dist/
+.cache/
+.env
+.env.*
+!.env.example
