@@ -21,7 +21,7 @@
   }
   const dataNode=document.getElementById('library-data');if(!dataNode)return;
   const data=JSON.parse(dataNode.textContent);
-  const web=data.kind==='web';const items=web?data.concepts:data.apps;
+  const web=data.kind==='web';const items=web?data.concepts.filter(item=>item.id==='W01'):data.apps;
   const sectors=data.sectors;
   const sectorEl=document.getElementById('sector-filter'),industryEl=document.getElementById('industry-filter'),mobile=document.getElementById('mobile-filter-panel');
   const grid=document.getElementById('concept-grid'),count=document.getElementById('result-count'),empty=document.getElementById('empty-result');
@@ -52,7 +52,7 @@
   function appThumb(item){let bars=Array.from({length:item.theme==='calendar'?28:7},(_,i)=>`<i style="--h:${25+(i*23)%65}%"></i>`).join('');return `<div class="app-mock" data-theme="${escapeHtml(item.theme)}" aria-hidden="true"><div class="app-mock-side"><i></i><i></i><i></i><i></i><i></i></div><div class="app-mock-body"><div class="app-mock-head"><span>${escapeHtml(item.title)}</span><i></i></div><div class="app-mock-kpis"><b>Overview</b><b>Activity</b><b>Summary</b></div><div class="app-mock-visual">${bars}</div></div></div>`}
   function render(){
     filterContent();let found=items.filter(matches);if(sort.value==='az')found=[...found].sort((a,b)=>a.title.localeCompare(b.title));
-    count.textContent=web?`${found.length} of 15 designs · ${items.filter(item=>item.demoUrl).length} live demos`:`${found.length} of 5 application concepts`;
+    count.textContent=web?`${found.length} approved demo${found.length===1?'':'s'} · 14 designs in redesign`:`${found.length} of 5 application concepts`;
     grid.innerHTML=found.map(item=>`<button type="button" class="concept-card" data-id="${escapeHtml(item.id)}" aria-label="View ${escapeHtml(item.title)} concept details"><span class="card-frame">${web?siteThumb(item):appThumb(item)}</span><h3 class="card-name">${escapeHtml(item.title)}</h3><p class="card-meta">${escapeHtml(web?item.industry:item.category)}<span class="dot">·</span>${escapeHtml(web?item.style:'Interface concept')}</p><span class="card-badge">${item.demoUrl?'Live demo · Details ↗':'Concept preview · Details ↗'}</span></button>`).join('');
     empty.hidden=!!found.length;
     if(!found.length){const subject=web?`Website Design Enquiry — ${chosenIndustry||chosenSector||'Industry'}`:'Business Application Enquiry';empty.innerHTML=`<h3>No concept preview matches this selection yet.</h3><p>${chosenIndustry?`We're expanding our ${escapeHtml(chosenIndustry)} examples.`:'Try another category or search term.'} We can still discuss a tailored ${web?'website':'application'} for your business.</p><a class="solid-button" href="${mail(subject,'Hello MyBizDigital,\n\nI am interested in a solution for this industry: '+(chosenIndustry||chosenSector||'')+'\n\nMy business: \nRequirements: ')}">Request a ${web?'Website':'Business App'} ↗</a>`}
