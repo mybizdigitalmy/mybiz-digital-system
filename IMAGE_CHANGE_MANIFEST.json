@@ -1,0 +1,158 @@
+[
+  {
+    "industry": "auto-detail-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/auto-detail-01/detail.webp",
+    "prior_sha256": "a732f9b91be73db2b9b1ec83d6b5c68970435c2846172571c9895167de4fdcc2",
+    "new_sha256": "9c74a4aed3990f9296c4eaeff023f61b715a844a631b6023f414c838d3f1ced6",
+    "hero_sha256": "8e6ce84c233e8e4c6510032543afe78ac7d01bf2c57f3dd1c69d6df44bede769",
+    "crop": {
+      "x": 0.65,
+      "y": 0.51,
+      "zoom": 1.27
+    }
+  },
+  {
+    "industry": "bakery-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/bakery-01/detail.webp",
+    "prior_sha256": "f99cfff3c821fc782d1c0bb3f4bb7defc56c4005ce9cd62f3b314fad7b53af29",
+    "new_sha256": "8d338cd55e381cc0dad465aece224b896a184ec73a504f3c6e61f02394bb4765",
+    "hero_sha256": "adaf03c18f406975d4d082a9aecf68d8a3317e8acbe3f2e758a37589214fc100",
+    "crop": {
+      "x": 0.49,
+      "y": 0.63,
+      "zoom": 1.23
+    }
+  },
+  {
+    "industry": "clinic-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/clinic-01/detail.webp",
+    "prior_sha256": "90a0714ab0d9c55b608f0204eb2394ab4be6ecdbc76df8709547ddafd9890959",
+    "new_sha256": "3bd3e0822543b8d263a1d3f833a836024ca8d9e316cb44b9d106664d6ed5075a",
+    "hero_sha256": "d974b07ae8009f1bc57f59f162deb3629bf6d363e9a4a4eab1c2d025b00fadf1",
+    "crop": {
+      "x": 0.66,
+      "y": 0.59,
+      "zoom": 1.18
+    }
+  },
+  {
+    "industry": "dental-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/dental-01/detail.webp",
+    "prior_sha256": "d974b07ae8009f1bc57f59f162deb3629bf6d363e9a4a4eab1c2d025b00fadf1",
+    "new_sha256": "e9181f337a5b5a20ef7125322f0be9d1a27595861317a017c6ebb7a6fc920825",
+    "hero_sha256": "9be6e8a34860e9873c9ee26c3f926be074d7f9bdbb77143d358afbe018ad5121",
+    "crop": {
+      "x": 0.65,
+      "y": 0.44,
+      "zoom": 1.24
+    }
+  },
+  {
+    "industry": "electronics-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/electronics-01/detail.webp",
+    "prior_sha256": "5f884c0f12fe15e57e789be2bf1c5cbe4c5a4bec43e72b48784d9143cad842fe",
+    "new_sha256": "96b31913379d772233fff94cd2c87a0cea07826019ccd212d5e0606b4d1e3998",
+    "hero_sha256": "a732f9b91be73db2b9b1ec83d6b5c68970435c2846172571c9895167de4fdcc2",
+    "crop": {
+      "x": 0.41,
+      "y": 0.6,
+      "zoom": 1.2
+    }
+  },
+  {
+    "industry": "fashion-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/fashion-01/detail.webp",
+    "prior_sha256": "5f884c0f12fe15e57e789be2bf1c5cbe4c5a4bec43e72b48784d9143cad842fe",
+    "new_sha256": "f72c9e427310966bfc7d5b75e333598d973232c74528242a754ebf0d3c788420",
+    "hero_sha256": "d597f66e7c606aee29dffa4d9acc91a3fc428ee1535fa0e96f1b86122a74f3d0",
+    "crop": {
+      "x": 0.7,
+      "y": 0.55,
+      "zoom": 1.25
+    }
+  },
+  {
+    "industry": "fitness-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/fitness-01/detail.webp",
+    "prior_sha256": "90a0714ab0d9c55b608f0204eb2394ab4be6ecdbc76df8709547ddafd9890959",
+    "new_sha256": "32416ad3508018cd351312a27eb94d8aebe4c26025f38173fb282199b554e6d7",
+    "hero_sha256": "b4e748c0588bdf29286fe6a62966e91ab0c797a3882d1bd53a5242698d3c215f",
+    "crop": {
+      "x": 0.4,
+      "y": 0.61,
+      "zoom": 1.23
+    }
+  },
+  {
+    "industry": "hotel-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/hotel-01/detail.webp",
+    "prior_sha256": "5f884c0f12fe15e57e789be2bf1c5cbe4c5a4bec43e72b48784d9143cad842fe",
+    "new_sha256": "d2fbaebe33a2dd68132a6b88e59c902f20d8b5b715ea855abb7f2a1804b29846",
+    "hero_sha256": "5f9d5485ca8896264a04602cf050175c45f3839bef4cee67bd6453190727fc01",
+    "crop": {
+      "x": 0.68,
+      "y": 0.55,
+      "zoom": 1.18
+    }
+  },
+  {
+    "industry": "real-estate-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/real-estate-01/detail.webp",
+    "prior_sha256": "5f9d5485ca8896264a04602cf050175c45f3839bef4cee67bd6453190727fc01",
+    "new_sha256": "a7fbb73f5510f6a3e62483b598a79c48a299d8046ee7ef2f25f14a6cb627f3db",
+    "hero_sha256": "5f884c0f12fe15e57e789be2bf1c5cbe4c5a4bec43e72b48784d9143cad842fe",
+    "crop": {
+      "x": 0.64,
+      "y": 0.57,
+      "zoom": 1.22
+    }
+  },
+  {
+    "industry": "salon-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/salon-01/detail.webp",
+    "prior_sha256": "d597f66e7c606aee29dffa4d9acc91a3fc428ee1535fa0e96f1b86122a74f3d0",
+    "new_sha256": "6944050f9f1e65c51887889d402d9451ab5e24c7b8cf2fc79cae9b7731eae593",
+    "hero_sha256": "07b2fe7df92466ec412c0941d1dbfc10339f083f565a0f921ef52ad1ce2215ac",
+    "crop": {
+      "x": 0.61,
+      "y": 0.5,
+      "zoom": 1.2
+    }
+  },
+  {
+    "industry": "spa-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/spa-01/detail.webp",
+    "prior_sha256": "5f9d5485ca8896264a04602cf050175c45f3839bef4cee67bd6453190727fc01",
+    "new_sha256": "234cabdb0ff96c4cd6cbf1e0b46a7061ef4eb0480c8e74acbb41dd9193c4bd8d",
+    "hero_sha256": "a9913e6e0cfe7e778d8d517731a98b72fab11e076db89ec36bb267eee32c5b78",
+    "crop": {
+      "x": 0.61,
+      "y": 0.6,
+      "zoom": 1.2
+    }
+  },
+  {
+    "industry": "tuition-01",
+    "source": "existing V2.04 hero.webp for same industry",
+    "changed_file": "assets/demos/tuition-01/detail.webp",
+    "prior_sha256": "d974b07ae8009f1bc57f59f162deb3629bf6d363e9a4a4eab1c2d025b00fadf1",
+    "new_sha256": "fd63fcc36eb2aa6d3a4cf04e33a0dd270e65ce37cd5d094fa4205848600335c2",
+    "hero_sha256": "90a0714ab0d9c55b608f0204eb2394ab4be6ecdbc76df8709547ddafd9890959",
+    "crop": {
+      "x": 0.47,
+      "y": 0.66,
+      "zoom": 1.25
+    }
+  }
+]
