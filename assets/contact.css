@@ -5,7 +5,7 @@
 .mbd-contact-kicker{font-size:11px;letter-spacing:.15em;font-weight:750;margin:0 0 18px;color:#737373}
 .mbd-contact-main h1{font-size:clamp(40px,5.25vw,70px);font-weight:750;letter-spacing:-.061em;line-height:1.08;max-width:940px;margin:0;color:#171717}
 .mbd-contact-lead{max-width:710px;font-size:16px;line-height:1.8;color:#6b6b6b;margin:23px 0 53px}
-.mbd-contact-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:25px;align-items:start}
+.mbd-contact-layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:881px;gap:25px;align-items:start}
 .mbd-contact-panel,.mbd-contact-aside{background:#fff;border:1px solid #e4e4e2;border-radius:20px;padding:39px;min-width:0}
 .mbd-contact-panel h2,.mbd-contact-aside h2{font-size:25px;line-height:1.25;letter-spacing:-.045em;font-weight:750;margin:0 0 10px;color:#171717}
 .mbd-contact-panel-sub,.mbd-contact-aside p{font-size:13px;line-height:1.75;color:#737373;margin:0 0 23px}
