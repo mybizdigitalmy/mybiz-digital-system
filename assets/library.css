@@ -177,3 +177,32 @@ body.has-detail{overflow:hidden}
   .web-mode .concept-card:hover,.web-mode .concept-card:hover .real-site-thumb{transform:none!important}
 }
 .web-mode .library-resultbar{justify-content:flex-end}
+
+/* Website Development only: remove the indicated divider rules and rebalance spacing. */
+.web-mode .library-hero{border-bottom:0;padding-bottom:82px}
+.web-mode .library-browser{padding-top:76px}
+.web-mode .filters{border-top:0;padding-top:0}
+.web-mode .library-resultbar{border-top:0;padding-top:0}
+.web-mode .library-support{border-top:0;padding-top:0;margin-top:108px}
+
+/* Subtle whole-card zoom on the three process cards, matching existing card motion. */
+.web-mode .process .steps article{
+  transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1),border-color .28s ease;
+  transform-origin:center;
+}
+@media(hover:hover) and (pointer:fine){
+  .web-mode .process .steps article:hover{
+    transform:translateY(-4px) scale(1.025);
+    box-shadow:0 14px 35px rgba(22,28,42,.12);
+    border-color:#c9ccd2;
+  }
+}
+@media(max-width:760px){
+  .web-mode .library-hero{padding-bottom:50px}
+  .web-mode .library-browser{padding-top:44px}
+  .web-mode .library-support{margin-top:72px}
+}
+@media(prefers-reduced-motion:reduce){
+  .web-mode .process .steps article{transition:none!important}
+  .web-mode .process .steps article:hover{transform:none!important}
+}
