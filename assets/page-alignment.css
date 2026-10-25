@@ -1,0 +1,85 @@
+/* V2.06 main-site headings aligned with existing homepage typography.
+   Demonstration websites are intentionally excluded. */
+.library-page .library-hero h1,
+.mbd-contact-page .mbd-contact-main h1,
+.about-hero h1 {
+  font-size:clamp(38px,4vw,54px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.035em!important;
+  font-weight:700!important;
+}
+.library-page .library-intro h2,
+.library-page .library-support h2,
+.library-page .process h2,
+.library-page .closing-cta h2,
+.about-section-heading,
+.about-cta h2,
+.mbd-contact-page .mbd-contact-panel h2 {
+  font-size:clamp(34px,2.6vw,40px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.038em!important;
+  font-weight:700!important;
+}
+/* Follow the home Products heading size on narrow mobile screens. */
+@media(max-width:599px){
+  .library-page .library-hero h1,
+  .mbd-contact-page .mbd-contact-main h1,
+  .about-hero h1 {font-size:36px!important;line-height:1.16!important}
+  .library-page .library-intro h2,
+  .library-page .library-support h2,
+  .library-page .process h2,
+  .library-page .closing-cta h2,
+  .about-section-heading,
+  .about-cta h2,
+  .mbd-contact-page .mbd-contact-panel h2 {font-size:31px!important}
+}
+/* Business Apps adopts the approved Website Development clean divider spacing.
+   Its individual application mockups and demonstration styles are unchanged. */
+.apps-mode .library-hero {border-bottom:0;padding-bottom:82px}
+.apps-mode .library-browser{padding-top:76px}
+.apps-mode .filters,.apps-mode .library-resultbar,
+.apps-mode .library-support{border-top:0;padding-top:0}
+.apps-mode .library-support{margin-top:108px}
+.apps-mode .library-resultbar{justify-content:flex-end}
+.apps-mode .process .steps article{
+  transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1),border-color .28s ease;
+  transform-origin:center;
+}
+@media(hover:hover) and (pointer:fine){
+  .apps-mode .process .steps article:hover{
+    transform:translateY(-4px) scale(1.025);
+    box-shadow:0 14px 35px rgba(22,28,42,.12);
+    border-color:#c9ccd2;
+  }
+}
+@media(max-width:760px){
+  .apps-mode .library-hero{padding-bottom:50px}
+  .apps-mode .library-browser{padding-top:44px}
+  .apps-mode .library-support{margin-top:72px}
+}
+/* The homepage's existing character rise is reused for main-page intros and
+   footer text. No footer background animation or hover-roll modifications. */
+.mbd-page-entrance.mbd-rise-ready .mbd-entrance-word{
+  display:inline-block;
+  white-space:nowrap;
+}
+.mbd-page-entrance.mbd-rise-ready .mbd-entrance-space{display:inline-block;width:.28em}
+.mbd-page-entrance.mbd-rise-ready .mbd-entrance-wrap{
+  display:inline-block;overflow:hidden;vertical-align:bottom;
+  padding-block:.12em .22em;margin-block:-.12em -.22em;
+  padding-inline:.02em;margin-inline:-.02em;
+}
+.mbd-page-entrance.mbd-rise-ready .mbd-entrance-char{
+  display:inline-block;opacity:0;transform:translateY(115%);
+  transition:transform .78s cubic-bezier(.16,1,.3,1),opacity .5s ease;
+  will-change:transform;
+}
+.mbd-page-entrance.mbd-rise-visible .mbd-entrance-char{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  .apps-mode .process .steps article{transition:none!important}
+  .apps-mode .process .steps article:hover{transform:none!important}
+  .mbd-page-entrance.mbd-rise-ready .mbd-entrance-char{
+    opacity:1!important;transform:none!important;transition:none!important;
+    will-change:auto!important;
+  }
+}
