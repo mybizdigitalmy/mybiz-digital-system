@@ -216,7 +216,7 @@ a:focus-visible{outline:2px solid #171717;outline-offset:4px}
   #mbd-site-footer .mbd-f-nav a:focus-visible .roll-char-inner{transform:none!important}
 }
 </style>
-</head>
+<link rel="stylesheet" href="assets/contact.css"></head>
 <body>
 <div id="top"></div>
 <header class="about-header about-container" aria-label="About us page header">
@@ -247,13 +247,13 @@ a:focus-visible{outline:2px solid #171717;outline-offset:4px}
     <span class="about-card-num">02</span>
     <h3>Website Development</h3>
     <p class="about-card-copy">Modern, responsive business websites designed to present your brand clearly, make information easy to access and support your business's digital presence.</p>
-    <a class="about-card-link" href="mailto:support@mybizdigital.my?subject=Website%20Enquiry">Discuss a Website <span aria-hidden="true">→</span></a>
+    <a class="about-card-link" href="contact.html?enquiry=website" data-mbd-enquiry="website">Discuss a Website <span aria-hidden="true">→</span></a>
    </article>
    <article class="about-card">
     <span class="about-card-num">03</span>
     <h3>Custom Software</h3>
     <p class="about-card-copy">We are developing custom software and future SaaS solutions designed to simplify workflows, support business operations and adapt to evolving business needs.</p>
-    <a class="about-card-link" href="mailto:support@mybizdigital.my?subject=Software%20Enquiry">Enquire About Software <span aria-hidden="true">→</span></a>
+    <a class="about-card-link" href="contact.html?enquiry=software" data-mbd-enquiry="software">Enquire About Software <span aria-hidden="true">→</span></a>
    </article>
   </div>
  </section>
@@ -271,7 +271,7 @@ a:focus-visible{outline:2px solid #171717;outline-offset:4px}
   <p>Explore our NFC smart products or get in touch to discuss what your business needs next.</p>
   <div class="about-cta-actions">
    <a class="about-cta-primary" href="index.html#products">Explore Products</a>
-   <a class="about-cta-secondary" href="mailto:support@mybizdigital.my">Get in Touch</a>
+   <a class="about-cta-secondary" href="contact.html" data-mbd-enquiry="general">Get in Touch</a>
   </div>
  </section>
 </main>
@@ -374,5 +374,5 @@ a:focus-visible{outline:2px solid #171717;outline-offset:4px}
   });
 })();
 </script>
-</body>
+<script src="assets/contact.js" defer></script></body>
 </html>
