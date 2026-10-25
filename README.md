@@ -1,54 +1,40 @@
-# MyBizDigital website — V1.96 (GitHub-ready media split)
+# MyBizDigital.my — Consolidated V2.06 website migration package
 
-**Source:** `V1.96_MYBIZDIGITAL_HORIZONX_FOOTER_REFINEMENT.html`  
-**Build:** 23 October 2026  
-**Scope:** Packaging only. No layout, text, visual, code-logic, pricing or interaction redesign. The 46 inline Base64 image/video references from the source were replaced with local paths into `/assets/`, and identical media blobs were deduplicated. All original media bytes were preserved.
+Assembled: 25 October 2026 from preserved previous website ZIP artifacts.
 
-## Repository structure
+**This is a reconstructed migration package, NOT an original single published V2.06 full-site release and NOT proof of what is live on GitHub/Netlify.** Existing files were copied byte-for-byte (no code rewrites or design changes); only documentation was added/relocated.
 
-- `index.html` — entire website's HTML, styles and JavaScript (self-contained except for local media and Google Fonts)
-- `assets/` — local product images, icons and demonstration videos used by `index.html`
-- `netlify.toml` — Netlify static-site publish directory
-- `.nojekyll` — disables Jekyll processing if using GitHub Pages
-- `.gitignore` — ignores operating-system and local development artifacts
-- `DEPLOYMENT_CHECKLIST.md` — publish steps and currently unfinished items
-- `ASSET_MANIFEST.json` — original-reference mapping and checksums of extracted media
+## Build provenance
+1. V1.98 GitHub Ready complete website archive: full homepage media assets, original `ASSET_MANIFEST.json`, Netlify config.
+2. V1.99 approved About Us / index update (replaces only `index.html`, introduces `about.html`).
+3. V2.02 cumulative package: `index.html` two-option Services nav, website/app libraries, 15 demo pages including approved Barber.
+4. V2.06 *design-library* cumulative package: V2.04 premium rebuilds for the 14 non-Barber demos, V2.05 corrected supporting photographs, and V2.06 website-development library changes. This source is an **incremental package** and by itself does not contain the home page or original media assets.
+5. V2.05 `IMAGE_CHANGE_MANIFEST.json` and release notes retained separately.
 
-## Run locally
+## Website structure
+- `index.html` main site (from V2.02 cumulative release; later updates explicitly left homepage unchanged)
+- `about.html` approved About Us
+- `web-development.html` V2.06 Website Development library
+- `business-apps.html` Business Apps library (V2.02)
+- `demos/` 15 individual demo sites (Barber V2.01/02, other 14 V2.06)
+- `assets/` homepage media, shared libraries, demonstration photos/styles/scripts
+- `ASSET_MANIFEST.json` original website media manifest
+- `IMAGE_CHANGE_MANIFEST.json` V2.05 supporting-image change log
+- `netlify.toml` original static deployment configuration
+- `docs/` historical original release notes and build provenance
 
-Opening `index.html` in a browser often works, but serve the folder locally to match production URLs:
+## Transfer to ChatGPT personal Plus
+Upload this whole ZIP to a **private** `MyBizDigital HQ` project chat and request an **audit before changes**. The rest of the historical conversation and media masters are not contained in this ZIP.
 
-```bash
-python -m http.server 8000
-```
+## Deployment workflow
+1. Extract ZIP locally; compare to the existing GitHub repository before touching `main`.
+2. Preview through a local web server (e.g. `python -m http.server 8000`) and check all 15 demo routes, Home/About, both library pages, nav, media and checkout/cart.
+3. For Netlify historical static settings, keep build command blank, publish directory `.`. Verify actual Netlify configuration before publishing.
+4. Publish only after browser validation and owner approval. No deployed site was accessed or changed by this assembly.
 
-Visit `http://localhost:8000`. No npm, Vite, frameworks or build scripts are required.
-
-## Upload to GitHub
-
-1. Create a new, **private** GitHub repository for the business (or use your existing website repository).
-2. **Extract this ZIP locally.** Upload the **contents** of this folder, not the ZIP itself. `index.html`, `assets/` and `netlify.toml` must appear at the repository root.
-3. For larger folders, GitHub Desktop is the most reliable method: File > Add local repository (or create one in this directory), Commit, then Publish repository.
-4. Confirm that `index.html` and all `assets/*` files are committed.
-
-## Netlify
-
-1. Add new project → Import existing project → GitHub → select the repository.
-2. Leave build command blank; publish directory `.` (also defined in `netlify.toml`).
-3. Deploy, then verify product images, videos, shopping cart and mobile nav.
-4. Attach `mybizdigital.my` in Netlify domain management after DNS is ready.
-
-## Current limitations — NOT production checkout-ready
-
-- The cart and checkout are front-end previews. **No HitPay payment gateway, webhooks, live shipping prices, order database, or email receipts are integrated.**
-- International checkout remains an enquiry/manual-quotation flow.
-- Some navigation actions and footer/legal/newsletter functions are intentionally not implemented or unavailable.
-- The footer does not yet display the newly approved SSM legal name/registration details or final activated payment method logos.
-- Google Fonts (Inter) is loaded from Google over the network; system fonts fall back when offline.
-- Review legal pages, privacy/data processing, refund and shipping policies, and merchant activation **before accepting live orders**.
-
-The original V1.96 source file was left untouched; this is a directory-layout conversion to make the site GitHub/Netlify-ready.
-
-## Production-preview safety text update
-
-This production-preview package makes **only two on-page copy corrections** relative to the GitHub-ready V1.96 HTML: the checkout privacy notice and outdated Billplz/V1.91 message. The disabled payment button and all checkout logic remain unchanged. No backend, HitPay credentials, or payment submission was added.
+## Status and limitations
+- No HitPay live checkout, shipping, email or order backend is established by these source files.
+- Blog editorial master note (24 Oct) is **not approved as live blog**; do not include the exploratory blog patch by default.
+- No promises of SEO ranking, AI recommendation placement, or real client demos. Industry demo brands/content are illustrative.
+- Final page interactions, complete web browser rendering and GitHub/Netlify deployment still require integration testing; file integrity and path validation are documented in `docs/VALIDATION_REPORT.json`.
+- Archive contents are reconstructed from verified archives rather than the user's current local GitHub working tree. Compare against any newer commits before applying.

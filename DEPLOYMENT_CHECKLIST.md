@@ -1,4 +1,4 @@
-# MyBizDigital V1.96 — Deployment and Launch Checklist
+# MyBizDigital V1.98 — Deployment and Launch Checklist
 
 ## Source control
 
@@ -18,7 +18,7 @@
 
 ## Before production / taking real payments
 
-- [ ] Update legal business identity: MYBIZ DIGITAL SOLUTIONS and SSM registration information
+- [x] Display registered business identity: MYBIZ DIGITAL SOLUTIONS and SSM registration number in the footer
 - [ ] Finish contact / support, privacy, terms, shipping, returns and refund pages
 - [ ] Activate HitPay business merchant account and supported payment methods
 - [ ] Implement hosted payment checkout and **server-side verified webhook** (Netlify Functions or other suitable backend)

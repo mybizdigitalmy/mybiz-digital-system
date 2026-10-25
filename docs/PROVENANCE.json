@@ -1,0 +1,1018 @@
+{
+  "assembled_at": "2026-10-25",
+  "input_archives": [
+    "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+    "MyBizDigital_V199.zip",
+    "MyBizDigital_V202_All15_Industry_Demos.zip",
+    "MyBizDigital_V206_Complete.zip",
+    "V205_Full_Corrected.zip (manifest only)"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 190,
+      "sha256": "bcd76417c64f19f8f91f10e982adfe1faec2e53cfc8a62c1b784d6030c89b447",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "ASSET_MANIFEST.json",
+      "bytes": 11717,
+      "sha256": "f94b07d3bca509ead7f732d03f714e7421df247e7b03ab3213d7bf7a42ed4e8e",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "DEPLOYMENT_CHECKLIST.md",
+      "bytes": 1983,
+      "sha256": "c150f36dacb84fce3ed34825757bc3230d1240ce851654e02099d78fde7dd99a",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "IMAGE_CHANGE_MANIFEST.json",
+      "bytes": 5900,
+      "sha256": "dd15d29d0d4750bc4a1c8db6b4ac3b86628d75e7a48797def608b84674eafa05",
+      "origin": "V205_Full_Corrected.zip",
+      "description": "V2.05 supporting image change manifest / version note"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3373,
+      "sha256": "f951fa123f82dc039591fab2d409ab19ae5244286a8f26d953de11de17ae7da0"
+    },
+    {
+      "path": "about.html",
+      "bytes": 25572,
+      "sha256": "37ef6fe6823e5ec046c3127473df09ecc99c27027205ef44b9b9a0551f84ad7e",
+      "origin": "MyBizDigital_V199.zip",
+      "description": "V1.99 approved homepage/About"
+    },
+    {
+      "path": "assets/brand-logo.svg",
+      "bytes": 2671,
+      "sha256": "2e583a7bd091137dc17ce63fe44c6833a14b092c54ffdd1f1e5ace746b13fd01",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/demos/auto-detail-01/art.svg",
+      "bytes": 739,
+      "sha256": "cbab3d67521235796ac1334de2b0e69d818e81888949e47df6c4842788886223",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/auto-detail-01/detail.webp",
+      "bytes": 68974,
+      "sha256": "9c74a4aed3990f9296c4eaeff023f61b715a844a631b6023f414c838d3f1ced6",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/auto-detail-01/hero.webp",
+      "bytes": 84104,
+      "sha256": "8e6ce84c233e8e4c6510032543afe78ac7d01bf2c57f3dd1c69d6df44bede769",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/auto-detail-01/thumbnail.webp",
+      "bytes": 44074,
+      "sha256": "3a22559b5f5352fab66b8cdd8bf147ba6a6cab3d780af51b28a3010bbfc68508",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/bakery-01/art.svg",
+      "bytes": 733,
+      "sha256": "d4b2448da03b7aeb682967b3b1ed336ef19eb2e0306818ac392de0bc78d675dd",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/bakery-01/detail.webp",
+      "bytes": 102286,
+      "sha256": "8d338cd55e381cc0dad465aece224b896a184ec73a504f3c6e61f02394bb4765",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/bakery-01/hero.webp",
+      "bytes": 114826,
+      "sha256": "adaf03c18f406975d4d082a9aecf68d8a3317e8acbe3f2e758a37589214fc100",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/bakery-01/thumbnail.webp",
+      "bytes": 46094,
+      "sha256": "e9e5c0559a25181b4adcbcc6f47f73281cae8aa94415fd39a19ed2a82a15f064",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/barber-01/barber-chair.webp",
+      "bytes": 117558,
+      "sha256": "709cd0919624ea2be9d4d3328e8603070062031855606263db14316e9f4ca14b",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/barber-01/barber-interior.webp",
+      "bytes": 63426,
+      "sha256": "5aa094ba6adbd9217e0cf621efc762a5e1bef56d84191e5d1b6e9e18693f50b0",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/barber-01/barber-studio.webp",
+      "bytes": 212694,
+      "sha256": "4b28ddfa6fc2197ce0031a87be8e4d9ae3770ef16f60cc4f465c9a4b6682786c",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/barber-01/barber-thumbnail.webp",
+      "bytes": 80954,
+      "sha256": "db7345d2bdfa83b4f733cbb95bef5403de8568540523b5bde668994608afef17",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/clinic-01/art.svg",
+      "bytes": 731,
+      "sha256": "3a7d6a398d07e3114f26789feb57d54893b2cab4d5df59578cb4ed3aa5f6e6cd",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/clinic-01/detail.webp",
+      "bytes": 50572,
+      "sha256": "3bd3e0822543b8d263a1d3f833a836024ca8d9e316cb44b9d106664d6ed5075a",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/clinic-01/hero.webp",
+      "bytes": 51884,
+      "sha256": "d974b07ae8009f1bc57f59f162deb3629bf6d363e9a4a4eab1c2d025b00fadf1",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/clinic-01/thumbnail.webp",
+      "bytes": 29624,
+      "sha256": "86f99aa775a7d4402397d98656f085f2aa1094bd27afe89d28141b8708540c7f",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/coffee-01/art.svg",
+      "bytes": 900,
+      "sha256": "c80355e83fec4392f1e9f45f4c65ecdf9807b967725b508c2c8d3b763b593b46",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/coffee-01/detail.webp",
+      "bytes": 88698,
+      "sha256": "03d152343afe53e3908112e8f6d16db2d5c43e5754f8bd64bc9f3fe8c0f5c698",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/coffee-01/hero.webp",
+      "bytes": 66742,
+      "sha256": "f99cfff3c821fc782d1c0bb3f4bb7defc56c4005ce9cd62f3b314fad7b53af29",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/coffee-01/thumbnail.webp",
+      "bytes": 33106,
+      "sha256": "0dc3238c44eb8fa9d2b36c03e43ea521c8d9680cef4615b01275a925e5cd4e59",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/demo-sites.css",
+      "bytes": 16649,
+      "sha256": "91788e17193e930f9c7aaec2780bccc06d191c7df393a584bdebb8195d124963",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/demo-sites.js",
+      "bytes": 831,
+      "sha256": "74b8b3992bc2f27dac7e51f2faa5bfc5a63d71d2352067d6b5265325cd65b565",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/dental-01/art.svg",
+      "bytes": 659,
+      "sha256": "67e20c2f1c45aed734cf9708709ec169585cb8d90cfa86e042a6ee59620db8ee",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/dental-01/detail.webp",
+      "bytes": 44636,
+      "sha256": "e9181f337a5b5a20ef7125322f0be9d1a27595861317a017c6ebb7a6fc920825",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/dental-01/hero.webp",
+      "bytes": 59788,
+      "sha256": "9be6e8a34860e9873c9ee26c3f926be074d7f9bdbb77143d358afbe018ad5121",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/dental-01/thumbnail.webp",
+      "bytes": 33658,
+      "sha256": "e6852be608e57db2ed6507d2aba0114d9d93a917c3654d451407b3fc8cbb87df",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/electronics-01/art.svg",
+      "bytes": 841,
+      "sha256": "7e018daa788adf3eb6b7ee1c465f43d406fe75ef64a90b92daa11d463a268bd4",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/electronics-01/detail.webp",
+      "bytes": 40602,
+      "sha256": "96b31913379d772233fff94cd2c87a0cea07826019ccd212d5e0606b4d1e3998",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/electronics-01/hero.webp",
+      "bytes": 49086,
+      "sha256": "a732f9b91be73db2b9b1ec83d6b5c68970435c2846172571c9895167de4fdcc2",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/electronics-01/thumbnail.webp",
+      "bytes": 28162,
+      "sha256": "84530117480ff6d97c4308f8aeff86adeaea938d27deb9aa8df9577892154e8d",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/fashion-01/art.svg",
+      "bytes": 706,
+      "sha256": "8dd94a80e79df8846ade50ee7c2fd86b591c1b8bf7933dfe0cf1bd80d9357acd",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/fashion-01/detail.webp",
+      "bytes": 64676,
+      "sha256": "f72c9e427310966bfc7d5b75e333598d973232c74528242a754ebf0d3c788420",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/fashion-01/hero.webp",
+      "bytes": 85592,
+      "sha256": "d597f66e7c606aee29dffa4d9acc91a3fc428ee1535fa0e96f1b86122a74f3d0",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/fashion-01/thumbnail.webp",
+      "bytes": 37882,
+      "sha256": "3734ba958586753e02f42b1ed9b9627d333c3a3f1ec442bffb86ba4db525ffd2",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/fitness-01/art.svg",
+      "bytes": 781,
+      "sha256": "548eda7ead4c00c7b06b4a626e4ffaa85505f784f664243578a0c27fe76c471e",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/fitness-01/detail.webp",
+      "bytes": 65330,
+      "sha256": "32416ad3508018cd351312a27eb94d8aebe4c26025f38173fb282199b554e6d7",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/fitness-01/hero.webp",
+      "bytes": 78246,
+      "sha256": "b4e748c0588bdf29286fe6a62966e91ab0c797a3882d1bd53a5242698d3c215f",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/fitness-01/thumbnail.webp",
+      "bytes": 39380,
+      "sha256": "7518d7579d493e5dc91ab849e6aad5255dd7d673b304adb526ead890ba395ab2",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/hotel-01/art.svg",
+      "bytes": 859,
+      "sha256": "f6c85749a4886d09de5d5d27709e1325e6dfd497c00c090f05ddcd7ec5449d7c",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/hotel-01/detail.webp",
+      "bytes": 86092,
+      "sha256": "d2fbaebe33a2dd68132a6b88e59c902f20d8b5b715ea855abb7f2a1804b29846",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/hotel-01/hero.webp",
+      "bytes": 96308,
+      "sha256": "5f9d5485ca8896264a04602cf050175c45f3839bef4cee67bd6453190727fc01",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/hotel-01/thumbnail.webp",
+      "bytes": 41600,
+      "sha256": "dcc8d1a1be5ee433b39b5800a1372fea282669a26c1b3795718423ad22cdf3be",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/premier-showcase.css",
+      "bytes": 23640,
+      "sha256": "98ce40ce030405afe92919ea830fb300f1cbfcf90b6552b26362c04155aedcf1",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/premier-showcase.js",
+      "bytes": 731,
+      "sha256": "c87d34268d7ec90c0466f84996fad37e5a88938aacae783f26ad519d5bf10c15",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/real-estate-01/art.svg",
+      "bytes": 837,
+      "sha256": "48475bd70620357a75642f8cdc2d0fd27a4f30f80834a3bf4187b39f7123e4b8",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/real-estate-01/detail.webp",
+      "bytes": 113580,
+      "sha256": "a7fbb73f5510f6a3e62483b598a79c48a299d8046ee7ef2f25f14a6cb627f3db",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/real-estate-01/hero.webp",
+      "bytes": 135392,
+      "sha256": "5f884c0f12fe15e57e789be2bf1c5cbe4c5a4bec43e72b48784d9143cad842fe",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/real-estate-01/thumbnail.webp",
+      "bytes": 51738,
+      "sha256": "6e1e79223c4fdab1d09abaf990e1fc2f661a636b7a90364b71dca3a9fcbf2617",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/restaurant-01/art.svg",
+      "bytes": 780,
+      "sha256": "6c67c4513120ea7bca11bf99ea48b8894c1821dda5e6bfb92857e7dcd063d0f6",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/restaurant-01/detail.webp",
+      "bytes": 122748,
+      "sha256": "a47c37cab7c258cdeed8ad8984b8e695804115842fa131a37827ab9ae24345c5",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/restaurant-01/hero.webp",
+      "bytes": 87400,
+      "sha256": "0f49497f21a1fd08ba95520d5dc03c58e746754eeed342ef08e5102f72d2b6d2",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/restaurant-01/thumbnail.webp",
+      "bytes": 39038,
+      "sha256": "6bfe13a3c71993efd9cc47b0479ae7eee0fdab203ca78245d10093a3ac4fa8ce",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/salon-01/art.svg",
+      "bytes": 720,
+      "sha256": "7af86ec2c16c4035aab6d62f0a5c85dcc3aa7c083d95b3ccc27f6964ead44361",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/salon-01/detail.webp",
+      "bytes": 59338,
+      "sha256": "6944050f9f1e65c51887889d402d9451ab5e24c7b8cf2fc79cae9b7731eae593",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/salon-01/hero.webp",
+      "bytes": 67594,
+      "sha256": "07b2fe7df92466ec412c0941d1dbfc10339f083f565a0f921ef52ad1ce2215ac",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/salon-01/thumbnail.webp",
+      "bytes": 31038,
+      "sha256": "17af4387775409d67c86627afdbe980af7667af4951f3c0a42be6b9a2825caf5",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/spa-01/art.svg",
+      "bytes": 853,
+      "sha256": "7f52720ed59389ec597b4bb1dde03cd5adcaf3ef050ff596615ac9c12057212d",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/spa-01/detail.webp",
+      "bytes": 78486,
+      "sha256": "234cabdb0ff96c4cd6cbf1e0b46a7061ef4eb0480c8e74acbb41dd9193c4bd8d",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/spa-01/hero.webp",
+      "bytes": 98726,
+      "sha256": "a9913e6e0cfe7e778d8d517731a98b72fab11e076db89ec36bb267eee32c5b78",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/spa-01/thumbnail.webp",
+      "bytes": 16918,
+      "sha256": "dd2e0eff5418f92fc87951001d16cb4aebd2458474b6da8296982b59b3886e3e",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/tuition-01/art.svg",
+      "bytes": 753,
+      "sha256": "be4a63617ff7c0666e6d4923e4334bb178d15a16002b9c2470a2943f1f1e6245",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/demos/tuition-01/detail.webp",
+      "bytes": 43606,
+      "sha256": "fd63fcc36eb2aa6d3a4cf04e33a0dd270e65ce37cd5d094fa4205848600335c2",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/tuition-01/hero.webp",
+      "bytes": 50420,
+      "sha256": "90a0714ab0d9c55b608f0204eb2394ab4be6ecdbc76df8709547ddafd9890959",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/demos/tuition-01/thumbnail.webp",
+      "bytes": 32774,
+      "sha256": "bf0f45f85d67723aceee4a1450856f2b0ae5bf60be55110b5e77c32f0c9dc3ac",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/facebook-cover.webp",
+      "bytes": 179430,
+      "sha256": "859d4474a9af20ffb55f87f6f7993a313c6adb3a01fe3712e557089dbe46865d",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/facebook-front.webp",
+      "bytes": 47936,
+      "sha256": "dd6080ef9c583cd948f48f72bdbf723764e7caf8f22d9240dd74017e6820743e",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/facebook-left.webp",
+      "bytes": 15010,
+      "sha256": "32adf51cad2a71162db048db52c5473fa7f851c016164deedf59da7dd1018cf7",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/facebook-right.webp",
+      "bytes": 15060,
+      "sha256": "b5486031a8222f099383694948a5cc5cbf11dbe0c458fcb6238080bf043944e3",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/food-menu-back.webp",
+      "bytes": 450200,
+      "sha256": "65fd1999f662b19f195d6d2cd9774dfd630c75c6c4a8723ccffe465852208e59",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/food-menu-cover.webp",
+      "bytes": 149556,
+      "sha256": "bf82dec0c02fc7cd08bfc6c20c55e254f9042e53260d42488b24d928f3c924c6",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/food-menu-front.webp",
+      "bytes": 162056,
+      "sha256": "2d324b7851a971abdd0dcc37395693b8fe5a3c82ea40114f8ad7581def04ee31",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/food-menu-left.webp",
+      "bytes": 236594,
+      "sha256": "7e7086d88c42b6bda6d282b2ff71444bc1eb10906c37974f51dab05de98134b2",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/food-menu-right.webp",
+      "bytes": 236402,
+      "sha256": "0c018b20b14b1ffe9fe872f179c54bf34f76ac0f72d59e529d68b1f600cc059a",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/footer-roll.js",
+      "bytes": 1555,
+      "sha256": "2cb5701eb06b113ae69bd48b2886cf1b899a9f01b8c8d062980883c209fdfc58",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/google-review-back.webp",
+      "bytes": 12806,
+      "sha256": "f715a2dcee130713147ec42173fe500455ebf9d9c0cb7f07cfe6c576d03f16e7",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/google-review-cover.webp",
+      "bytes": 170962,
+      "sha256": "c5f0e64c95257938766643056fc1f7ba57e8dd373b45de335f333be1ba7da721",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/google-review-front.webp",
+      "bytes": 55164,
+      "sha256": "7ccac24265efd8d219725ead761a4f0bd20c5c0994b33497de4f6b0ffcde2890",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/google-review-left.webp",
+      "bytes": 15350,
+      "sha256": "90b0b127db0d7b1ba9cfc8f001e42a69700fd4e223834b343b7a0c2676c0485f",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/google-review-right.webp",
+      "bytes": 15184,
+      "sha256": "84642b2422ca283068f8b01dd8f43655b6a905c901df6115186cab6bd9dc520e",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-food-black-icon.svg",
+      "bytes": 1340,
+      "sha256": "f56e951414ba0a06becb111fd67e4b7b8f60cab53339d01c43feedfaab45f13f",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-food-white-icon.svg",
+      "bytes": 1340,
+      "sha256": "837a467968c84c6b0d76615edc8e33a6ba2002879b404f9f0d1a65421a578ed8",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-google-demo.mp4",
+      "bytes": 5449769,
+      "sha256": "7a5dc2f8b8f72245d18854b518d1bb1f88e41191e64d54aa76df28df6e961496",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-google-icon.svg",
+      "bytes": 1134,
+      "sha256": "9ef04c0b0e88cfa90f2fe72b642eab5a99a20b51d40d07e52c9cd457f52b21f0",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-google-poster.jpg",
+      "bytes": 79191,
+      "sha256": "58a5d564b9c85225dbe5f40fe34f5383df5a179cdb925f5cc37bb85c71f63de0",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-google-stand.webp",
+      "bytes": 63550,
+      "sha256": "4aba7dc1082506c7c84392b6df89dab101c0ef5847f5d37b697b73baa4de203a",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-instagram-icon.svg",
+      "bytes": 4188,
+      "sha256": "cdb24338313de5bf7eea53c67598eaa41060ea2b1f5d7682ed61dfd4d44c0936",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-menu-demo.mp4",
+      "bytes": 4048037,
+      "sha256": "734bf698a84064fbea70277fab6453dfb108d37e48c5d0885a30cb5178466287",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-menu-poster.jpg",
+      "bytes": 145105,
+      "sha256": "2fc4e32c60af0aa904d6e75e3f99ae76bfdb47bd526a4ea901516d8a3e4aa3f4",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-menu-stand.webp",
+      "bytes": 35642,
+      "sha256": "52fc6da2ba5471edb9bbd06c2ff0c2434e73f86dfd9e5eac2d962daba4d02d4c",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-social-demo.mp4",
+      "bytes": 4506509,
+      "sha256": "d71e826ae0b4c57e30fe2621460287243c33e28b2017f73bdb6ebf6bf692d970",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-social-poster.jpg",
+      "bytes": 75282,
+      "sha256": "24f6856a89984fc8a522e8e4ed6656510fb10874f409c15974ce9062ff158801",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-social-stand.webp",
+      "bytes": 33492,
+      "sha256": "6756646e11da22ebdc2638ae9c9023b46833011ecdce64622d59342ff6102ef4",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/hiw-static-video-poster.jpg",
+      "bytes": 129493,
+      "sha256": "13386168259408247516010ae48c86d563cad90488a5e338e2da911433be3b92",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/instagram-cover.webp",
+      "bytes": 223384,
+      "sha256": "42b3571bdd6f82fb47409829b87c6fa82dec0d9cc3237c4d1226101dc9cc3fe2",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/instagram-front.webp",
+      "bytes": 56604,
+      "sha256": "fee7e56907f7c33eecea5b6e2e1e15c0242edf228a45bd57885904049d666cf9",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/instagram-left.webp",
+      "bytes": 15260,
+      "sha256": "b01b3db0b31e09aaeae01bb36f63dab0f100108f973c344890125e81c5566f7c",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/instagram-right.webp",
+      "bytes": 14914,
+      "sha256": "e4f84f999549520241dfbe2166c1f98e127dc2313b900313d8b547a270791c6c",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/library.css",
+      "bytes": 18836,
+      "sha256": "d929f9cf27fb6adf1086034d062923c592060887eddb407c9fa25ccd06d830c3",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/library.js",
+      "bytes": 12210,
+      "sha256": "89e9bbba9279b81996f8f05f2d19d460ceeac5a05940ae5427944bca9648504f",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "assets/product-card-facebook.png",
+      "bytes": 395650,
+      "sha256": "efd34895a12e3673f698c85815de3bc1ca5c7dfadb624615767b5e58c6c02030",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/product-card-food-menu.png",
+      "bytes": 284628,
+      "sha256": "57fe91c216648ca7fe6eb1bc167ac1c018e92fd3efea2621cfb9a41d441ee82b",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/product-card-google-review.png",
+      "bytes": 391756,
+      "sha256": "8376f8f1e311914b412995e0f29bb4251f7724e19089fbb6256d36014f75c5dd",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/product-card-instagram.png",
+      "bytes": 718304,
+      "sha256": "c48aee9bf65a482b396f4b187620fcd2cf0bb188a93428a043fb3add379db216",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/product-card-tiktok.png",
+      "bytes": 150825,
+      "sha256": "e5893c907087015ab5d0416f382c5819863909fd86b5e7bedee7919e77e2207a",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/site-shell.css",
+      "bytes": 85498,
+      "sha256": "dd02464a99c2ba1bbd81981fcc5bc9d968e3927c03bdd69f868e123ae562fb5e",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "assets/tiktok-back.webp",
+      "bytes": 14142,
+      "sha256": "2c5ca31bde4cdd7955d69e4e5eb4b28a6a097021a56c5658607b7e19650f0492",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/tiktok-cover.webp",
+      "bytes": 179990,
+      "sha256": "cf5e4f449faccf96b24f329933d4d6dce6724088ca6f39799cc624a9b7e3ac10",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/tiktok-front.webp",
+      "bytes": 55590,
+      "sha256": "1133c202b0db9cb188c950ae9992c89696d6b62cfc94efe160b5c8a5ab701b26",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/tiktok-left.webp",
+      "bytes": 18708,
+      "sha256": "d07d443bef9cdaaab735e1fabdf1924395d1a0de3c9c84a00178aa489bcfec80",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "assets/tiktok-right.webp",
+      "bytes": 18430,
+      "sha256": "1e542b453e0cbf91b12c0f40387d33dd9dc952ef1b1bde4add195686fee9d207",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "business-apps.html",
+      "bytes": 15361,
+      "sha256": "daebbc5fea8c8081ff165b004610ecbecd52961e51bf3ad356f876e293aa8101",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "demos/auto-detail-01/index.html",
+      "bytes": 6369,
+      "sha256": "c48cd13fb5c455aa99897448a1dc09836f0d9b3a85aa005bddfb5c283501ec49",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/bakery-01/index.html",
+      "bytes": 6332,
+      "sha256": "58f25da5b39fd138d8f621cc03b74a1ed6a43a5d0aa68a20bf219db2d21c67b5",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/barber-01/barber.css",
+      "bytes": 14804,
+      "sha256": "07eca9b6a6986687604180f8834ed6a071db4d7a742e302d7912e8642df14cca",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "demos/barber-01/barber.js",
+      "bytes": 3046,
+      "sha256": "51976c32c960487322e26bafe1aedd92c8bd0a7675998b264e81143be0981776",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "demos/barber-01/index.html",
+      "bytes": 11822,
+      "sha256": "cd9789390e204762098eab0a616596e5bdbe97d359f435bad2e121e204a70f1e",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "demos/clinic-01/index.html",
+      "bytes": 6406,
+      "sha256": "86c33c8c5417ab133fd1e35da4b360f14eae11e8f912d18e826f7a262a82712e",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/coffee-01/index.html",
+      "bytes": 6332,
+      "sha256": "e29839a48dd0da3ea03ceef19d7d85bbfba063e2689c73695e4e10bc00ee81a6",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/dental-01/index.html",
+      "bytes": 6480,
+      "sha256": "34d31525a43240b10cb4991c12693ec3d73cdda3205ebca0660e74b1f21e37f8",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/electronics-01/index.html",
+      "bytes": 6335,
+      "sha256": "7582973638a3ae4f9690a5849f941a9882a579d6184cbf3561e14c268f54e6df",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/fashion-01/index.html",
+      "bytes": 6285,
+      "sha256": "1bacd008982c98eadbe39813c1d1b67ab0a4fa8212b40cd9a915892c4fea89e3",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/fitness-01/index.html",
+      "bytes": 6288,
+      "sha256": "9fcfa89f34995143568ef6d19a453349abbd2f953804a39a9209dff0655ef654",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/hotel-01/index.html",
+      "bytes": 6333,
+      "sha256": "63fc4257a255faaed49c868d2128416d5e3e738d0f2086160df10443a7c20093",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/real-estate-01/index.html",
+      "bytes": 6374,
+      "sha256": "739d9af16ccbe2e6c71197e19d69aff261b23758da864f8eb5e537fdf6ed71dd",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/restaurant-01/index.html",
+      "bytes": 6712,
+      "sha256": "30b96582e274a73f364724ae9a4227d57c8066257775aae438ae840056f7b0c1",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/salon-01/index.html",
+      "bytes": 6373,
+      "sha256": "4828f9bf9cbee81072d7155e1e5df5a9f5f15587b39050c322b3b5859bc5e7e0",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/spa-01/index.html",
+      "bytes": 6225,
+      "sha256": "eec0033d06fcab478f74898799da55813566a4cc488e67af5ac24433798ca04c",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "demos/tuition-01/index.html",
+      "bytes": 6397,
+      "sha256": "ce35f6b5341020dabc8ccedbea3e7e493a23c68edffe07198246a8ac9d8e7414",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "docs/version-notes/README_V1.98_original.md",
+      "bytes": 3522,
+      "sha256": "eb4785daf03bab33f1fc8007beed177ca60b650b2eb1d1e84112028eeccebf20",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "docs/version-notes/README_V2.02.md",
+      "bytes": 4369,
+      "sha256": "030821f3819443ea881600e5f6cbf0125e787b8d4925bcc1f50db1b937b478cc",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "docs/version-notes/README_V2.04.md",
+      "bytes": 1434,
+      "sha256": "0d6c5d5050f0e03375ada035a91b0623183b969f493cc8f9b670cb49ec6d8893",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "docs/version-notes/README_V2.05.md",
+      "bytes": 2480,
+      "sha256": "2b7b3664a93a360ed8afc3b53db8240960a0737d8c0cf56ed392044059a4be95",
+      "origin": "V205_Full_Corrected.zip",
+      "description": "V2.05 supporting image change manifest / version note"
+    },
+    {
+      "path": "docs/version-notes/README_V2.06.md",
+      "bytes": 1518,
+      "sha256": "bb297ab41b431b99332d7807cb1076d98b4a702a261af7373f72d2749bd40503",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    },
+    {
+      "path": "index.html",
+      "bytes": 232992,
+      "sha256": "0b788466a398631c20f329adc56bb9ec712cb2f5231cb03ff04dcd14d10ff906",
+      "origin": "MyBizDigital_V202_All15_Industry_Demos.zip",
+      "description": "Cumulative V2.02 15-demo package and two-choice Services menu"
+    },
+    {
+      "path": "netlify.toml",
+      "bytes": 73,
+      "sha256": "59a823f8cdbf11fbb92c46a7cec0c187a8c735c0695b9610dc903b2cd8257e65",
+      "origin": "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+      "description": "Base V1.98 complete website, original media and config"
+    },
+    {
+      "path": "web-development.html",
+      "bytes": 18188,
+      "sha256": "ce6e75a5eabfba11e2eb203c4f7242eee584e023e9119793785354a9ec0aec02",
+      "origin": "MyBizDigital_V206_Complete.zip",
+      "description": "V2.06 latest design-library incremental complete package (14 premium demos, V2.05 image corrections, V2.06 styles and copy)"
+    }
+  ]
+}

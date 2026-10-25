@@ -1,0 +1,42 @@
+{
+  "assembly_date": "2026-10-25",
+  "html_pages": 19,
+  "asset_file_count": 111,
+  "checked_static_link_references": 211,
+  "missing_static_link_references": [],
+  "missing_required_files": [],
+  "zip_sources": [
+    "MyBizDigital_V1.98_Footer_Copyright_GitHub_Ready.zip",
+    "MyBizDigital_V199.zip",
+    "MyBizDigital_V202_All15_Industry_Demos.zip",
+    "MyBizDigital_V206_Complete.zip",
+    "V205_Full_Corrected.zip: IMAGE_CHANGE_MANIFEST.json"
+  ],
+  "limitations": [
+    "No live browser regression test or deployment performed",
+    "Links generated dynamically by JavaScript not fully enumerated",
+    "Latest GitHub checkout was not inspected"
+  ],
+  "javascript_syntax_checks": [
+    {
+      "file": "assets/footer-roll.js",
+      "passed": true
+    },
+    {
+      "file": "assets/library.js",
+      "passed": true
+    },
+    {
+      "file": "demos/barber-01/barber.js",
+      "passed": true
+    },
+    {
+      "file": "assets/demos/demo-sites.js",
+      "passed": true
+    },
+    {
+      "file": "assets/demos/premier-showcase.js",
+      "passed": true
+    }
+  ]
+}
