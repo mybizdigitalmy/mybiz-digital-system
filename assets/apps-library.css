@@ -1,13 +1,15 @@
 /* Business Applications library only — do not alter Website Development styles. */
-.apps-mode .app-demo-card{display:block;border:1px solid transparent;border-radius:15px;padding:8px 8px 14px;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
-.apps-mode .app-demo-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 15px 34px rgba(16,28,31,.1);border-color:#d9e0df}
+/* Match the approved Website Development library card composition: no inset image frame. */
+.apps-mode .app-demo-card{display:block;overflow:hidden;background:#fff;border:1px solid #dedfe3;border-radius:22px;padding:0 0 15px;box-shadow:none;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1),border-color .28s ease}
+.apps-mode .app-demo-card:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 14px 35px rgba(22,28,42,.12);border-color:#c9ccd2}
 .apps-mode .app-demo-card:focus-visible{outline:2px solid #171717;outline-offset:3px}
-.apps-mode .app-demo-card .card-frame{padding:0;aspect-ratio:1.57;background:#e9eeee;overflow:hidden;border:1px solid #e0e5e3}
-.apps-mode .app-demo-thumb{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .35s ease}
-.apps-mode .app-demo-card:hover .app-demo-thumb{transform:scale(1.035)}
-.apps-mode .app-demo-card .card-name{font-size:14px;line-height:1.4;margin:13px 2px 5px}
-.apps-mode .app-demo-card .card-meta{margin:0 2px;font-size:11px;line-height:1.55}
-.apps-mode .app-demo-card .card-badge{display:block;margin:9px 2px 0;color:#394e4b;font-size:11px;font-weight:700}
+.apps-mode .app-demo-card .card-frame{display:block;padding:0;aspect-ratio:16/10;background:#f1f1f0;overflow:hidden;border:0;border-radius:0;box-shadow:none}
+.apps-mode .app-demo-card:hover .card-frame{border-color:transparent;box-shadow:none}
+.apps-mode .app-demo-thumb{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s ease}
+.apps-mode .app-demo-card:hover .app-demo-thumb{transform:scale(1.04)}
+.apps-mode .app-demo-card .card-name{font-size:14px;line-height:1.4;margin:14px 16px 5px}
+.apps-mode .app-demo-card .card-meta{margin:0 16px;font-size:11px;line-height:1.55}
+.apps-mode .app-demo-card .card-badge{display:block;margin:10px 16px 0;color:#394e4b;font-size:11px;font-weight:700}
 .apps-mode .apps-demo-disclaimer{font-size:11px;line-height:1.7;color:#6c7473;margin:24px 0 0}
 @media(prefers-reduced-motion:reduce){.apps-mode .app-demo-card,.apps-mode .app-demo-thumb{transition:none!important}.apps-mode .app-demo-card:hover,.apps-mode .app-demo-card:hover .app-demo-thumb{transform:none}}
 
