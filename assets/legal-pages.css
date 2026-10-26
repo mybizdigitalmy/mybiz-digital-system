@@ -1,0 +1,28 @@
+/* V2.07 — standalone legal pages; no existing page selectors modified. */
+body.mbd-legal-page{background:#f8f8f7;color:#171717}
+.mbd-legal-main{padding:96px 0 115px;min-height:58vh;background:#f8f8f7;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
+.mbd-legal-wrap{width:min(1120px,calc(100% - 72px));margin:auto}
+.mbd-legal-head{max-width:880px;margin:0 auto 58px}
+.mbd-legal-kicker{font-size:11px;font-weight:760;letter-spacing:.15em;text-transform:uppercase;color:#737373;margin:0 0 20px}
+.mbd-legal-head h1{font-size:clamp(39px,5.2vw,66px);font-weight:750;letter-spacing:-.06em;line-height:1.1;margin:0 0 20px}
+.mbd-legal-lead{max-width:760px;font-size:16px;color:#606060;line-height:1.8;margin:0 0 19px}
+.mbd-legal-meta{font-size:12px;color:#858585;line-height:1.6;margin:0}
+.mbd-legal-language{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#696969}
+.mbd-legal-language a{display:inline-flex;align-items:center;min-height:37px;text-decoration:none;color:#1d1d1d;font-weight:650;border:1px solid #dcdedc;background:#fff;border-radius:24px;padding:9px 15px;transition:border-color .2s,transform .2s}
+.mbd-legal-language a:hover{border-color:#777;transform:translateY(-1px)}
+.mbd-legal-sheet{max-width:880px;margin:0 auto;padding:50px 58px 55px;background:#fff;border:1px solid #e5e5e3;border-radius:21px}
+.mbd-legal-sheet h2{font-size:24px;font-weight:740;line-height:1.3;letter-spacing:-.04em;color:#171717;margin:0 0 18px}
+.mbd-legal-sheet h3{font-size:17px;line-height:1.5;letter-spacing:-.025em;font-weight:720;margin:34px 0 12px;color:#1c1c1c;scroll-margin-top:110px}
+.mbd-legal-sheet p,.mbd-legal-sheet li{font-size:14px;line-height:1.88;color:#565656;margin:0 0 14px}
+.mbd-legal-sheet ul{padding-left:22px;margin:0 0 18px}
+.mbd-legal-sheet a{color:#171717;text-underline-offset:3px}
+.mbd-legal-sheet section+section{border-top:1px solid #eeefec;margin-top:25px;padding-top:6px}
+.mbd-legal-sheet .mbd-legal-alt{margin-top:46px;border-top:1px solid #e5e5e3;padding-top:36px}
+.mbd-legal-sheet .mbd-legal-alt h2{margin-bottom:14px}
+.mbd-legal-contact{padding:19px 22px;border-radius:12px;background:#f6f6f4;margin:24px 0 0}
+.mbd-legal-contact p{margin:0}
+.mbd-legal-footnote{font-size:12px!important;color:#888!important}
+.mbd-legal-crosslink{max-width:880px;margin:28px auto 0;font-size:13px;color:#686868;line-height:1.8}
+.mbd-legal-crosslink a{color:#171717;font-weight:650;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.mbd-legal-main{padding:60px 0 85px}.mbd-legal-wrap{width:calc(100% - 32px)}.mbd-legal-head{margin-bottom:32px}.mbd-legal-head h1{font-size:clamp(36px,9vw,50px)}.mbd-legal-lead{font-size:14px}.mbd-legal-sheet{padding:29px 22px 36px;border-radius:16px}.mbd-legal-sheet h2{font-size:22px}.mbd-legal-sheet h3{font-size:16px}.mbd-legal-sheet p,.mbd-legal-sheet li{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.mbd-legal-language a{transition:none}.mbd-legal-language a:hover{transform:none}}
