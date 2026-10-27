@@ -45,18 +45,34 @@ function open(which,message=''){
     if(which==='login'||which==='signup'){
       const google=action('Continue with Google','mbd-auth-google',()=>{
         if(busy)return;setBusy(true);say();
-        // Netlify Identity's OAuth method navigates away; it is not a login Promise.
-        // Do not interpret its redirect control flow as an authentication failure.
+        // oauthLogin starts a browser navigation. Some environments report an
+        // SDK error after the provider redirect has already been initiated.
+        // Check for actual navigation before showing a failure to the customer.
+        const startingUrl=location.href;
+        let navigationStarted=false;
+        const markLeaving=()=>{navigationStarted=true;};
+        const markHidden=()=>{if(D.visibilityState==='hidden')navigationStarted=true;};
+        window.addEventListener('pagehide',markLeaving,{once:true});
+        D.addEventListener('visibilitychange',markHidden);
+        let startError=null;
         try{oauthLogin('google');}
-        catch(error){
-          if(error?.name==='MissingIdentityError'||error?.name==='AuthError'){
-            // Diagnostic-only: never echo URLs, tokens, error details or private data.
-            const code=error.name==='MissingIdentityError'?'IDENTITY_CONFIG':'SDK_AUTH_ERROR';
-            console.warn('[MyBizDigital] Google OAuth start error category:',code);
-            say('Google sign-in diagnostic: '+code+'. Please report this code so we can correct the cause.','error');
-            setBusy(false);
+        catch(error){startError=error;}
+        window.setTimeout(()=>{
+          window.removeEventListener('pagehide',markLeaving);
+          D.removeEventListener('visibilitychange',markHidden);
+          // A Google redirect, provider tab, or completed Identity session is
+          // evidence that the start was not a failure; do not show a false alert.
+          if(navigationStarted||D.visibilityState==='hidden'||location.href!==startingUrl||currentUser)return;
+          if(startError){
+            // Log only the public error category; never log tokens or OAuth URLs.
+            const category=startError?.name==='MissingIdentityError'?'IDENTITY_CONFIG':'SDK_AUTH_ERROR';
+            console.warn('[MyBizDigital] Google OAuth could not navigate:',category);
           }
-        }
+          say(startError?.name==='MissingIdentityError'
+            ? 'Google sign-in is temporarily unavailable. Please try again later.'
+            : 'Google sign-in did not open. Please try again.','error');
+          setBusy(false);
+        },1800);
       });
       // Use Google's published G artwork rather than approximating it with custom SVG paths.
       // The click handler and Netlify Identity OAuth flow above remain unchanged.
@@ -262,6 +278,12 @@ async function init(){
   }
   onAuthChange((event,user)=>{
     currentUser=user||null;updateHeader();
+    if(currentUser&&dialog?.open&&(mode==='login'||mode==='signup')){
+      // A completed Google sign-in can arrive while the original popup is open.
+      // Close it instead of leaving an obsolete login form or status visible.
+      if(busy)setBusy(false);
+      say();dialog.close();
+    }
     if(event==='logout'&&dialog?.open)dialog.close();
   });
   if(callback?.type==='recovery')open('reset');
