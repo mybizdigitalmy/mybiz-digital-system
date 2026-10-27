@@ -32,3 +32,4 @@ Contents: Four HTML page references (index, contact, web-development, business-a
 - **Browser UI automated tests did not run:** the local Chromium environment blocked both `file://` and `http://127.0.0.1` navigation with `ERR_BLOCKED_BY_ADMINISTRATOR`.
 - The npm registry was not reachable from this sandbox, so SDK installation and Netlify build were not tested.
 - Do not interpret this patch as tested or approved production authentication.
+Branch deployment test initiated for MyBizDigital customer authentication.
