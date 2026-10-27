@@ -50,7 +50,10 @@ function open(which,message=''){
         try{oauthLogin('google');}
         catch(error){
           if(error?.name==='MissingIdentityError'||error?.name==='AuthError'){
-            say('Unable to start Google sign-in. Please try again.','error');
+            // Diagnostic-only: never echo URLs, tokens, error details or private data.
+            const code=error.name==='MissingIdentityError'?'IDENTITY_CONFIG':'SDK_AUTH_ERROR';
+            console.warn('[MyBizDigital] Google OAuth start error category:',code);
+            say('Google sign-in diagnostic: '+code+'. Please report this code so we can correct the cause.','error');
             setBusy(false);
           }
         }
