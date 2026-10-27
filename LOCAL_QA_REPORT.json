@@ -1,0 +1,104 @@
+[
+  {
+    "viewport": 1440,
+    "file": "privacy-policy.html",
+    "title": "Privacy Policy & Personal Data Notice | MyBizDigital.my",
+    "width": 1440,
+    "client": 1440,
+    "headings": 24,
+    "langSections": [
+      "en",
+      "ms"
+    ],
+    "footerLinks": [
+      "terms-and-conditions.html",
+      "privacy-policy.html"
+    ],
+    "css": "rgb(255, 255, 255)"
+  },
+  {
+    "viewport": 1440,
+    "file": "terms-and-conditions.html",
+    "title": "Terms & Conditions | MyBizDigital.my",
+    "width": 1440,
+    "client": 1440,
+    "headings": 28,
+    "langSections": [
+      "en",
+      "ms"
+    ],
+    "footerLinks": [
+      "terms-and-conditions.html",
+      "privacy-policy.html"
+    ],
+    "css": "rgb(255, 255, 255)"
+  },
+  {
+    "viewport": 390,
+    "file": "privacy-policy.html",
+    "title": "Privacy Policy & Personal Data Notice | MyBizDigital.my",
+    "width": 390,
+    "client": 390,
+    "headings": 24,
+    "langSections": [
+      "en",
+      "ms"
+    ],
+    "footerLinks": [
+      "terms-and-conditions.html",
+      "privacy-policy.html"
+    ],
+    "css": "rgb(255, 255, 255)"
+  },
+  {
+    "viewport": 390,
+    "file": "terms-and-conditions.html",
+    "title": "Terms & Conditions | MyBizDigital.my",
+    "width": 390,
+    "client": 390,
+    "headings": 28,
+    "langSections": [
+      "en",
+      "ms"
+    ],
+    "footerLinks": [
+      "terms-and-conditions.html",
+      "privacy-policy.html"
+    ],
+    "css": "rgb(255, 255, 255)"
+  },
+  {
+    "viewport": 320,
+    "file": "privacy-policy.html",
+    "title": "Privacy Policy & Personal Data Notice | MyBizDigital.my",
+    "width": 320,
+    "client": 320,
+    "headings": 24,
+    "langSections": [
+      "en",
+      "ms"
+    ],
+    "footerLinks": [
+      "terms-and-conditions.html",
+      "privacy-policy.html"
+    ],
+    "css": "rgb(255, 255, 255)"
+  },
+  {
+    "viewport": 320,
+    "file": "terms-and-conditions.html",
+    "title": "Terms & Conditions | MyBizDigital.my",
+    "width": 320,
+    "client": 320,
+    "headings": 28,
+    "langSections": [
+      "en",
+      "ms"
+    ],
+    "footerLinks": [
+      "terms-and-conditions.html",
+      "privacy-policy.html"
+    ],
+    "css": "rgb(255, 255, 255)"
+  }
+]
