@@ -1,4 +1,3 @@
-# Static website with a targeted browser authentication build.
+# Static site; no build step or server required.
 [build]
   publish = "."
-  command = "npm run build"
