@@ -47,16 +47,12 @@ function open(which,message=''){
         if(busy)return;setBusy(true);
         try{await oauthLogin('google');}catch{say('Google sign-in is unavailable. Please try again.','error');setBusy(false)}
       });
-      const icon=D.createElementNS('http://www.w3.org/2000/svg','svg');
-      icon.setAttribute('class','mbd-auth-google-logo');icon.setAttribute('viewBox','0 0 48 48');
-      icon.setAttribute('width','20');icon.setAttribute('height','20');icon.setAttribute('aria-hidden','true');
-      const paths=[
-        ['#EA4335','M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 5.38 6.51 13.22 2.56l7.98 6.19C17.05 7.26 20.39 9.5 24 9.5Z'],
-        ['#4285F4','M46.98 24.55c0-1.57-.15-3.08-.38-4.55H24v9.02h12.94c-.58 2.97-2.25 5.49-4.78 7.19l7.73 6C44.4 38.05 46.98 31.92 46.98 24.55Z'],
-        ['#FBBC05','M10.53 28.5a14.4 14.4 0 0 1 0-9l-8-6.2a23.89 23.89 0 0 0 0 21.4l8-6.2Z'],
-        ['#34A853','M24 48c6.48 0 11.93-2.13 15.9-5.79l-7.73-6a14.32 14.32 0 0 1-8.17 2.29c-6.26 0-11.57-4.23-13.47-9.98l-8 6.2C6.48 42.55 14.61 48 24 48Z']
-      ];
-      for(const [fill,d] of paths){const path=D.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('fill',fill);path.setAttribute('d',d);icon.append(path)}
+      // Use Google's published G artwork rather than approximating it with custom SVG paths.
+      // The click handler and Netlify Identity OAuth flow above remain unchanged.
+      const icon=make('img','mbd-auth-google-logo');
+      icon.src='https://developers.google.com/static/identity/images/g-logo.png';
+      icon.alt='';icon.setAttribute('aria-hidden','true');
+      icon.width=20;icon.decoding='async';icon.referrerPolicy='no-referrer';
       google.prepend(icon);
       if(!googleAllowed){google.disabled=true;google.title='Google sign-in is not enabled';}
       content.append(google,make('p','mbd-auth-divider','or use your email address'));
@@ -108,6 +104,33 @@ async function handleForm(event){
   }finally{setBusy(false)}
 }
 function accountName(user){return String(user?.userMetadata?.full_name||user?.name||'Customer').trim()}
+// The browser's Chrome avatar is not shared with websites. Identity may supply
+// a Google profile picture; only load it from a Google-hosted HTTPS domain.
+function googleProfilePhoto(user){
+  const raw=user?.pictureUrl||user?.userMetadata?.avatar_url||user?.userMetadata?.picture;
+  if(typeof raw!=='string')return '';
+  try{
+    const url=new URL(raw);
+    if(url.protocol==='https:'&&(url.hostname==='googleusercontent.com'||url.hostname.endsWith('.googleusercontent.com')))return url.href;
+  }catch{/* No usable picture was supplied by the identity provider. */}
+  return '';
+}
+function renderAccountAvatar(user,root){
+  const avatar=$('.mbd-account-avatar',root);if(!avatar)return;
+  const name=accountName(user);
+  const parts=name.split(/\s+/).filter(Boolean);
+  const initials=(parts.length>1?parts[0][0]+parts[parts.length-1][0]:parts[0]?.slice(0,2)||'MB').toUpperCase();
+  const picture=googleProfilePhoto(user);
+  if(avatar.dataset.photo===picture&&avatar.dataset.initials===initials)return;
+  avatar.dataset.photo=picture;avatar.dataset.initials=initials;
+  avatar.textContent=initials;
+  if(picture){
+    const img=make('img','mbd-account-avatar-photo');
+    img.alt='';img.src=picture;img.referrerPolicy='no-referrer';img.decoding='async';
+    img.addEventListener('error',()=>{if(avatar.contains(img))avatar.textContent=initials;});
+    avatar.replaceChildren(img);
+  }
+}
 async function signOut(){
   if(busy)return;busy=true;
   try{
@@ -173,6 +196,7 @@ function renderAccountPage(){
   const name=accountName(currentUser),email=currentUser.email||'';
   const display=$('#mbd-account-display-name',root),label=$('#mbd-account-email',root);
   if(display)display.textContent=name;if(label)label.textContent=email;
+  renderAccountAvatar(currentUser,root);
   const fieldEmail=$('#mbd-profile-email',root);if(fieldEmail)fieldEmail.value=email;
   const nameInput=$('#mbd-profile-name',root),phoneInput=$('#mbd-profile-phone',root);
   if(accountPageUserId!==currentUser.id){
