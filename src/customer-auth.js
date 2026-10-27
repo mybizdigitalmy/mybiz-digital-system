@@ -219,6 +219,12 @@ async function init(){
   }
   try{currentUser=await getUser();}catch{currentUser=null;}
   updateHeader();
+  // Fragment destinations are initially hidden until the Identity session resolves.
+  // Align an account section beneath the fixed navbar after revealing it.
+  if(currentUser && $('#mbd-customer-dashboard') && (location.hash==='#profile'||location.hash==='#security')){
+    const target=$(location.hash);
+    if(target)requestAnimationFrame(()=>target.scrollIntoView({behavior:'instant',block:'start'}));
+  }
   onAuthChange((event,user)=>{
     currentUser=user||null;updateHeader();
     if(event==='logout'&&dialog?.open)dialog.close();
