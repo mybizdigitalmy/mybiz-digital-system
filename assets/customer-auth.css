@@ -32,7 +32,7 @@
 @media(max-width:540px){.mbd-auth-box{padding:24px 20px}.mbd-auth-dialog h2{font-size:25px!important}}
 @media(prefers-reduced-motion:reduce){.mbd-auth-google,.mbd-auth-primary{transition:none}.mbd-auth-google:hover,.mbd-auth-primary:hover{transform:none}}
 /* Phase 1: official multicolour Google mark and accessible account navigation. */
-.mbd-auth-google-logo{width:20px;height:20px;flex:0 0 20px;display:block}
+.mbd-auth-google-logo{width:20px;height:auto;flex:0 0 20px;display:block;object-fit:contain}
 .mbd-auth-account-wrap{position:relative;flex:0 0 auto}
 .mbd-auth-account-wrap[hidden],.mbd-auth-dropdown[hidden]{display:none!important}
 .mbd-auth-account-nav{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;min-height:36px}
