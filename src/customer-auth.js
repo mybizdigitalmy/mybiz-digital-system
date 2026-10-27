@@ -43,9 +43,17 @@ function open(which,message=''){
     }));
   } else {
     if(which==='login'||which==='signup'){
-      const google=action('Continue with Google','mbd-auth-google',async()=>{
-        if(busy)return;setBusy(true);
-        try{await oauthLogin('google');}catch{say('Google sign-in is unavailable. Please try again.','error');setBusy(false)}
+      const google=action('Continue with Google','mbd-auth-google',()=>{
+        if(busy)return;setBusy(true);say();
+        // Netlify Identity's OAuth method navigates away; it is not a login Promise.
+        // Do not interpret its redirect control flow as an authentication failure.
+        try{oauthLogin('google');}
+        catch(error){
+          if(error?.name==='MissingIdentityError'||error?.name==='AuthError'){
+            say('Unable to start Google sign-in. Please try again.','error');
+            setBusy(false);
+          }
+        }
       });
       // Use Google's published G artwork rather than approximating it with custom SVG paths.
       // The click handler and Netlify Identity OAuth flow above remain unchanged.
