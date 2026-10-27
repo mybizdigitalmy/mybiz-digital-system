@@ -1,6 +1,6 @@
 /* Standalone signed-in account page — scoped, no changes to approved site-shell styles. */
 .mbd-account-page{background:#f8f8f7;color:#141414}
-.mbd-account-main{box-sizing:border-box;width:min(1216px,calc(100% - 44px));margin:0 auto;padding:102px 0 96px;min-height:65vh;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
+.mbd-account-main{box-sizing:border-box;width:min(1216px,calc(100% - 44px));margin:0 auto;padding:132px 0 96px;min-height:65vh;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
 .mbd-account-kicker{font-size:11px!important;color:#777!important;letter-spacing:.18em;font-weight:750;margin:0 0 12px!important}
 .mbd-account-main h1{font-size:clamp(36px,4.2vw,56px)!important;font-weight:740!important;letter-spacing:-.06em!important;line-height:1.1!important;margin:0 0 15px!important;color:#101010!important}
 .mbd-account-intro{color:#666!important;font-size:15px!important;max-width:660px;line-height:1.75!important;margin:0 0 44px!important}
@@ -17,12 +17,14 @@
 .mbd-account-avatar{display:grid;place-items:center;width:44px;height:44px;background:#121212;color:white;border-radius:50%;font-weight:700;margin-bottom:13px;letter-spacing:-.03em}
 .mbd-account-identity strong{display:block;font-size:14px;overflow-wrap:anywhere;line-height:1.4}
 .mbd-account-identity span{display:block;color:#787878;font-size:11px;overflow-wrap:anywhere;margin-top:5px}
+/* Keep the initials centred: the general identity span rule above must not override the avatar grid. */
+.mbd-account-identity .mbd-account-avatar{display:grid;place-items:center;margin-top:0;font-size:12px;line-height:1}
 .mbd-account-aside a{display:block;padding:12px 13px;border-radius:11px;font-size:13px;color:#242424;text-decoration:none;font-weight:640}
 .mbd-account-aside a:hover,.mbd-account-aside a:focus-visible{background:#f3f3f2}
 .mbd-account-aside .mbd-account-aside-active{background:#f0f0ef}
 .mbd-account-aside-note{font-size:11px!important;line-height:1.65!important;color:#858585!important;padding:6px 13px 0;margin:12px 0 0!important;border-top:1px solid #eee}
 .mbd-account-sections{display:grid;gap:22px;min-width:0}
-.mbd-account-panel{padding:34px 38px;scroll-margin-top:98px}
+.mbd-account-panel{padding:34px 38px;scroll-margin-top:118px}
 .mbd-account-panel h2{font-size:28px!important;line-height:1.15!important;letter-spacing:-.05em!important;font-weight:720!important;color:#111!important;margin:0 0 9px!important}
 .mbd-account-panel-description{font-size:13px!important;color:#727272!important;line-height:1.65!important;margin:0 0 28px!important}
 .mbd-account-profile-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;max-width:760px}
@@ -37,6 +39,6 @@
 .mbd-account-security-note{font-size:13px!important;color:#676767!important;max-width:650px;line-height:1.7!important}
 .mbd-account-security-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
 .mbd-account-main [hidden]{display:none!important}
-@media(max-width:780px){.mbd-account-main{width:min(680px,calc(100% - 32px));padding:88px 0 70px}.mbd-account-grid{grid-template-columns:1fr;gap:17px}.mbd-account-aside{position:static;padding:17px}.mbd-account-aside .mbd-account-avatar{display:none}.mbd-account-aside a{display:inline-block}.mbd-account-aside-note{margin-top:8px!important}.mbd-account-panel{padding:27px 23px}}
-@media(max-width:520px){.mbd-account-main{width:calc(100% - 24px);padding-top:82px}.mbd-account-intro{font-size:13px!important;margin-bottom:26px!important}.mbd-account-panel{padding:24px 18px}.mbd-account-panel h2{font-size:24px!important}.mbd-account-profile-form{grid-template-columns:1fr}.mbd-account-guest{padding:25px}}
+@media(max-width:780px){.mbd-account-main{width:min(680px,calc(100% - 32px));padding:112px 0 70px}.mbd-account-grid{grid-template-columns:1fr;gap:17px}.mbd-account-aside{position:static;padding:17px}.mbd-account-aside .mbd-account-avatar{display:none}.mbd-account-aside a{display:inline-block}.mbd-account-aside-note{margin-top:8px!important}.mbd-account-panel{padding:27px 23px}}
+@media(max-width:520px){.mbd-account-main{width:calc(100% - 24px);padding-top:102px}.mbd-account-intro{font-size:13px!important;margin-bottom:26px!important}.mbd-account-panel{padding:24px 18px}.mbd-account-panel h2{font-size:24px!important}.mbd-account-profile-form{grid-template-columns:1fr}.mbd-account-guest{padding:25px}}
 @media(prefers-reduced-motion:reduce){.mbd-account-btn{transition:none}}
