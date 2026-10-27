@@ -31,3 +31,17 @@
 .mbd-auth-mobile-account{width:100%;margin-top:8px}
 @media(max-width:540px){.mbd-auth-box{padding:24px 20px}.mbd-auth-dialog h2{font-size:25px!important}}
 @media(prefers-reduced-motion:reduce){.mbd-auth-google,.mbd-auth-primary{transition:none}.mbd-auth-google:hover,.mbd-auth-primary:hover{transform:none}}
+/* Phase 1: official multicolour Google mark and accessible account navigation. */
+.mbd-auth-google-logo{width:20px;height:20px;flex:0 0 20px;display:block}
+.mbd-auth-account-wrap{position:relative;flex:0 0 auto}
+.mbd-auth-account-wrap[hidden],.mbd-auth-dropdown[hidden]{display:none!important}
+.mbd-auth-account-nav{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;min-height:36px}
+.mbd-auth-account-nav::after{content:'';width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .18s ease}
+.mbd-auth-account-nav[aria-expanded=true]::after{transform:translateY(2px) rotate(225deg)}
+.mbd-auth-dropdown{position:absolute;top:calc(100% + 12px);right:0;min-width:185px;z-index:1500;box-sizing:border-box;padding:7px;background:#fff;border:1px solid #e7e7e7;border-radius:15px;box-shadow:0 20px 44px rgba(0,0,0,.15)}
+.mbd-auth-menu-link{display:block!important;box-sizing:border-box;width:100%;padding:11px 13px;border:0;border-radius:9px;background:transparent;color:#191919!important;font:650 12px/1.45 Inter,system-ui,sans-serif!important;text-align:left;text-decoration:none!important;cursor:pointer}
+.mbd-auth-menu-link:hover,.mbd-auth-menu-link:focus-visible{background:#f2f2f1;outline-offset:0}
+.mbd-auth-menu-logout{border-top:1px solid #ececec;border-radius:0 0 9px 9px;margin-top:5px}
+.mbd-auth-account-mobile{width:100%}
+.mbd-auth-account-mobile .mbd-auth-account-nav{width:100%;justify-content:center}
+.mbd-auth-account-mobile .mbd-auth-dropdown{position:static;margin-top:8px;min-width:0;width:100%;box-shadow:none}

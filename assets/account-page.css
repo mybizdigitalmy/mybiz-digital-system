@@ -1,0 +1,42 @@
+/* Standalone signed-in account page — scoped, no changes to approved site-shell styles. */
+.mbd-account-page{background:#f8f8f7;color:#141414}
+.mbd-account-main{box-sizing:border-box;width:min(1216px,calc(100% - 44px));margin:0 auto;padding:102px 0 96px;min-height:65vh;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
+.mbd-account-kicker{font-size:11px!important;color:#777!important;letter-spacing:.18em;font-weight:750;margin:0 0 12px!important}
+.mbd-account-main h1{font-size:clamp(36px,4.2vw,56px)!important;font-weight:740!important;letter-spacing:-.06em!important;line-height:1.1!important;margin:0 0 15px!important;color:#101010!important}
+.mbd-account-intro{color:#666!important;font-size:15px!important;max-width:660px;line-height:1.75!important;margin:0 0 44px!important}
+.mbd-account-guest,.mbd-account-panel{background:#fff;border:1px solid #e8e8e7;border-radius:20px;box-sizing:border-box}
+.mbd-account-guest{padding:34px;max-width:580px}
+.mbd-account-guest h2{font-size:25px!important;letter-spacing:-.04em;margin:0 0 12px!important;color:#111!important}
+.mbd-account-guest p{color:#666!important;margin:0 0 24px!important}
+.mbd-account-btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:43px;padding:10px 24px;border-radius:23px;font:720 13px Inter,system-ui,sans-serif;border:1px solid #111;color:#fff;background:#111;cursor:pointer;text-decoration:none;transition:transform .2s ease}
+.mbd-account-btn:hover{transform:scale(1.015)}
+.mbd-account-btn-secondary{background:#fff;color:#111;border-color:#dbdbdb}
+.mbd-account-grid{display:grid;grid-template-columns:240px minmax(0,1fr);gap:27px;align-items:start}
+.mbd-account-aside{background:#fff;border:1px solid #e8e8e7;border-radius:20px;padding:23px 18px;position:sticky;top:94px}
+.mbd-account-identity{padding:1px 12px 22px;border-bottom:1px solid #ededed;margin-bottom:13px}
+.mbd-account-avatar{display:grid;place-items:center;width:44px;height:44px;background:#121212;color:white;border-radius:50%;font-weight:700;margin-bottom:13px;letter-spacing:-.03em}
+.mbd-account-identity strong{display:block;font-size:14px;overflow-wrap:anywhere;line-height:1.4}
+.mbd-account-identity span{display:block;color:#787878;font-size:11px;overflow-wrap:anywhere;margin-top:5px}
+.mbd-account-aside a{display:block;padding:12px 13px;border-radius:11px;font-size:13px;color:#242424;text-decoration:none;font-weight:640}
+.mbd-account-aside a:hover,.mbd-account-aside a:focus-visible{background:#f3f3f2}
+.mbd-account-aside .mbd-account-aside-active{background:#f0f0ef}
+.mbd-account-aside-note{font-size:11px!important;line-height:1.65!important;color:#858585!important;padding:6px 13px 0;margin:12px 0 0!important;border-top:1px solid #eee}
+.mbd-account-sections{display:grid;gap:22px;min-width:0}
+.mbd-account-panel{padding:34px 38px;scroll-margin-top:98px}
+.mbd-account-panel h2{font-size:28px!important;line-height:1.15!important;letter-spacing:-.05em!important;font-weight:720!important;color:#111!important;margin:0 0 9px!important}
+.mbd-account-panel-description{font-size:13px!important;color:#727272!important;line-height:1.65!important;margin:0 0 28px!important}
+.mbd-account-profile-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;max-width:760px}
+.mbd-account-profile-form label{display:grid;gap:8px;font-weight:650;font-size:12px;color:#252525}
+.mbd-account-profile-form input{box-sizing:border-box;width:100%;min-height:46px;padding:11px 13px;border:1px solid #dbdbdb;border-radius:11px;background:#fff;color:#111;font:400 14px Inter,system-ui,sans-serif}
+.mbd-account-profile-form input[readonly]{background:#f6f6f5;color:#676767;cursor:not-allowed}
+.mbd-account-profile-form input:focus-visible{outline:2px solid #a9a9a9;outline-offset:2px}
+.mbd-account-help{font-weight:400;font-size:11px;color:#787878;line-height:1.5}
+.mbd-account-profile-actions{grid-column:1/-1;display:flex;align-items:center;gap:16px}
+.mbd-account-message{padding:12px 16px;border-radius:10px;background:#edf6f0;color:#27633b!important;margin:0 0 20px!important;font-size:13px!important}
+.mbd-account-message[data-kind=error]{background:#fff0ee;color:#92392d!important}
+.mbd-account-security-note{font-size:13px!important;color:#676767!important;max-width:650px;line-height:1.7!important}
+.mbd-account-security-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.mbd-account-main [hidden]{display:none!important}
+@media(max-width:780px){.mbd-account-main{width:min(680px,calc(100% - 32px));padding:88px 0 70px}.mbd-account-grid{grid-template-columns:1fr;gap:17px}.mbd-account-aside{position:static;padding:17px}.mbd-account-aside .mbd-account-avatar{display:none}.mbd-account-aside a{display:inline-block}.mbd-account-aside-note{margin-top:8px!important}.mbd-account-panel{padding:27px 23px}}
+@media(max-width:520px){.mbd-account-main{width:calc(100% - 24px);padding-top:82px}.mbd-account-intro{font-size:13px!important;margin-bottom:26px!important}.mbd-account-panel{padding:24px 18px}.mbd-account-panel h2{font-size:24px!important}.mbd-account-profile-form{grid-template-columns:1fr}.mbd-account-guest{padding:25px}}
+@media(prefers-reduced-motion:reduce){.mbd-account-btn{transition:none}}
