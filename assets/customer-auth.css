@@ -1,0 +1,33 @@
+/* Dedicated account overlay; approved website components remain unchanged. */
+.mbd-auth-dialog{box-sizing:border-box;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 24px);margin:auto;padding:0;border:1px solid #dcdede;border-radius:22px;overflow:auto;background:#fff;color:#151515;font:14px/1.55 Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;box-shadow:0 28px 72px #0004}
+.mbd-auth-dialog::backdrop{background:#080a0baa;backdrop-filter:blur(3px)}
+.mbd-auth-box{padding:30px;position:relative}
+.mbd-auth-close{position:absolute;right:15px;top:10px;border:0;border-radius:50%;background:transparent;font:normal 27px Inter,sans-serif;width:40px;height:40px;cursor:pointer;color:#222}
+.mbd-auth-close:hover{background:#eee}
+.mbd-auth-kicker{margin:0 0 8px!important;color:#888!important;font-size:10px!important;letter-spacing:.16em;font-weight:700}
+.mbd-auth-dialog h2{font:750 28px/1.18 Inter,system-ui,sans-serif!important;letter-spacing:-.05em;color:#111!important;margin:0 0 23px!important}
+.mbd-auth-form{display:grid;gap:14px}
+.mbd-auth-field{display:flex;flex-direction:column;gap:6px;color:#292929;font-size:12px;font-weight:670}
+.mbd-auth-field input{box-sizing:border-box;width:100%;min-height:45px;background:#fff;border:1px solid #ddd;border-radius:11px;padding:10px 12px;color:#171717;font:400 14px Inter,system-ui,sans-serif}
+.mbd-auth-field input:focus-visible{outline:2px solid #aaa;outline-offset:1px}
+.mbd-auth-google,.mbd-auth-primary{display:flex;justify-content:center;align-items:center;gap:10px;cursor:pointer;border-radius:24px;min-height:46px;width:100%;padding:10px 18px;font:700 13px Inter,system-ui,sans-serif;transition:transform .2s ease}
+.mbd-auth-google{border:1px solid #dedede;color:#161616;background:#fff}
+.mbd-auth-g{font-size:18px;color:#4285f4}
+.mbd-auth-primary{margin-top:7px;background:#101010;color:#fff;border:1px solid #101010}
+.mbd-auth-google:hover,.mbd-auth-primary:hover{transform:scale(1.013)}
+.mbd-auth-divider{text-align:center;color:#777!important;margin:16px 0!important;font-size:12px!important}
+.mbd-auth-links{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.mbd-auth-text-button{padding:0;border:0;background:transparent;color:#353535;text-decoration:underline;font:650 12px Inter,system-ui,sans-serif;cursor:pointer}
+.mbd-auth-note{font-size:11px!important;line-height:1.7!important;color:#777!important;margin:19px 0 0!important}
+.mbd-auth-note a{color:inherit;text-decoration:underline}
+.mbd-auth-status{background:#eff3f1;border-radius:10px;padding:12px;margin:18px 0 0;font-size:12px;color:#35433d}
+.mbd-auth-status[data-kind=error]{background:#fff0ee;color:#8a2c21}
+.mbd-auth-profile{margin:0 0 5px!important;font-weight:740;font-size:16px!important}
+.mbd-auth-address{overflow-wrap:anywhere;font-size:13px!important;color:#666!important}
+.mbd-auth-dialog button:disabled{opacity:.65;cursor:wait;transform:none}
+.mbd-auth-account-nav{font:700 12px Inter,system-ui,sans-serif;border:1px solid #111;background:#111;color:#fff;border-radius:20px;padding:9px 16px;cursor:pointer}
+.mbd-auth-account-nav[hidden]{display:none!important}
+.mbd-auth-signed-in .site-header .nav-login,.mbd-auth-signed-in .site-header .nav-signup,.mbd-auth-signed-in .site-header .mobile-actions>a[href$='#login'],.mbd-auth-signed-in .site-header .mobile-actions>a[href$='#signup']{display:none!important}
+.mbd-auth-mobile-account{width:100%;margin-top:8px}
+@media(max-width:540px){.mbd-auth-box{padding:24px 20px}.mbd-auth-dialog h2{font-size:25px!important}}
+@media(prefers-reduced-motion:reduce){.mbd-auth-google,.mbd-auth-primary{transition:none}.mbd-auth-google:hover,.mbd-auth-primary:hover{transform:none}}

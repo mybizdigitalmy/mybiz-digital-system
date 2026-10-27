@@ -1,0 +1,14 @@
+{
+  "name": "mybizdigital-auth-review",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/customer-auth.js --bundle --minify --platform=browser --format=esm --target=es2022 --outfile=assets/customer-auth.bundle.js"
+  },
+  "dependencies": {
+    "@netlify/identity": "2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
