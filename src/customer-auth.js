@@ -7,8 +7,9 @@ const $ = (s, root = D) => root.querySelector(s);
 const all = (s, root = D) => [...root.querySelectorAll(s)];
 const make = (tag, cls, value) => { const n = D.createElement(tag); if(cls) n.className=cls; if(value!==undefined) n.textContent=value; return n; };
 let currentUser=null, dialog, content, status, mode='login', busy=false, googleAllowed=true;
+let accountPageUserId=null;
 const titles={login:'Log in to MyBizDigital',signup:'Create your account',recover:'Reset your password',reset:'Set a new password',account:'My Account'};
-function say(msg='',kind='info'){status.hidden=!msg;status.textContent=msg;status.dataset.kind=kind;}
+function say(msg='',kind='info'){if(!status)return;status.hidden=!msg;status.textContent=msg;status.dataset.kind=kind;}
 function setBusy(on){busy=on;all('button,input',dialog).forEach(n=>n.disabled=on);}
 function action(text,cls,fn){const b=make('button',cls,text);b.type='button';b.addEventListener('click',fn);return b;}
 function field(label,name,type,autocomplete){
@@ -38,9 +39,7 @@ function open(which,message=''){
       make('p','mbd-auth-address',currentUser?.email||''),
       make('p','mbd-auth-note','Order history will be available after secure checkout launches.'));
     content.append(action('Log out','mbd-auth-primary',async()=>{
-      if(busy)return;setBusy(true);
-      try{await logout();currentUser=null;updateHeader();dialog.close();}
-      catch{say('Unable to log out. Please try again.','error');}finally{setBusy(false)}
+      await signOut();
     }));
   } else {
     if(which==='login'||which==='signup'){
@@ -48,7 +47,17 @@ function open(which,message=''){
         if(busy)return;setBusy(true);
         try{await oauthLogin('google');}catch{say('Google sign-in is unavailable. Please try again.','error');setBusy(false)}
       });
-      google.prepend(make('span','mbd-auth-g','G'));
+      const icon=D.createElementNS('http://www.w3.org/2000/svg','svg');
+      icon.setAttribute('class','mbd-auth-google-logo');icon.setAttribute('viewBox','0 0 48 48');
+      icon.setAttribute('width','20');icon.setAttribute('height','20');icon.setAttribute('aria-hidden','true');
+      const paths=[
+        ['#EA4335','M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 5.38 6.51 13.22 2.56l7.98 6.19C17.05 7.26 20.39 9.5 24 9.5Z'],
+        ['#4285F4','M46.98 24.55c0-1.57-.15-3.08-.38-4.55H24v9.02h12.94c-.58 2.97-2.25 5.49-4.78 7.19l7.73 6C44.4 38.05 46.98 31.92 46.98 24.55Z'],
+        ['#FBBC05','M10.53 28.5a14.4 14.4 0 0 1 0-9l-8-6.2a23.89 23.89 0 0 0 0 21.4l8-6.2Z'],
+        ['#34A853','M24 48c6.48 0 11.93-2.13 15.9-5.79l-7.73-6a14.32 14.32 0 0 1-8.17 2.29c-6.26 0-11.57-4.23-13.47-9.98l-8 6.2C6.48 42.55 14.61 48 24 48Z']
+      ];
+      for(const [fill,d] of paths){const path=D.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('fill',fill);path.setAttribute('d',d);icon.append(path)}
+      google.prepend(icon);
       if(!googleAllowed){google.disabled=true;google.title='Google sign-in is not enabled';}
       content.append(google,make('p','mbd-auth-divider','or use your email address'));
     }
@@ -98,27 +107,111 @@ async function handleForm(event){
     say(msg[request]||'Something went wrong. Please try again.','error');
   }finally{setBusy(false)}
 }
+function accountName(user){return String(user?.userMetadata?.full_name||user?.name||'Customer').trim()}
+async function signOut(){
+  if(busy)return;busy=true;
+  try{
+    await logout();currentUser=null;updateHeader();
+    if(dialog?.open)dialog.close();
+    if($('#mbd-customer-dashboard'))location.assign('index.html');
+  }catch(error){
+    if(dialog?.open)say('Unable to log out. Please try again.','error');
+    else alert('Unable to log out. Please try again.');
+  }finally{busy=false}
+}
+function closeMenus(except=null){
+  all('.mbd-auth-account-wrap').forEach(w=>{
+    if(w===except)return;
+    const m=$('.mbd-auth-dropdown',w),button=$('.mbd-auth-account-nav',w);
+    if(m)m.hidden=true;if(button)button.setAttribute('aria-expanded','false');
+  });
+}
+function accountControl(isMobile){
+  const wrap=make('div','mbd-auth-account-wrap'+(isMobile?' mbd-auth-account-mobile':''));wrap.hidden=true;
+  const b=action('My Account','mbd-auth-account-nav',()=>{
+    const menu=$('.mbd-auth-dropdown',wrap);const shouldOpen=menu.hidden;
+    closeMenus();menu.hidden=!shouldOpen;b.setAttribute('aria-expanded',String(shouldOpen));
+  });
+  b.setAttribute('aria-haspopup','true');b.setAttribute('aria-expanded','false');
+  const menu=make('div','mbd-auth-dropdown');menu.hidden=true;
+  menu.setAttribute('aria-label','Account menu');
+  const profile=make('a','mbd-auth-menu-link','My Profile');profile.href='my-account.html';
+  const security=make('a','mbd-auth-menu-link','Account Security');security.href='my-account.html#security';
+  const out=action('Log out','mbd-auth-menu-link mbd-auth-menu-logout',()=>{closeMenus();signOut()});
+  menu.append(profile,security,out);wrap.append(b,menu);return wrap;
+}
 function updateHeader(){
   D.body.classList.toggle('mbd-auth-signed-in',!!currentUser);
-  all('.mbd-auth-account-nav').forEach(b=>b.hidden=!currentUser);
+  all('.mbd-auth-account-wrap').forEach(w=>{w.hidden=!currentUser;if(!currentUser)closeMenus()});
+  renderAccountPage();
 }
 function initHeader(){
   for(const header of all('.site-header')){
     const right=$('.nav-right',header);
-    if(right){
-      const button=action('My Account','mbd-auth-account-nav',()=>open('account'));
-      button.hidden=true;
-      const signUp=$('.nav-signup',right);if(signUp)signUp.after(button);else right.append(button);
+    if(right){const signUp=$('.nav-signup',right),control=accountControl(false);
+      if(signUp)signUp.after(control);else right.append(control);
     }
     const mobile=$('.mobile-actions',header);
-    if(mobile){const button=action('My Account','mbd-auth-account-nav mbd-auth-mobile-account',()=>open('account'));button.hidden=true;mobile.append(button)}
+    if(mobile)mobile.append(accountControl(true));
   }
   for(const a of all('a[href="#login"],a[href="#signup"],a[href="index.html#login"],a[href="index.html#signup"]')){
     a.addEventListener('click',event=>{event.preventDefault();open(currentUser?'account':a.hash==='#signup'?'signup':'login');});
   }
+  D.addEventListener('click',event=>{if(!event.target.closest('.mbd-auth-account-wrap'))closeMenus();});
+  D.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenus();});
+}
+function showPageMessage(message='',isError=false){
+  const box=$('#mbd-account-message');if(!box)return;
+  box.textContent=message;box.dataset.kind=isError?'error':'success';box.hidden=!message;
+}
+function renderAccountPage(){
+  const root=$('#mbd-customer-dashboard');if(!root)return;
+  const guest=$('.mbd-account-guest',root),member=$('.mbd-account-member',root);
+  if(guest)guest.hidden=!!currentUser;
+  if(member)member.hidden=!currentUser;
+  if(!currentUser){accountPageUserId=null;return}
+  const name=accountName(currentUser),email=currentUser.email||'';
+  const display=$('#mbd-account-display-name',root),label=$('#mbd-account-email',root);
+  if(display)display.textContent=name;if(label)label.textContent=email;
+  const fieldEmail=$('#mbd-profile-email',root);if(fieldEmail)fieldEmail.value=email;
+  const nameInput=$('#mbd-profile-name',root),phoneInput=$('#mbd-profile-phone',root);
+  if(accountPageUserId!==currentUser.id){
+    if(nameInput)nameInput.value=accountName(currentUser)==='Customer'?'':name;
+    if(phoneInput)phoneInput.value=String(currentUser.userMetadata?.phone||'');
+    accountPageUserId=currentUser.id;
+  }
+}
+function initAccountPage(){
+  const root=$('#mbd-customer-dashboard');if(!root)return;
+  const loginButton=$('#mbd-account-login',root);
+  if(loginButton)loginButton.addEventListener('click',()=>open('login'));
+  const form=$('#mbd-profile-form',root);
+  if(form)form.addEventListener('submit',async event=>{
+    event.preventDefault();if(busy||!currentUser)return;
+    const name=$('#mbd-profile-name',form).value.trim(),phone=$('#mbd-profile-phone',form).value.trim();
+    if(!name){showPageMessage('Please enter your full name.',true);return}
+    if(name.length>100||phone.length>30){showPageMessage('Please check the name or telephone number.',true);return}
+    const save=$('button[type=submit]',form);busy=true;save.disabled=true;showPageMessage();
+    try{
+      const user=await updateUser({data:{full_name:name,phone}});
+      currentUser=user||await getUser();
+      accountPageUserId=null;updateHeader();showPageMessage('Your profile has been saved.');
+    }catch{showPageMessage('Unable to save your profile. Please try again.',true)}
+    finally{save.disabled=false;busy=false}
+  });
+  const reset=$('#mbd-account-reset-password',root);
+  if(reset)reset.addEventListener('click',async()=>{
+    if(busy||!currentUser?.email)return;
+    busy=true;reset.disabled=true;showPageMessage();
+    try{await requestPasswordRecovery(currentUser.email);
+      showPageMessage('If your account uses an email password, check your inbox for a secure reset link. Google sign-in passwords are managed by Google.');
+    }catch{showPageMessage('Unable to request a password reset right now.',true)}
+    finally{busy=false;reset.disabled=false}
+  });
+  const out=$('#mbd-account-logout',root);if(out)out.addEventListener('click',signOut);
 }
 async function init(){
-  initHeader();
+  initHeader();initAccountPage();
   let callback=null;
   try{callback=await handleAuthCallback();}
   catch{
@@ -131,7 +224,7 @@ async function init(){
     if(event==='logout'&&dialog?.open)dialog.close();
   });
   if(callback?.type==='recovery')open('reset');
-  else if(callback?.type==='confirmation')open('account','Email confirmation completed.');
+  else if(callback?.type==='confirmation')open(currentUser?'account':'login','Email confirmation completed.');
   else if(callback?.type==='invite')open('login','For invitation assistance, contact support@mybizdigital.my.');
   else if(location.hash==='#login'||location.hash==='#signup'){
     open(currentUser?'account':location.hash==='#signup'?'signup':'login');
@@ -139,7 +232,7 @@ async function init(){
   }
   try{
     const settings=await getSettings();
-    if(settings?.external && !settings.external.google){
+    if(settings?.providers && !settings.providers.google){
       googleAllowed=false;
       all('.mbd-auth-google').forEach(b=>{b.disabled=true;b.title='Google authentication is unavailable';});
     }
