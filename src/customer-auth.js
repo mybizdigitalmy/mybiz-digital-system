@@ -18,7 +18,51 @@ function field(label,name,type,autocomplete){
   if(type==='password') input.minLength=8;
   if(name==='email') input.maxLength=200;
   if(name==='name') input.maxLength=100;
-  wrap.append(input);return wrap;
+  // Sign-up only: a separate eye control for each password input.
+  // Visibility changes the input display, never its value or form field name.
+  if(type==='password'&&mode==='signup'){
+    const passwordBox=make('span','mbd-auth-password-wrap');
+    input.id='mbd-auth-signup-'+name;
+    const toggle=make('button','mbd-auth-password-toggle');
+    toggle.type='button';
+    toggle.setAttribute('aria-controls',input.id);
+    const label=name==='confirm'?'confirmation password':'password';
+    const syncVisibility=()=>{
+      const isVisible=input.type==='text';
+      const accessibleLabel=(isVisible?'Hide ':'Show ')+label;
+      toggle.setAttribute('aria-label',accessibleLabel);
+      toggle.setAttribute('title',accessibleLabel);
+      toggle.setAttribute('aria-pressed',String(isVisible));
+      const svg=D.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('viewBox','0 0 24 24');
+      svg.setAttribute('aria-hidden','true');
+      svg.setAttribute('focusable','false');
+      svg.setAttribute('fill','none');
+      svg.setAttribute('stroke','currentColor');
+      svg.setAttribute('stroke-width','1.8');
+      svg.setAttribute('stroke-linecap','round');
+      svg.setAttribute('stroke-linejoin','round');
+      const outline=D.createElementNS('http://www.w3.org/2000/svg','path');
+      outline.setAttribute('d','M2 12s3.64-7 10-7 10 7 10 7-3.64 7-10 7S2 12 2 12Z');
+      const pupil=D.createElementNS('http://www.w3.org/2000/svg','circle');
+      pupil.setAttribute('cx','12');pupil.setAttribute('cy','12');pupil.setAttribute('r','3');
+      svg.append(outline,pupil);
+      if(!isVisible){
+        const slash=D.createElementNS('http://www.w3.org/2000/svg','path');
+        slash.setAttribute('d','M3 3l18 18');
+        svg.append(slash);
+      }
+      toggle.replaceChildren(svg);
+    };
+    toggle.addEventListener('click',()=>{
+      input.type=input.type==='password'?'text':'password';
+      syncVisibility();
+    });
+    syncVisibility();
+    passwordBox.append(input,toggle);
+    wrap.append(passwordBox);
+  }else wrap.append(input);
+  return wrap;
 }
 function createDialog(){
   dialog=make('dialog','mbd-auth-dialog');dialog.setAttribute('aria-labelledby','mbd-auth-title');
