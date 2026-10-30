@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Help using your preconfigured MyBizDigital NFC Smart Stand, troubleshoot NFC taps and request product assistance.">
+<meta name="theme-color" content="#f8f8f7">
+<title>Product Usage &amp; Support | MyBizDigital</title>
+<link rel="icon" href="assets/brand-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap">
+<link rel="stylesheet" href="assets/site-shell.css">
+<link rel="stylesheet" href="assets/library.css">
+<link rel="stylesheet" href="assets/page-alignment.css">
+<style id="mbd-support-page-styles">
+/* Support sections extend the current main-site shell, library type scale, and alignment.
+   Intentionally scoped: no changes to existing approved pages or shared assets. */
+.mbd-support-page .library-main{padding-bottom:105px}
+.mbd-support-page .library-hero{border-bottom:0;padding-bottom:82px}
+.mbd-support-page .library-hero h1{max-width:1015px}
+.mbd-support-page .hero-desc{max-width:760px}
+.mbd-support-content{padding-top:0}
+.mbd-support-primary{padding:39px 45px 43px;background:#fff;border:1px solid #e6e6e3;border-radius:20px;box-shadow:0 9px 24px rgba(0,0,0,.035)}
+.mbd-support-primary .mbd-support-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;color:#777;margin:0 0 18px}
+.mbd-support-primary h2{font-size:clamp(27px,2.65vw,35px);font-weight:700;line-height:1.14;letter-spacing:-.038em;color:#161616;margin:0 0 15px}
+.mbd-support-primary p:not(.mbd-support-label){font-size:15px;line-height:1.8;color:#6b6b6b;max-width:825px;margin:0}
+.mbd-support-section{margin-top:98px}
+.mbd-support-section .library-intro{margin-bottom:31px}
+.mbd-support-section .library-intro h2{margin:0!important}
+.mbd-support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.mbd-support-card{background:#fff;border:1px solid #dedfe3;border-radius:22px;min-width:0;min-height:215px;padding:30px 33px 34px;box-shadow:none;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1),border-color .28s ease;transform-origin:center}
+.mbd-support-card .mbd-support-no{display:block;font-size:11px;font-weight:700;color:#858585;margin:0 0 28px}
+.mbd-support-card h3{font-size:19px;line-height:1.33;font-weight:750;letter-spacing:-.03em;color:#161616;margin:0 0 12px}
+.mbd-support-card p,.mbd-support-card li{font-size:14px;line-height:1.75;color:#777;margin:0}
+.mbd-support-card ul{margin:11px 0 0;padding-left:18px}
+.mbd-support-list{border-top:1px solid #dededb}
+.mbd-support-row{display:grid;grid-template-columns:minmax(195px,.8fr) minmax(0,2fr);gap:36px;padding:24px 0 26px;border-bottom:1px solid #dededb}
+.mbd-support-row h3{font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.02em;margin:0;color:#171717}
+.mbd-support-row p{font-size:14px;color:#6b6b6b;line-height:1.8;margin:0}
+.mbd-support-row a,.mbd-support-fine a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.mbd-support-page .closing-cta{margin-top:105px}
+.mbd-support-page .closing-cta h2{color:#fff!important}
+.mbd-support-page .closing-cta p{max-width:700px}
+.mbd-support-hours{font-size:12px!important;color:#a5a5a5!important;margin:0 auto 28px!important}
+.mbd-support-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
+.mbd-support-actions .white-button,.mbd-support-actions .mbd-support-secondary{min-width:172px}
+.mbd-support-actions .mbd-support-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:40px;border:1px solid #666;color:#fff;text-decoration:none;font-size:13px;font-weight:650;transition:background-color .17s,border-color .17s}
+.mbd-support-actions .mbd-support-secondary:hover{background:#343434;border-color:#999}
+.mbd-support-fine{margin:27px 0 0;color:#868686;font-size:12px;line-height:1.7}
+@media(hover:hover) and (pointer:fine){.mbd-support-card:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 14px 35px rgba(22,28,42,.12);border-color:#c9ccd2}}
+@media(max-width:760px){
+ .mbd-support-page .library-hero{padding-bottom:50px}
+ .mbd-support-primary{padding:29px 25px}
+ .mbd-support-section{margin-top:74px}
+ .mbd-support-card{padding:26px 25px;min-height:0}
+ .mbd-support-card .mbd-support-no{margin-bottom:18px}
+ .mbd-support-row{grid-template-columns:1fr;gap:9px}
+ .mbd-support-page .closing-cta{margin-top:78px}
+}
+@media(max-width:599px){
+ .mbd-support-grid{grid-template-columns:1fr;gap:14px}
+ .mbd-support-section .library-intro h2{font-size:31px!important}
+ .mbd-support-primary h2{font-size:27px}
+ .mbd-support-card h3{font-size:18px}
+ .mbd-support-actions .white-button,.mbd-support-actions .mbd-support-secondary{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .mbd-support-card,.mbd-support-actions .mbd-support-secondary{transition:none!important}
+ .mbd-support-card:hover{transform:none!important}
+}
+
+</style>
+</head>
+<body class="library-page mbd-support-page">
+<a class="skip-library" href="#top">Skip to main content</a>
+<header aria-label="Main navigation" class="site-header">
+<div class="nav-inner">
+<a aria-label="MyBizDigital Home" class="nav-brand" href="index.html"><img alt="" src="assets/brand-logo.svg"/><span class="nav-brand-text">MyBizDigital</span></a>
+<nav aria-label="Primary" class="desktop-nav">
+<a class="nav-link" href="index.html#products"><span class="roll"><span class="roll-stack"><span>Products</span><span aria-hidden="true">Products</span></span></span></a>
+<div class="services-wrap">
+<button aria-expanded="false" class="nav-action services-trigger" type="button"><span class="roll"><span class="roll-stack"><span>Services</span><span aria-hidden="true">Services</span></span></span><svg class="nav-chevron" fill="none" viewbox="0 0 20 20"><path d="m5 7 5 5 5-5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button>
+<div class="services-dropdown">
+<div class="dropdown-grid">
+<div><a class="dropdown-link" href="web-development.html">Website Development</a></div>
+<div><a class="dropdown-link" href="business-apps.html">Business Application</a></div>
+</div>
+</div>
+</div>
+<a class="nav-link" href="index.html#how-it-works"><span class="roll"><span class="roll-stack"><span>How It Works</span><span aria-hidden="true">How It Works</span></span></span></a>
+<a class="nav-link" href="index.html#faq"><span class="roll"><span class="roll-stack"><span>FAQ</span><span aria-hidden="true">FAQ</span></span></span></a>
+<a class="nav-link" href="contact.html"><span class="roll"><span class="roll-stack"><span>Contact</span><span aria-hidden="true">Contact</span></span></span></a>
+</nav>
+<div class="nav-right">
+<a aria-label="Shopping cart" class="cart-button" href="index.html#shop"><svg fill="none" viewbox="0 0 24 24"><path d="M7 8h10l1 12H6L7 8Z" stroke="currentColor" stroke-width="1.5"></path><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.5"></path></svg></a>
+<a class="nav-login" href="index.html#login">Log in</a>
+<a class="btn btn-primary nav-signup" href="index.html#signup">Sign up</a>
+<button aria-expanded="false" aria-label="Open menu" class="mobile-toggle" type="button"><svg fill="none" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"></path></svg></button>
+</div>
+</div>
+<div class="mobile-drawer">
+<a class="mobile-nav-link" href="index.html#products">Products</a>
+<div class="mobile-services"><button aria-expanded="false" class="mobile-services-btn" type="button">Services <span>⌄</span></button><div class="mobile-submenu"><a href="web-development.html">Website Development</a><a href="business-apps.html">Business Application</a></div></div>
+<a class="mobile-nav-link" href="index.html#how-it-works">How It Works</a><a class="mobile-nav-link" href="index.html#faq">FAQ</a><a class="mobile-nav-link" href="contact.html">Contact</a>
+<div class="mobile-actions"><a class="btn btn-secondary" href="index.html#login">Log in</a><a class="btn btn-primary" href="index.html#signup">Sign up</a></div>
+</div>
+</header>
+<main class="library-main mbd-support-main" id="top">
+  <section class="library-hero" aria-labelledby="support-title"><div class="library-wrap">
+    <p class="library-eyebrow">PRODUCT SUPPORT</p>
+    <h1 id="support-title">Your NFC stand is ready. We&#x27;re here if you need help.</h1>
+    <p class="hero-desc">MyBizDigital configures your NFC Smart Stand before delivery. Place it where customers can conveniently reach it. There is no chip programming required on your side. If something is not working, this page explains what to check and how to get assistance.</p>
+  </div></section>
+  <div class="library-wrap mbd-support-content">
+    <section aria-labelledby="ready-heading" class="mbd-support-primary">
+<p class="mbd-support-label">READY TO USE</p>
+<h2 id="ready-heading">We program it. You place it. Your customers tap.</h2>
+<p>Your programmed stand opens its intended Google review, social media or food-menu destination when tapped with a compatible smartphone. Visitors decide what to do on the destination page; a tap never automatically posts a review or follows a social account.</p>
+</section><section aria-labelledby="steps-heading" class="mbd-support-section">
+<div class="library-intro"><div><h2 id="steps-heading">Having trouble with a tap?</h2></div></div>
+<div class="mbd-support-grid">
+<article class="mbd-support-card"><span class="mbd-support-no">01</span><h3>Check the phone</h3><p>Confirm that the customer's phone supports NFC. On Android, enable NFC in Settings if required; compatible iPhones normally handle NFC tag reading automatically. Make sure the phone screen is on before tapping. If the stand is not detected, unlock the phone and try again. Depending on the device, NFC scanning may not work while the screen is off or the phone is locked.</p></article>
+<article class="mbd-support-card"><span class="mbd-support-no">02</span><h3>Try a different tap position</h3><p>Hold the phone near the NFC area of the stand for a moment. The antenna position can vary between smartphones. Thick cases or metal attachments may interfere.</p></article>
+<article class="mbd-support-card"><span class="mbd-support-no">03</span><h3>Try another compatible device</h3><p>If possible, test the same stand with another NFC-capable smartphone. This helps determine whether the issue is with a particular phone or the stand.</p></article>
+<article class="mbd-support-card"><span class="mbd-support-no">04</span><h3>Contact support</h3><p>If neither device opens the intended link, report the issue and include your order reference, product type and a short photo or video demonstrating the problem.</p></article>
+</div>
+</section><section aria-labelledby="help-heading" class="mbd-support-section">
+<div class="library-intro"><div><h2 id="help-heading">Replacement and technical assistance</h2></div></div>
+<div class="mbd-support-list">
+<div class="mbd-support-row"><h3>5-Year NFC Chip Warranty</h3><p>Our five-year NFC chip warranty covers verified chip failure under normal intended use from confirmed delivery, for eligible stands delivered in Malaysia or overseas. Approved chip-defect replacements are supplied without charge. Replacement delivery within Malaysia is covered; for international orders, shipping arrangements and any applicable charges are reviewed and confirmed case by case. Contact MyBizDigital with your order reference for assessment. Accidental damage and customer-requested link changes are not chip defects.</p></div>
+<div class="mbd-support-row"><h3>Damaged when delivered</h3><p>Report the issue promptly with photographs of the stand, outer packaging and shipping label. For verified delivery-related or MyBizDigital-caused damage, we arrange a replacement without charging you. For severe damage, we may approve a replacement without asking you to return the product.</p></div>
+<div class="mbd-support-row"><h3>Business link changed after delivery</h3><p>Our stands are programmed before dispatch. If a customer-provided destination changes or was supplied incorrectly after programming and dispatch, remote rewriting is not offered. The customer must purchase a newly programmed stand at the applicable full price, plus delivery charges. MyBizDigital may request the original stand to be returned; the customer is responsible for return shipping. Please contact us before sending any item back. This policy does not apply to programming errors caused by MyBizDigital.</p></div>
+<div class="mbd-support-row"><h3>Accidental damage after delivery</h3><p>Send your order reference and photographs so we can assess the issue. Damage caused by accidental drops, misuse or other customer-caused physical damage is not covered by the NFC chip warranty. A newly programmed replacement may be purchased at the applicable full product price, plus delivery charges. No returning-customer replacement discount applies.</p></div>
+<div class="mbd-support-row"><h3>Incorrect programming by MyBizDigital</h3><p>If we programmed a stand with a destination different from the information you correctly supplied and approved before dispatch, contact us with the order reference and the intended link. After verifying our error, we arrange an appropriate correction or a newly programmed replacement without charging for the replacement product.</p></div>
+<div class="mbd-support-row"><h3>Technical investigation and evidence</h3><p>If the stand still fails with more than one compatible, awake smartphone after the checks above, send your order reference, stand type, the link you expected to open and a short video of the tap attempt. For shipping damage, include clear photographs of the product, packaging and shipping label. This helps us determine whether troubleshooting, inspection or replacement is appropriate.</p></div>
+<div class="mbd-support-row"><h3>Returning a stand for assessment</h3><p>Do not send a stand back before receiving instructions from MyBizDigital. We may request a return to verify a suspected fault or a customer-requested link change; whether a return is needed and who pays shipping depends on the cause of the issue. For customer-requested link changes after dispatch, the customer pays return shipping. Eligible defect claims are assessed under the five-year warranty and applicable law.</p></div>
+</div>
+</section><section aria-labelledby="contact-heading" class="closing-cta">
+<h2 id="contact-heading">Need product assistance?</h2>
+<p>Contact MyBizDigital with your order reference and the issue you are experiencing. We will review the information and advise you on the next steps.</p>
+<p class="mbd-support-hours">Support: Monday–Saturday, 8:00 AM–6:00 PM (Malaysia time). Closed Sunday.</p>
+<div class="mbd-support-actions"><a class="white-button" href="index.html#products">Explore Products</a><a class="mbd-support-secondary" href="contact.html">Contact Us</a></div>
+</section>
+    <p class="mbd-support-fine">For order amendments, shipment questions and delivery problems, see <a href="order-support.html">Order Support</a>. Warranty eligibility, refund rights and remedies are subject to the applicable published policies and law. This information does not limit any rights that cannot legally be excluded.</p>
+  </div>
+</main>
+<footer aria-label="MyBizDigital footer" id="mbd-site-footer">
+<div class="mbd-f-inner">
+<section aria-labelledby="mbd-footer-newsletter-title" class="mbd-f-top">
+<div class="mbd-f-newsletter-copy">
+<h2 class="mbd-f-title" id="mbd-footer-newsletter-title">New products, straight to your inbox</h2>
+<p class="mbd-f-subtitle">New NFC products, digital tools and business updates. No filler, just what's new.</p>
+</div>
+<div class="mbd-f-newsletter">
+<div aria-label="Newsletter registration not yet available" class="mbd-f-subscribe-box">
+<input aria-label="Email address (newsletter not available yet)" disabled="" placeholder="you@email.com" type="email"/>
+<button disabled="" title="Newsletter sign-ups coming soon" type="button">Notify me</button>
+</div>
+<span class="mbd-f-subscribe-note">Newsletter sign-ups are not available yet.</span>
+</div>
+</section>
+<div class="mbd-f-main">
+<div class="mbd-f-brand">
+<a aria-label="MyBizDigital — back to top" class="mbd-f-wordmark" href="#top"><img alt="" src="assets/brand-logo.svg"/><span>MyBizDigital</span></a>
+<span class="mbd-f-contact-label">Contact</span>
+<a aria-label="Email MyBizDigital support at support@mybizdigital.my" class="mbd-f-contact-link" href="mailto:support@mybizdigital.my">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span>support@mybizdigital.my</span>
+</a>
+<nav aria-label="Official social media profiles" class="mbd-f-socials">
+<a aria-label="MyBizDigital on YouTube" href="https://www.youtube.com/@MyBizDigitalMY" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M23 7.1a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.5A3 3 0 0 0 1 7.1C.5 9 .5 12 .5 12s0 3 .5 4.9A3 3 0 0 0 3.1 19c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.9.5-4.9s0-3-.5-4.9ZM9.7 15.5v-7l6.1 3.5-6.1 3.5Z"></path></svg></a>
+<a aria-label="MyBizDigital on Instagram" href="https://www.instagram.com/mybizdigital.my/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"></path></svg></a>
+<a aria-label="MyBizDigital on Facebook" href="https://www.facebook.com/mybizdigital.my/" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 22v-8.7h2.9l.44-3.4H13.7V7.7c0-1 .3-1.7 1.7-1.7h1.8V3a22.5 22.5 0 0 0-2.6-.1c-2.6 0-4.3 1.6-4.3 4.5v2.5H7.5v3.4h2.8V22h3.4Z"></path></svg></a>
+<a aria-label="MyBizDigital on LinkedIn" href="https://www.linkedin.com/company/mybizdigital-my" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4.9 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3.2 9h3.4v12H3.2V9Zm6 0h3.2v1.6h.05A3.5 3.5 0 0 1 15.6 8.8C19 8.8 20 11 20 14v7h-3.4v-6.2c0-1.5 0-3.3-2-3.3s-2.3 1.6-2.3 3.2V21H9.2V9Z"></path></svg></a>
+</nav>
+</div>
+<nav aria-label="Product footer links">
+<h3 class="mbd-f-col-title">Product</h3>
+<div class="mbd-f-nav"><a href="index.html#products">Explore Products</a><a href="index.html#how-it-works">How It Works</a></div>
+</nav>
+<nav aria-label="Company footer links">
+<h3 class="mbd-f-col-title">Company</h3>
+<div class="mbd-f-nav"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><span aria-disabled="true" title="Page not available yet">Blog</span><span aria-disabled="true" title="Page not available yet">Careers</span><span aria-disabled="true" title="Page not available yet">Affiliate Program</span></div>
+</nav>
+<nav aria-label="Resources footer links">
+<h3 class="mbd-f-col-title">Resources</h3>
+<div class="mbd-f-nav"><a href="index.html#faq">FAQ</a><a href="product-support.html">Product Support</a><a href="order-support.html">Order Support</a></div>
+</nav>
+<nav aria-label="Legal footer links">
+<h3 class="mbd-f-col-title">Legal</h3>
+<div class="mbd-f-nav"><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="privacy-policy.html">Privacy Policy</a><span aria-disabled="true" title="Page not available yet">Shipping &amp; Delivery</span><span aria-disabled="true" title="Page not available yet">Returns &amp; Refunds</span><span aria-disabled="true" title="Page not available yet">Warranty Policy</span></div>
+</nav>
+</div>
+<div class="mbd-f-bottom">
+<span>Copyright © 2026 MyBiz Digital Solutions 202603283464 (003903196-T). All rights reserved.</span>
+<a href="#top">Back to top ↑</a>
+</div>
+</div>
+<!-- SSM registration approved 23 October 2026. -->
+</footer>
+<script src="assets/library.js" defer></script>
+<script src="assets/footer-roll.js" defer></script>
+<script src="assets/page-entrance.js" defer></script>
+<script src="assets/cart-nav-count.js" defer></script>
+</body>
+</html>
