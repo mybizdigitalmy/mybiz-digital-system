@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MyBizDigital NFC stand order assistance, amendments, delivery enquiries, damage reports and replacements.">
+<meta name="theme-color" content="#f8f8f8">
+<title>Order Support | MyBizDigital</title>
+<link rel="icon" href="assets/brand-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap">
+<style id="mbd-about-styles">
+:root{--about-bg:#f8f8f8;--about-ink:#111;--about-muted:#737373;--about-border:#e5e5e5;--about-width:1080px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--about-bg);color:var(--about-ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid #171717;outline-offset:4px}
+#top{position:absolute;top:0;left:0}
+.about-container{max-width:var(--about-width);width:calc(100% - 44px);margin-inline:auto}
+/* Minimal information-page header; no edits to the storefront header. */
+.about-header{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.about-brand{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:740;letter-spacing:-.045em}
+.about-brand img{width:29px;height:29px;object-fit:contain}
+.about-home{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;line-height:1.2;transition:opacity .2s ease}
+.about-home:hover{opacity:.55}
+.about-main{padding:61px 0 92px}
+.about-eyebrow{margin:0 0 13px;font-size:12px;font-weight:700;line-height:1.5;color:#151515}
+.about-hero h1{font-size:clamp(38px,4.4vw,60px);line-height:1.075;letter-spacing:-.061em;font-weight:750;max-width:835px;margin:0}
+.about-hero-copy{color:#777;font-size:16px;line-height:1.7;max-width:660px;margin:18px 0 0}
+.about-mission{margin-top:67px;padding:47px 54px 49px;background:#fff;border:1px solid #e5e5e5;border-radius:23px;box-shadow:0 12px 27px rgba(0,0,0,.055)}
+.about-mission-label{color:#8a8a8a;font-size:11px;line-height:1.5;margin:0 0 11px}
+.about-mission h2{font-size:20px;font-weight:720;letter-spacing:-.028em;line-height:1.3;margin:0 0 12px}
+.about-mission p:last-child{margin:0;max-width:740px;color:#737373;font-size:14px;line-height:1.75}
+.about-section{margin-top:74px}
+.about-section-heading{font-size:22px;line-height:1.25;font-weight:750;letter-spacing:-.038em;margin:0 0 25px}
+.about-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}
+.about-card{display:flex;flex-direction:column;min-height:355px;padding:34px 34px 29px;background:#fff;border:1px solid #e7e7e7;border-radius:21px;box-shadow:0 9px 24px rgba(0,0,0,.045)}
+.about-card-num{font-size:11px;font-weight:680;line-height:1.3;margin-bottom:22px}
+.about-card h3{font-size:20px;font-weight:730;letter-spacing:-.035em;line-height:1.25;margin:0 0 12px}
+.about-card-copy{font-size:14px;color:#747474;line-height:1.7;margin:0}
+.about-card-link{margin-top:auto;padding-top:24px;align-self:flex-start;display:inline-flex;align-items:center;gap:5px;font-size:12px;line-height:1.45;font-weight:700;transition:gap .22s ease,color .22s ease}
+.about-card-link:hover{gap:11px;color:#555}
+.about-work{margin-top:77px}
+.about-work .about-section-heading{margin-bottom:22px}
+.about-principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px;row-gap:23px}
+.about-principle{border-top:1px solid #dcdcdc;padding:17px 0 0;min-height:89px}
+.about-principle h3{font-size:16px;line-height:1.45;font-weight:720;letter-spacing:-.025em;margin:0 0 7px}
+.about-principle p{font-size:13px;line-height:1.65;color:#777;margin:0}
+.about-cta{margin-top:73px;background:#171717;color:#fff;border-radius:23px;padding:54px 28px 56px;text-align:center}
+.about-cta h2{margin:0;font-weight:730;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.043em;line-height:1.2}
+.about-cta p{color:#c4c4c4;margin:16px auto 24px;max-width:550px;font-size:14px;line-height:1.65}
+.about-cta-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:11px}
+.about-cta-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;padding:0 22px;font-size:13px;line-height:1.2;font-weight:700;transition:background .22s ease,color .22s ease,border-color .22s ease}
+.about-cta-primary{background:#fff;color:#111}
+.about-cta-primary:hover{background:#dedede}
+.about-cta-secondary{background:transparent;color:#fff;border:1px solid #777}
+.about-cta-secondary:hover{background:#333;border-color:#aaa}
+/* The reference keeps three service cards in a row on small tablets. */
+@media(max-width:720px){
+ .about-header{height:63px}.about-brand{font-size:14px}.about-brand img{width:25px;height:25px}
+ .about-main{padding:42px 0 68px}.about-eyebrow{font-size:11px;margin-bottom:10px}
+ .about-hero h1{font-size:clamp(27px,5vw,35px);line-height:1.1;letter-spacing:-.055em;max-width:520px}
+ .about-hero-copy{font-size:13px;line-height:1.7;margin-top:11px;max-width:510px}
+ .about-mission{margin-top:41px;padding:29px 30px;border-radius:18px}.about-mission-label{font-size:10px}.about-mission h2{font-size:15px;margin-bottom:8px}.about-mission p:last-child{font-size:12px;line-height:1.7}
+ .about-section{margin-top:45px}.about-section-heading{font-size:16px;margin-bottom:17px}
+ .about-cards{gap:13px}.about-card{padding:20px 18px 18px;min-height:256px;border-radius:17px}.about-card-num{font-size:10px;margin-bottom:13px}.about-card h3{font-size:14px;line-height:1.25;margin-bottom:9px}.about-card-copy{font-size:11px;line-height:1.52}.about-card-link{font-size:10px;padding-top:19px}
+ .about-work{margin-top:47px}.about-principles{column-gap:20px;row-gap:16px}.about-principle{min-height:90px;padding-top:11px}.about-principle h3{font-size:12px;margin-bottom:5px}.about-principle p{font-size:11px;line-height:1.55}
+ .about-cta{margin-top:50px;border-radius:18px;padding:35px 23px 39px}.about-cta h2{font-size:21px}.about-cta p{font-size:12px;margin:11px auto 18px}.about-cta-actions a{font-size:11px;min-height:37px;padding:0 17px}
+}
+@media(max-width:480px){
+ .about-container{width:calc(100% - 32px)}.about-brand{gap:7px}.about-home{font-size:12px}
+ .about-main{padding-top:36px}.about-hero h1{font-size:clamp(30px,8.2vw,38px)}.about-hero-copy{font-size:13px}
+ .about-mission{padding:26px 22px}.about-section{margin-top:48px}.about-section-heading{font-size:18px}
+ .about-cards{grid-template-columns:1fr;gap:15px}.about-card{min-height:208px;padding:24px 25px}.about-card h3{font-size:18px}.about-card-copy{font-size:13px;line-height:1.6}.about-card-link{font-size:12px}
+ .about-principles{grid-template-columns:1fr;row-gap:16px}.about-principle{min-height:0;padding:13px 0 0}.about-principle h3{font-size:15px}.about-principle p{font-size:12px}
+ .about-cta{margin-top:50px;padding:39px 18px}.about-cta h2{font-size:23px}.about-cta p{font-size:13px}.about-cta-actions a{min-height:41px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.about-home,.about-card-link,.about-cta-actions a{transition:none}}
+
+
+/* New content only: derived from the approved MyBizDigital About page hierarchy. */
+.mbd-support{max-width:100%;min-width:0}
+.mbd-support-kicker{font-size:12px;font-weight:700;letter-spacing:.015em;text-transform:none;color:#111;margin:0 0 14px}
+.mbd-support-intro{font-size:clamp(38px,4.4vw,60px);max-width:900px;font-weight:750;letter-spacing:-.061em;line-height:1.08;margin:0}
+.mbd-support-lead{max-width:740px;font-size:16px;line-height:1.75;color:#6b6b6b;margin:19px 0 0}
+.mbd-support-primary{margin-top:60px;padding:37px 43px;background:#fff;border:1px solid #e5e5e5;border-radius:23px;box-shadow:0 12px 27px rgba(0,0,0,.052)}
+.mbd-support-primary .mbd-support-label{font-size:11px;color:#777;margin:0 0 10px}
+.mbd-support-primary h2{font-size:24px;letter-spacing:-.036em;line-height:1.3;margin:0 0 13px}
+.mbd-support-primary p{color:#686868;font-size:14px;line-height:1.75;margin:0;max-width:850px}
+.mbd-support-section{margin-top:71px}
+.mbd-support-section h2{font-size:23px;letter-spacing:-.035em;line-height:1.3;margin:0 0 24px}
+.mbd-support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.mbd-support-card{padding:29px 31px 31px;background:#fff;border:1px solid #e7e7e7;border-radius:20px;min-width:0}
+.mbd-support-card .mbd-support-no{display:block;font-size:11px;font-weight:700;margin-bottom:16px}
+.mbd-support-card h3{font-size:18px;line-height:1.4;letter-spacing:-.027em;margin:0 0 11px}
+.mbd-support-card p,.mbd-support-card li{font-size:14px;line-height:1.75;color:#707070;margin:0}
+.mbd-support-card ul{padding-left:18px;margin:11px 0 0}
+.mbd-support-card li+li{margin-top:7px}
+.mbd-support-list{display:grid;gap:0;border-top:1px solid #d9d9d9}
+.mbd-support-row{display:grid;grid-template-columns:minmax(155px,.7fr) minmax(0,1.9fr);gap:25px;padding:22px 0;border-bottom:1px solid #d9d9d9}
+.mbd-support-row h3{font-size:15px;line-height:1.5;font-weight:700;margin:0;letter-spacing:-.015em}
+.mbd-support-row p{margin:0;font-size:14px;line-height:1.75;color:#6d6d6d}
+.mbd-support-qa{display:grid;gap:11px}
+.mbd-support-qa details{background:#fff;border:1px solid #e6e6e6;border-radius:14px;padding:20px 23px}
+.mbd-support-qa summary{cursor:pointer;font-size:15px;font-weight:700;line-height:1.5;list-style-position:outside}
+.mbd-support-qa p{font-size:14px;line-height:1.8;color:#6c6c6c;margin:13px 0 0}
+.mbd-support-qa a,.mbd-support-row a,.mbd-support-primary a,.mbd-support-fine a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.mbd-support-contact{margin-top:78px;border-radius:23px;padding:41px 44px 45px;color:#fff;background:#171717}
+.mbd-support-contact h2{font-size:26px;line-height:1.25;letter-spacing:-.035em;margin:0 0 12px}
+.mbd-support-contact p{font-size:14px;color:#c5c5c5;line-height:1.75;margin:0 0 12px;max-width:710px}
+.mbd-support-contact .mbd-support-hours{font-size:12px;color:#a4a4a4;margin:0 0 25px}
+.mbd-support-actions{display:flex;gap:12px;flex-wrap:wrap}
+.mbd-support-actions a{display:inline-flex;min-height:44px;padding:12px 22px;align-items:center;justify-content:center;border-radius:100px;font-size:13px;font-weight:700;transition:opacity .2s ease}
+.mbd-support-actions a:hover{opacity:.8}
+.mbd-support-actions .primary{background:#fff;color:#111}
+.mbd-support-actions .secondary{border:1px solid #555;color:#fff}
+.mbd-support-fine{margin:29px 0 0;font-size:12px;line-height:1.65;color:#7a7a7a}
+@media(max-width:700px){.mbd-support-primary{margin-top:45px;padding:29px 24px}.mbd-support-grid{grid-template-columns:1fr}.mbd-support-row{grid-template-columns:1fr;gap:6px}.mbd-support-contact{padding:32px 25px 35px}.mbd-support-section{margin-top:54px}.mbd-support-card{padding:26px 24px}}
+@media(max-width:380px){.mbd-support-primary{padding:25px 20px}.mbd-support-qa details{padding:18px}.mbd-support-actions a{width:100%}}
+@media(prefers-reduced-motion:reduce){.mbd-support-actions a{transition:none}}
+
+</style>
+<style id="mbd-about-footer-roll-base">
+/* Existing storefront two-face rollover primitives, scoped to this page footer. */
+#mbd-site-footer .roll{height:1.25em;overflow:hidden;display:inline-flex;align-items:flex-start;line-height:1.25;vertical-align:bottom}
+#mbd-site-footer .roll-char{display:inline-block;height:1.25em;overflow:hidden;vertical-align:bottom}
+#mbd-site-footer .roll-char-inner{display:flex;flex-direction:column;height:2.5em;transform:translateY(0);transition:transform 360ms cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--ri,0)*18ms);will-change:transform}
+#mbd-site-footer .roll-char-face{display:block;height:1.25em;line-height:1.25}
+#mbd-site-footer .roll-space{display:inline-block;width:.28em;flex:0 0 .28em}
+</style>
+<style id="mbd-v196-footer-styles">
+/* V1.96 — footer only; HorizonX-inspired layout, all selectors scoped. */
+#mbd-site-footer {
+  background:#050505;
+  color:#f5f5f5;
+  font-family:Inter,Arial,sans-serif;
+  font-size:14px;
+  line-height:1.55;
+  isolation:isolate;
+}
+#mbd-site-footer *,#mbd-site-footer *::before,#mbd-site-footer *::after{box-sizing:border-box}
+#mbd-site-footer .mbd-f-inner{width:min(1320px,calc(100% - 88px));margin-inline:auto}
+#mbd-site-footer .mbd-f-top{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,440px);
+  align-items:center;gap:56px;padding:93px 0 74px;border-bottom:1px solid #242424;
+}
+#mbd-site-footer .mbd-f-eyebrow{display:none}
+#mbd-site-footer .mbd-f-title{
+  margin:0;color:#fff;font-size:clamp(33px,2.65vw,44px);
+  font-weight:700;line-height:1.16;letter-spacing:-.045em;max-width:none;
+}
+#mbd-site-footer .mbd-f-title span{color:inherit}
+#mbd-site-footer .mbd-f-subtitle{
+  margin:15px 0 0;color:#b5b5b5;font-size:15px;
+  font-weight:400;line-height:1.7;max-width:520px;
+}
+#mbd-site-footer .mbd-f-newsletter{width:100%}
+#mbd-site-footer .mbd-f-subscribe-box{
+  display:flex;align-items:center;gap:5px;width:100%;min-height:54px;
+  padding:4px;border:1px solid #303030;border-radius:999px;background:#0e0e0e;
+}
+#mbd-site-footer .mbd-f-subscribe-box input{
+  appearance:none;min-width:0;flex:1;width:100%;border:0;outline:0;box-shadow:none;
+  background:transparent;color:#b5b5b5;padding:11px 18px;
+  font:inherit;font-size:14px;cursor:not-allowed;
+}
+#mbd-site-footer .mbd-f-subscribe-box input::placeholder{color:#969696;opacity:1}
+#mbd-site-footer .mbd-f-subscribe-box button{
+  flex:0 0 auto;min-height:44px;border:0;border-radius:999px;
+  padding:0 24px;background:#fff;color:#101010;font:inherit;
+  font-size:13px;font-weight:650;letter-spacing:0;white-space:nowrap;
+  opacity:1;cursor:not-allowed;
+}
+#mbd-site-footer .mbd-f-subscribe-note{display:block;color:#8e8e8e;font-size:11px;margin:9px 0 0 20px}
+#mbd-site-footer .mbd-f-main{
+  display:grid;grid-template-columns:minmax(225px,1.95fr) repeat(4,minmax(120px,1fr));
+  column-gap:clamp(20px,2.6vw,48px);row-gap:42px;padding:54px 0 91px;
+}
+#mbd-site-footer .mbd-f-brand{min-width:0}
+#mbd-site-footer .mbd-f-wordmark{
+  display:inline-flex;align-items:center;gap:8px;margin:0 0 30px;
+  font-size:15px;font-weight:700;line-height:1.25;letter-spacing:-.035em;
+  color:#f3f3f3;text-decoration:none;
+}
+#mbd-site-footer .mbd-f-wordmark img{display:block;width:27px;height:27px;object-fit:contain;filter:brightness(0) invert(1)}
+#mbd-site-footer .mbd-f-wordmark span{color:inherit}
+#mbd-site-footer a:focus-visible{outline:2px solid #fff;outline-offset:5px}
+#mbd-site-footer .mbd-f-contact-label{display:block;font-size:12px;font-weight:600;color:#999;margin:0 0 13px}
+#mbd-site-footer .mbd-f-contact-link{
+  display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;
+  color:#e5e5e5;text-decoration:none;line-height:1.45;
+}
+#mbd-site-footer .mbd-f-contact-link:hover{color:#fff}
+#mbd-site-footer .mbd-f-contact-link svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}
+#mbd-site-footer .mbd-f-socials{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:27px}
+#mbd-site-footer .mbd-f-socials a{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:19px;height:22px;color:#929292;text-decoration:none;
+  border:0;border-radius:0;background:none;transition:color .2s ease;
+}
+#mbd-site-footer .mbd-f-socials a:hover{color:#fff}
+#mbd-site-footer .mbd-f-socials svg{display:block;width:19px;height:19px;fill:currentColor}
+#mbd-site-footer .mbd-f-col-title{
+  margin:1px 0 25px;color:#999;font-size:12px;font-weight:700;line-height:1.35;
+}
+#mbd-site-footer .mbd-f-nav{display:flex;flex-direction:column;align-items:start;gap:15px}
+#mbd-site-footer .mbd-f-nav a,#mbd-site-footer .mbd-f-nav span[aria-disabled="true"]{
+  display:inline-flex;max-width:100%;font-size:14px;line-height:1.5;font-weight:400;
+  text-decoration:none;color:#b4b4b4;
+}
+#mbd-site-footer .mbd-f-nav a{cursor:pointer}
+#mbd-site-footer .mbd-f-nav a:hover,#mbd-site-footer .mbd-f-nav a:focus-visible{color:#fff}
+#mbd-site-footer .mbd-f-nav span[aria-disabled="true"]{color:#898989;cursor:default}
+/* Exactly the same two-face, 360ms per-character rollover and 18ms stagger as the header. */
+#mbd-site-footer .mbd-f-nav a .roll{display:inline-flex;align-items:flex-start;max-width:100%}
+@media (hover:hover) and (pointer:fine){
+  #mbd-site-footer .mbd-f-nav a:hover .roll-char-inner{
+    transform:translateY(-50%);transition-delay:calc(var(--i,0)*18ms);
+  }
+}
+#mbd-site-footer .mbd-f-nav a:focus-visible .roll-char-inner{
+  transform:translateY(-50%);transition-delay:calc(var(--i,0)*18ms);
+}
+#mbd-site-footer .mbd-f-bottom{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:15px 24px;padding:24px 0 30px;border-top:1px solid #242424;
+  color:#8d8d8d;font-size:12px;
+}
+#mbd-site-footer .mbd-f-bottom a{color:#aaa;font-size:12px;text-decoration:none;white-space:nowrap}
+#mbd-site-footer .mbd-f-bottom a:hover{color:#fff}
+@media (max-width:1150px){
+  #mbd-site-footer .mbd-f-top{grid-template-columns:minmax(0,1fr) minmax(285px,390px);gap:32px}
+  #mbd-site-footer .mbd-f-title{font-size:clamp(31px,3.2vw,39px)}
+  #mbd-site-footer .mbd-f-main{grid-template-columns:minmax(210px,1.6fr) repeat(2,minmax(150px,1fr));gap:43px 35px}
+}
+@media (max-width:760px){
+  #mbd-site-footer .mbd-f-inner{width:calc(100% - 42px)}
+  #mbd-site-footer .mbd-f-top{grid-template-columns:1fr;gap:28px;padding:63px 0 58px}
+  #mbd-site-footer .mbd-f-title{font-size:clamp(30px,8vw,42px);line-height:1.14}
+  #mbd-site-footer .mbd-f-subtitle{font-size:14px}
+  #mbd-site-footer .mbd-f-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:43px 22px;padding:55px 0 62px}
+  #mbd-site-footer .mbd-f-brand{grid-column:1/-1}
+  #mbd-site-footer .mbd-f-wordmark{margin-bottom:27px}
+  #mbd-site-footer .mbd-f-col-title{margin-bottom:18px}
+  #mbd-site-footer .mbd-f-nav{gap:13px}
+  #mbd-site-footer .mbd-f-bottom{align-items:flex-start}
+}
+@media (max-width:380px){
+  #mbd-site-footer .mbd-f-inner{width:calc(100% - 34px)}
+  #mbd-site-footer .mbd-f-subscribe-box input{padding-left:13px;font-size:13px}
+  #mbd-site-footer .mbd-f-subscribe-box button{padding:0 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  #mbd-site-footer .mbd-f-nav .roll-char-inner,
+  #mbd-site-footer .mbd-f-socials a{transition:none!important}
+  #mbd-site-footer .mbd-f-nav a:hover .roll-char-inner,
+  #mbd-site-footer .mbd-f-nav a:focus-visible .roll-char-inner{transform:none!important}
+}
+</style>
+</head>
+<body>
+<div id="top"></div>
+<header class="about-header about-container" aria-label="Support page header">
+ <a class="about-brand" href="index.html#top" aria-label="MyBizDigital — Home"><img src="assets/brand-logo.svg" alt=""><span>MyBizDigital</span></a>
+ <a class="about-home" href="index.html#top">Back to Home <span aria-hidden="true">↗</span></a>
+</header>
+
+<main class="about-main about-container mbd-support" id="main-content">
+  <section aria-labelledby="support-title">
+    <p class="mbd-support-kicker">Order assistance</p>
+    <h1 class="mbd-support-intro" id="support-title">Questions about an NFC Smart Stand order?</h1>
+    <p class="mbd-support-lead">Contact MyBizDigital about order details, NFC destination information, shipment updates, damaged deliveries or replacement requests. Website development and custom software enquiries are handled separately through our Contact page.</p>
+  </section>
+  <section class="mbd-support-primary" aria-labelledby="help-heading">
+    <p class="mbd-support-label">ORDER SUPPORT</p>
+    <h2 id="help-heading">Keep your order reference handy.</h2>
+    <p>When contacting us, include the order reference (if one has been issued), business name, product type and the support issue. You should not share passwords, one-time passcodes or full payment-card details.</p>
+  </section>
+  <section class="mbd-support-section" aria-labelledby="topics-heading">
+    <h2 id="topics-heading">What can we help with?</h2>
+    <div class="mbd-support-grid">
+      <article class="mbd-support-card"><span class="mbd-support-no">01</span><h3>Order and payment enquiries</h3><p>Ask about an order, payment confirmation or purchase document. Live online payment processing and automated order-history features remain pending launch and verification.</p></article>
+      <article class="mbd-support-card"><span class="mbd-support-no">02</span><h3>Order amendments</h3><p>Request a change to the delivery address, quantity, destination link or business information as soon as possible. Changes are reviewed according to programming and dispatch progress and are not guaranteed.</p></article>
+      <article class="mbd-support-card"><span class="mbd-support-no">03</span><h3>Delivery enquiries</h3><p>Our selected delivery providers are Pos Laju within Malaysia and DHL for international shipments. Delivery times, charges and tracking information depend on the confirmed shipment and destination.</p></article>
+      <article class="mbd-support-card"><span class="mbd-support-no">04</span><h3>Damage, 5-year chip warranty and replacements</h3><p>Report damaged, defective or incorrect items with supporting photographs. The five-year NFC chip warranty covers verified chip defects under normal intended use from confirmed delivery. We review claims and arrange the appropriate remedy according to the issue and applicable policies.</p></article>
+    </div>
+  </section>
+  <section class="mbd-support-section" aria-labelledby="process-heading">
+    <h2 id="process-heading">How support requests are handled</h2>
+    <div class="mbd-support-list">
+      <div class="mbd-support-row"><h3>Before dispatch</h3><p>Contact us promptly to request an amendment or cancellation. We will confirm whether NFC programming or shipment preparation has begun and advise on the available options, including any price difference.</p></div>
+      <div class="mbd-support-row"><h3>After dispatch</h3><p>Shipment changes may not be possible once the courier has received the parcel. If a customer-supplied destination needs to change after dispatch, a newly programmed replacement may be ordered with a 10% discount for eligible returning customers; delivery is charged separately.</p></div>
+      <div class="mbd-support-row"><h3>Item arrives damaged</h3><p>Report the damage promptly. Send the product photographs, packaging images and shipping label with your order reference. If the damage is verified as arising before or during delivery, MyBizDigital arranges a replacement free of charge. A physical return is not always required.</p></div>
+      <div class="mbd-support-row"><h3>Chip malfunction or wrong programming</h3><p>We assess NFC issues and verify the original programmed destination. Verified errors made by MyBizDigital are remedied without charge, including a newly programmed replacement where necessary. Verified eligible chip defects are assessed under our five-year NFC chip warranty.</p></div>
+    </div>
+  </section>
+  <section class="mbd-support-section" aria-labelledby="questions-heading">
+    <h2 id="questions-heading">Frequently asked questions</h2>
+    <div class="mbd-support-qa">
+      <details><summary>Can I change my order after placing it?</summary><p>Please contact us before dispatch. We will check whether the change is possible based on the NFC configuration stage and courier handover status. A change affecting quantity or shipping may require an adjusted amount.</p></details>
+      <details><summary>Will I need to return a badly damaged stand?</summary><p>Not necessarily. We may approve a replacement without return when clear evidence is sufficient. Please retain the damaged item and packaging until we confirm the resolution.</p></details>
+      <details><summary>Who pays when an item arrives damaged?</summary><p>When our review confirms a MyBizDigital-caused or transit-damaged delivery, MyBizDigital arranges the replacement and replacement delivery without charging the customer.</p></details>
+      <details><summary>How will tracking work after online checkout launches?</summary><p>After the operational order-management system is launched and verified, customers are intended to receive order and shipment emails and see relevant progress in their customer account. Until then, please contact support for any existing enquiry or arrangement.</p></details>
+      <details><summary>Can I order just one Food Menu NFC Smart Stand?</summary><p>No. The Food Menu offer is a bundle of 10 preconfigured stands for RM800, not an individually sold product. Contact us if you need to discuss the destination link or intended menu setup.</p></details>
+      <details><summary>What about international orders?</summary><p>DHL is the selected international courier. Delivery availability, charges, customs responsibilities and international warranty shipping arrangements must be confirmed for the destination before an order is accepted.</p></details>
+    </div>
+  </section>
+  <section class="mbd-support-contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Order Support</h2>
+    <p>Send your order reference, business name and a short description of your request. For shipping damage or product issues, attach clear evidence where available.</p>
+    <p class="mbd-support-hours">Support: Monday–Saturday, 8:00 AM–6:00 PM (Malaysia time). Closed Sunday.</p>
+    <div class="mbd-support-actions"><a class="primary" href="mailto:support@mybizdigital.my?subject=Order%20Support%20Request">Email Order Support</a><a class="secondary" href="contact.html">Contact Us</a></div>
+  </section>
+  <p class="mbd-support-fine">For NFC setup, troubleshooting and chip-defect assistance, see <a href="product-support.html">Product Usage &amp; Support</a>. This page provides general order-assistance information. Final order cancellation, shipping, warranty and refund terms will be governed by the approved published policies and applicable law.</p>
+</main>
+
+<footer id="mbd-site-footer" aria-label="MyBizDigital footer">
+ <div class="mbd-f-inner">
+  <section class="mbd-f-top" aria-labelledby="mbd-footer-newsletter-title">
+   <div class="mbd-f-newsletter-copy">
+    <h2 id="mbd-footer-newsletter-title" class="mbd-f-title">New products, straight to your inbox</h2>
+    <p class="mbd-f-subtitle">New NFC products, digital tools and business updates. No filler, just what's new.</p>
+   </div>
+   <div class="mbd-f-newsletter">
+    <div class="mbd-f-subscribe-box" aria-label="Newsletter registration not yet available">
+     <input type="email" aria-label="Email address (newsletter not available yet)" placeholder="you@email.com" disabled>
+     <button type="button" disabled title="Newsletter sign-ups coming soon">Notify me</button>
+    </div>
+    <span class="mbd-f-subscribe-note">Newsletter sign-ups are not available yet.</span>
+   </div>
+  </section>
+
+  <div class="mbd-f-main">
+   <div class="mbd-f-brand">
+    <a class="mbd-f-wordmark" href="#top" aria-label="MyBizDigital — back to top"><img alt="" src="assets/brand-logo.svg"><span>MyBizDigital</span></a>
+    <span class="mbd-f-contact-label">Contact</span>
+    <a class="mbd-f-contact-link" href="mailto:support@mybizdigital.my" aria-label="Email MyBizDigital support at support@mybizdigital.my">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+     <span>support@mybizdigital.my</span>
+    </a>
+    <nav class="mbd-f-socials" aria-label="Official social media profiles">
+     <a href="https://www.youtube.com/@MyBizDigitalMY" target="_blank" rel="noopener noreferrer" aria-label="MyBizDigital on YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.1a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.5A3 3 0 0 0 1 7.1C.5 9 .5 12 .5 12s0 3 .5 4.9A3 3 0 0 0 3.1 19c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.9.5-4.9s0-3-.5-4.9ZM9.7 15.5v-7l6.1 3.5-6.1 3.5Z"/></svg></a>
+     <a href="https://www.instagram.com/mybizdigital.my/" target="_blank" rel="noopener noreferrer" aria-label="MyBizDigital on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></a>
+     <a href="https://www.facebook.com/mybizdigital.my/" target="_blank" rel="noopener noreferrer" aria-label="MyBizDigital on Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 22v-8.7h2.9l.44-3.4H13.7V7.7c0-1 .3-1.7 1.7-1.7h1.8V3a22.5 22.5 0 0 0-2.6-.1c-2.6 0-4.3 1.6-4.3 4.5v2.5H7.5v3.4h2.8V22h3.4Z"/></svg></a>
+     <a href="https://www.linkedin.com/company/mybizdigital-my" target="_blank" rel="noopener noreferrer" aria-label="MyBizDigital on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.9 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3.2 9h3.4v12H3.2V9Zm6 0h3.2v1.6h.05A3.5 3.5 0 0 1 15.6 8.8C19 8.8 20 11 20 14v7h-3.4v-6.2c0-1.5 0-3.3-2-3.3s-2.3 1.6-2.3 3.2V21H9.2V9Z"/></svg></a>
+    </nav>
+   </div>
+   <nav aria-label="Product footer links">
+    <h3 class="mbd-f-col-title">Product</h3>
+    <div class="mbd-f-nav"><a href="index.html#products">Explore Products</a><a href="index.html#how-it-works">How It Works</a></div>
+   </nav>
+   <nav aria-label="Company footer links">
+    <h3 class="mbd-f-col-title">Company</h3>
+    <div class="mbd-f-nav"><a href="about.html">About Us</a><span aria-disabled="true" title="Page not available yet">Blog</span><span aria-disabled="true" title="Page not available yet">Careers</span><span aria-disabled="true" title="Page not available yet">Affiliate Program</span></div>
+   </nav>
+   <nav aria-label="Resources footer links">
+    <h3 class="mbd-f-col-title">Resources</h3>
+    <div class="mbd-f-nav"><a href="index.html#faq">FAQ</a><a href="product-support.html">Product Usage &amp; Support</a><a href="order-support.html">Order Support</a></div>
+   </nav>
+   <nav aria-label="Legal footer links">
+    <h3 class="mbd-f-col-title">Legal</h3>
+    <div class="mbd-f-nav"><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="privacy-policy.html">Privacy Policy</a><span aria-disabled="true" title="Page not available yet">Shipping &amp; Delivery</span><span aria-disabled="true" title="Page not available yet">Returns &amp; Refunds</span><span aria-disabled="true" title="Page not available yet">Warranty Policy</span></div>
+   </nav>
+  </div>
+  <div class="mbd-f-bottom">
+   <span>Copyright © 2026 MyBiz Digital Solutions 202603283464 (003903196-T). All rights reserved.</span>
+   <a href="#top">Back to top ↑</a>
+  </div>
+ </div>
+ <!-- SSM registration approved 23 October 2026. -->
+</footer>
+<script id="mbd-v196-footer-roll">
+(() => {
+  const nav = document.querySelector('#mbd-site-footer .mbd-f-nav');
+  if (!nav) return;
+  document.querySelectorAll('#mbd-site-footer .mbd-f-nav a').forEach((link) => {
+    if (link.dataset.footerRollReady === 'true') return;
+    const label = link.textContent.trim();
+    link.textContent = '';
+    const host = document.createElement('span');
+    host.className = 'roll';
+    host.setAttribute('aria-label', label);
+    let index = 0;
+    const count = [...label].filter(ch => ch !== ' ').length;
+    for (const ch of label) {
+      if (ch === ' ') {
+        const space = document.createElement('span');
+        space.className = 'roll-space';
+        space.setAttribute('aria-hidden','true');
+        host.appendChild(space);
+      } else {
+        const col = document.createElement('span');
+        col.className = 'roll-char';
+        col.setAttribute('aria-hidden','true');
+        const inner = document.createElement('span');
+        inner.className = 'roll-char-inner';
+        inner.style.setProperty('--i',String(index));
+        inner.style.setProperty('--ri',String(Math.max(0,count - 1 - index)));
+        for (let j=0;j<2;j++) {
+          const face = document.createElement('span');
+          face.className = 'roll-char-face';
+          face.textContent = ch;
+          inner.appendChild(face);
+        }
+        col.appendChild(inner);
+        host.appendChild(col);
+        index++;
+      }
+    }
+    link.appendChild(host);
+    link.setAttribute('aria-label',label);
+    link.dataset.footerRollReady = 'true';
+  });
+})();
+</script>
+</body>
+</html>
